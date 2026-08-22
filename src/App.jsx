@@ -3,8 +3,18 @@ import { ArrowRight, Shield, Sparkles, Mail, ChevronRight, Menu, X, ShoppingCart
 import heroBG from './assets/imagine hero 1.jpeg';
 import logo1 from './assets/logo 1.png';
 import proiectArhitectural from './assets/proiect_arhitectural.jpg';
+import portofoliu1 from './assets/portofoliu/portofoliu-1.jpg';
+import portofoliu2 from './assets/portofoliu/portofoliu-2.jpg';
+import portofoliu3 from './assets/portofoliu/portofoliu-3.jpg';
+import portofoliu4 from './assets/portofoliu/portofoliu-4.jpg';
+import portofoliu5 from './assets/portofoliu/portofoliu-5.jpg';
+import portofoliu6 from './assets/portofoliu/portofoliu-6.jpg';
+import portofoliu7 from './assets/portofoliu/portofoliu-7.jpg';
+import portofoliu8 from './assets/portofoliu/portofoliu-8.jpg';
 import { contactInfo } from './productsData.js';
 import { CatalogShowroom } from './CatalogShowroom.jsx';
+
+const portfolioImages = [portofoliu1, portofoliu2, portofoliu3, portofoliu4, portofoliu5, portofoliu6, portofoliu7, portofoliu8];
 
 
 
@@ -515,13 +525,13 @@ function App() {
         >
           <div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-7xl flex-col justify-center px-6 pb-24 pt-24 text-center md:min-h-[calc(100vh-112px)] lg:px-8">
             <span className="mb-6 inline-flex text-base font-bold uppercase tracking-[0.15em] text-[#c5a059] sm:text-xl sm:tracking-[0.35em]">
-              Confecții metalice de lux
+              Confecții metalice de precizie
             </span>
             <h1 className="mx-auto max-w-4xl text-5xl font-semibold leading-tight text-[#c5a059] sm:text-6xl lg:text-7xl">
               Inginerie de Precizie.
             </h1>
             <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-[#d8ccb6] sm:text-lg">
-              Specialiști în balustrade arhitecturale, scări metalice și design industrial high-end, cu o experiență de peste 30 de ani în prelucrarea oțelului.
+              Specialiști în balustrade arhitecturale, scări metalice și design industrial modern, cu o experiență de peste 30 de ani în prelucrarea oțelului.
             </p>
             <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
@@ -573,7 +583,7 @@ function App() {
                       <span className="uppercase tracking-[0.25em] text-xs">Finitură premium</span>
                     </div>
                     <p className="mt-3 text-sm leading-6 text-[#cfc5ad]">
-                      Metal periat, tonuri profunde și reflexii discrete pentru proiecte high-end.
+                      Metal periat, tonuri profunde și reflexii discrete pentru fiecare proiect.
                     </p>
                   </div>
                   <div className="rounded-3xl border border-white/5 bg-white/10 p-5 backdrop-blur-md">
@@ -653,7 +663,7 @@ function App() {
         <section id="story" className="px-6 py-24 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
             <div className="space-y-6">
-              <p className="text-sm uppercase tracking-[0.35em] text-[#c5a059]">Despre noi</p>
+              <p className="text-sm uppercase tracking-[0.35em] text-[#c5a059]">Despre noi (Portofoliu)</p>
               <h2 className="text-4xl font-semibold leading-tight text-[#c5a059] sm:text-5xl">
                 Fabricație românească cu suflet industrial.
               </h2>
@@ -671,6 +681,18 @@ function App() {
                 <p className="mt-4 text-sm leading-7 text-[#cfc5ad]">Controlul dimensional și al finisajului este realizat la nivel de micron pentru fiecare piesă.</p>
               </div>
             </div>
+          </div>
+
+          <div className="mx-auto mt-16 max-w-7xl">
+            <p className="mb-6 text-sm uppercase tracking-[0.3em] text-[#c5a059]">Selecție de lucrări finalizate</p>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {portfolioImages.map((src, i) => (
+                <div key={i} className="aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                  <img src={src} alt={`Lucrare KRAFT Metalworks ${i + 1}`} className="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy" />
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-xs text-[#cfc5ad]/60">Exemple din proiectele noastre — portofoliul complet este în continuă extindere.</p>
           </div>
         </section>
 
@@ -782,6 +804,21 @@ function App() {
                 </div>
               </a>
 
+              {/* Phone 2 */}
+              <a
+                href={`tel:${contactInfo.phone2}`}
+                className="group flex flex-col gap-5 rounded-3xl border border-[#c5a059]/20 bg-[#c5a059]/5 p-8 backdrop-blur-md transition-all duration-300 hover:border-[#c5a059]/60 hover:bg-[#c5a059]/10 hover:shadow-[0_6px_40px_rgba(197,160,89,0.15)]"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#c5a059]/40 bg-[#c5a059]/15">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#c5a059]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-[#cfc5ad]/50 mb-2">Al Doilea Număr</p>
+                  <p className="text-xl font-bold tracking-wide text-[#c5a059] transition-colors group-hover:text-[#e2bc77]">{contactInfo.phone2}</p>
+                  <p className="mt-1 text-xs text-[#cfc5ad]/60">Click pentru apel direct</p>
+                </div>
+              </a>
+
               {/* Email */}
               <a
                 href={`mailto:${contactInfo.email}`}
@@ -821,6 +858,13 @@ function App() {
               className="text-sm font-bold text-[#c5a059] transition-colors hover:text-[#e2bc77]"
             >
               {contactInfo.phone}
+            </a>
+            <span className="hidden text-[#b8ab95]/30 sm:inline">|</span>
+            <a
+              href={`tel:${contactInfo.phone2}`}
+              className="text-sm font-bold text-[#c5a059] transition-colors hover:text-[#e2bc77]"
+            >
+              {contactInfo.phone2}
             </a>
             <span className="hidden text-[#b8ab95]/30 sm:inline">|</span>
             <a

@@ -13,8 +13,9 @@ export const categoryLabels = {
 };
 
 export const contactInfo = {
-  phone:    '+40 722 123 456',
-  email:    'contact@kraft-metalworks.ro',
+  phone:    '+40 743 096 269',
+  phone2:   '+40 746 333 104',
+  email:    'contact@kraftmetalworks.ro',
   address:  'Str. Industriilor 14, Cluj-Napoca, România',
   schedule: 'Luni–Vineri: 09:00–18:00',
 };
