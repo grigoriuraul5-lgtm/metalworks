@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Shield, Sparkles, Mail, ChevronRight, Menu, X, ShoppingCart, Trash2, Upload } from 'lucide-react';
+import { ArrowRight, Shield, Sparkles, Mail, ChevronRight, ChevronLeft, Menu, X, ShoppingCart, Trash2, Upload } from 'lucide-react';
 import heroBG from './assets/imagine hero 1.jpeg';
 import logo1 from './assets/logo 1.png';
 import proiectArhitectural from './assets/proiect_arhitectural.jpg';
@@ -11,10 +11,20 @@ import portofoliu5 from './assets/portofoliu/portofoliu-5.jpg';
 import portofoliu6 from './assets/portofoliu/portofoliu-6.jpg';
 import portofoliu7 from './assets/portofoliu/portofoliu-7.jpg';
 import portofoliu8 from './assets/portofoliu/portofoliu-8.jpg';
+import portofoliu9 from './assets/portofoliu/portofoliu-9.jpg';
+import portofoliu10 from './assets/portofoliu/portofoliu-10.jpg';
+import portofoliu11 from './assets/portofoliu/portofoliu-11.jpg';
+import portofoliu12 from './assets/portofoliu/portofoliu-12.jpg';
+import portofoliu13 from './assets/portofoliu/portofoliu-13.jpg';
+import portofoliu14 from './assets/portofoliu/portofoliu-14.jpg';
 import { contactInfo } from './productsData.js';
 import { CatalogShowroom } from './CatalogShowroom.jsx';
 
-const portfolioImages = [portofoliu1, portofoliu2, portofoliu3, portofoliu4, portofoliu5, portofoliu6, portofoliu7, portofoliu8];
+const portfolioImages = [
+  portofoliu10, portofoliu9, portofoliu11, portofoliu12, portofoliu13,
+  portofoliu1, portofoliu2, portofoliu3, portofoliu4, portofoliu5, portofoliu6, portofoliu7, portofoliu8,
+  portofoliu14,
+];
 
 
 
@@ -390,6 +400,14 @@ function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [customRequestProduct, setCustomRequestProduct] = useState(null);
+  const [portfolioExpanded, setPortfolioExpanded] = useState(false);
+  const portfolioScrollRef = useRef(null);
+
+  const scrollPortfolio = (dir) => {
+    const el = portfolioScrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * 340, behavior: 'smooth' });
+  };
   const lastScrollYRef = useRef(0);
 
   useEffect(() => {
@@ -684,15 +702,54 @@ function App() {
           </div>
 
           <div className="mx-auto mt-16 max-w-7xl">
-            <p className="mb-6 text-sm uppercase tracking-[0.3em] text-[#c5a059]">Selecție de lucrări finalizate</p>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-              {portfolioImages.map((src, i) => (
-                <div key={i} className="aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <div className="mb-6 flex items-center justify-between">
+              <p className="text-sm uppercase tracking-[0.3em] text-[#c5a059]">Selecție de lucrări finalizate</p>
+              <div className="hidden gap-2 sm:flex">
+                <button
+                  type="button"
+                  onClick={() => scrollPortfolio(-1)}
+                  aria-label="Derulează la stânga"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#c5a059] transition hover:border-[#c5a059]/60 hover:bg-[#c5a059]/10"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scrollPortfolio(1)}
+                  aria-label="Derulează la dreapta"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#c5a059] transition hover:border-[#c5a059]/60 hover:bg-[#c5a059]/10"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            <div
+              ref={portfolioScrollRef}
+              className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
+              {(portfolioExpanded ? portfolioImages : portfolioImages.slice(0, 6)).map((src, i) => (
+                <div
+                  key={i}
+                  className="aspect-square w-[70%] flex-shrink-0 snap-start overflow-hidden rounded-2xl border border-white/10 bg-white/5 sm:w-[45%] lg:w-[23%]"
+                >
                   <img src={src} alt={`Lucrare KRAFT Metalworks ${i + 1}`} className="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy" />
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-xs text-[#cfc5ad]/60">Exemple din proiectele noastre — portofoliul complet este în continuă extindere.</p>
+
+            <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+              <p className="text-xs text-[#cfc5ad]/60">Exemple din proiectele noastre — portofoliul complet este în continuă extindere.</p>
+              {!portfolioExpanded && portfolioImages.length > 6 && (
+                <button
+                  type="button"
+                  onClick={() => setPortfolioExpanded(true)}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#c5a059]/40 bg-[#c5a059]/5 px-6 py-3 text-xs uppercase tracking-[0.25em] text-[#c5a059] transition duration-300 hover:border-[#c5a059] hover:bg-[#c5a059]/10"
+                >
+                  Vezi mai multe lucrări <ChevronRight className="h-4 w-4" />
+                </button>
+              )}
+            </div>
           </div>
         </section>
 
