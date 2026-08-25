@@ -47,6 +47,25 @@ import pm8  from './assets/picioare masa.json/picioare de masa 8.jpeg';
 import pm9  from './assets/picioare masa.json/picioare masa 9.jpg';
 import pm10 from './assets/picioare masa.json/picioare de masa 10.jpg';
 
+// ── Picioare de Masă — Colecție Nouă 2026 ─────────────────────────────────────
+import produsNou1  from './assets/produse-noi/produs-nou-1.jpg';
+import produsNou2  from './assets/produse-noi/produs-nou-2.jpg';
+import produsNou3  from './assets/produse-noi/produs-nou-3.jpg';
+import produsNou4  from './assets/produse-noi/produs-nou-4.jpg';
+import produsNou5  from './assets/produse-noi/produs-nou-5.jpg';
+import produsNou6  from './assets/produse-noi/produs-nou-6.jpg';
+import produsNou7  from './assets/produse-noi/produs-nou-7.jpg';
+import produsNou8  from './assets/produse-noi/produs-nou-8.jpg';
+import produsNou9  from './assets/produse-noi/produs-nou-9.jpg';
+import produsNou10 from './assets/produse-noi/produs-nou-10.jpg';
+import produsNou11 from './assets/produse-noi/produs-nou-11.jpg';
+import produsNou12 from './assets/produse-noi/produs-nou-12.jpg';
+import produsNou13 from './assets/produse-noi/produs-nou-13.jpg';
+import produsNou14 from './assets/produse-noi/produs-nou-14.jpg';
+import produsNou15 from './assets/produse-noi/produs-nou-15.jpg';
+import produsNou16 from './assets/produse-noi/produs-nou-16.jpg';
+import produsNou17 from './assets/produse-noi/produs-nou-17.jpg';
+
 // ── Design Interior & Exterior ────────────────────────────────────────────────
 import di1 from './assets/elemente design inetrior exterior.json/dulap genial.jpg';
 import di2 from './assets/elemente design inetrior exterior.json/masa confort filigorie.jpg';
@@ -403,6 +422,214 @@ const PRODUCTS = [
       { label: 'Sarcina maximă', value: '600 kg' },
     ],
   },
+
+  // ─── Picioare de Masă — Colecție Nouă 2026 (fabricație proprie) ─────────────
+  {
+    id: 'pmn-1', category: 'picioare-masa', title: 'Picior Canon',
+    imgRender: produsNou1, aspect: 'landscape', hasSketch: false,
+    basePrice: 689, material: 'Țeavă rotundă 100×40 mm · vopsire electrostatică alb mat',
+    description: 'Picior tip Canon cu bază cruciformă lată, gândit pentru stabilitate maximă la mese mari. Finisaj alb mat pentru interioare luminoase, scandinave.',
+    specs: [
+      { label: 'Profil', value: 'Țeavă 100×40 mm' },
+      { label: 'Finisaj', value: 'Alb mat electrostatic' },
+      { label: 'Bază', value: 'Cruciformă 700×700 mm' },
+      { label: 'Înălțime', value: '740 mm' },
+      { label: 'Livrare', value: '10 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-2', category: 'picioare-masa', title: 'Picior Farm',
+    imgRender: produsNou2, aspect: 'landscape', hasSketch: false,
+    basePrice: 770, material: 'Profil masiv 100×50 mm · vopsire electrostatică negru mat',
+    description: 'Profil masiv Farm, robust și simplu, potrivit pentru mese de bucătărie sau birouri de tip atelier.',
+    specs: [
+      { label: 'Profil', value: '100×50 mm' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Dimensiuni', value: 'H 740 mm / L 800 mm' },
+      { label: 'Livrare', value: '10 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-3', category: 'picioare-masa', title: 'Picior H',
+    imgRender: produsNou3, aspect: 'landscape', hasSketch: false,
+    basePrice: 780, material: 'Profil masiv 100×100 mm · vopsire electrostatică negru mat',
+    description: 'Set de două picioare tip H, cu profil gros de 100×100 mm — soluție solidă pentru blaturi late sau lungi.',
+    specs: [
+      { label: 'Profil', value: '100×100 mm' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Dimensiuni', value: 'H 740 mm / L 770 mm' },
+      { label: 'Livrare', value: 'Set 2 bucăți · 10 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-4', category: 'picioare-masa', title: 'Picior Mânuță',
+    imgRender: produsNou4, aspect: 'landscape', hasSketch: false,
+    basePrice: 625, material: 'Profil 80×40 mm · vopsire electrostatică negru mat',
+    description: 'Set de două picioare Mânuță, profil compact, ideal pentru mese de zi cu zi în spații mai mici.',
+    specs: [
+      { label: 'Profil', value: '80×40 mm' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Dimensiuni', value: 'H 740 mm / L 600 mm' },
+      { label: 'Livrare', value: 'Set 2 bucăți · 8 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-5', category: 'picioare-masa', title: 'Picior Spin Salon',
+    imgRender: produsNou5, aspect: 'landscape', hasSketch: false,
+    basePrice: 790, material: 'Țeavă 80×80 mm sau 100×100 mm · vopsire electrostatică negru mat',
+    description: 'Picior Spider Salon cu braț radiant, disponibil în două lungimi — pentru mese de living de dimensiuni medii sau mari.',
+    specs: [
+      { label: 'Varianta 1', value: 'H740 / L1400 / l690 · 790 RON' },
+      { label: 'Varianta 2', value: 'H740 / L1470 / l710 · 830 RON' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Livrare', value: 'Specifică varianta dorită la comandă' },
+    ],
+  },
+  {
+    id: 'pmn-6', category: 'picioare-masa', title: 'Picior U Mic',
+    imgRender: produsNou6, aspect: 'landscape', hasSketch: false,
+    basePrice: 410, material: 'Profil 80×80 mm · vopsire electrostatică negru mat',
+    description: 'Set de două picioare U Mic, înălțime joasă — gândite special pentru măsuțe de cafea sau console joase.',
+    specs: [
+      { label: 'Profil', value: '80×80 mm' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Dimensiuni', value: 'H 340 mm / L 580 mm' },
+      { label: 'Livrare', value: 'Set 2 bucăți · 7 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-7', category: 'picioare-masa', title: 'Picior U',
+    imgRender: produsNou7, aspect: 'landscape', hasSketch: false,
+    basePrice: 560, material: 'Profil 80×40 mm · vopsire electrostatică negru mat',
+    description: 'Set de două picioare U, profil 80×40 mm, echilibru între stabilitate și eleganță minimalistă.',
+    specs: [
+      { label: 'Profil', value: '80×40 mm' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Dimensiuni', value: 'H 740 mm / L 770 mm' },
+      { label: 'Livrare', value: 'Set 2 bucăți · 10 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-8', category: 'picioare-masa', title: 'Picior UFO',
+    imgRender: produsNou8, aspect: 'landscape', hasSketch: false,
+    basePrice: 295, material: 'Profil 40×30 mm · vopsire electrostatică negru mat',
+    description: 'Picior UFO, compact și discret, potrivit pentru mese mici, birouri sau console de hol.',
+    specs: [
+      { label: 'Profil', value: '40×30 mm' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Dimensiuni', value: 'H 420 mm / L 400 mm' },
+      { label: 'Livrare', value: '7 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-9', category: 'picioare-masa', title: 'Picior V',
+    imgRender: produsNou9, aspect: 'landscape', hasSketch: false,
+    basePrice: 695, material: 'Profil 80×40 mm · vopsire electrostatică negru mat',
+    description: 'Set de două picioare V, cu geometrie deschisă pentru stabilitate laterală crescută.',
+    specs: [
+      { label: 'Profil', value: '80×40 mm' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Dimensiuni', value: 'H 740 mm / L 570 mm' },
+      { label: 'Livrare', value: 'Set 2 bucăți · 10 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-10', category: 'picioare-masa', title: 'Picior X Mic',
+    imgRender: produsNou10, aspect: 'landscape', hasSketch: false,
+    basePrice: 420, material: 'Profil 80×80 mm · vopsire electrostatică negru mat',
+    description: 'Set de două picioare X Mic, format compact, potrivit pentru mese de bistro sau spații reduse.',
+    specs: [
+      { label: 'Profil', value: '80×80 mm' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Dimensiuni', value: 'H 370 mm / L 580 mm' },
+      { label: 'Livrare', value: 'Set 2 bucăți · 7 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-11', category: 'picioare-masa', title: 'Picior X',
+    imgRender: produsNou11, aspect: 'landscape', hasSketch: false,
+    basePrice: 790, material: 'Profil masiv 100×100 mm · vopsire electrostatică negru mat',
+    description: 'Set de două picioare X, profil masiv 100×100 mm — clasicul industrial, foarte stabil pe orice tip de blat.',
+    specs: [
+      { label: 'Profil', value: '100×100 mm' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Dimensiuni', value: 'H 740 mm / L 770 mm' },
+      { label: 'Livrare', value: 'Set 2 bucăți · 10 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-12', category: 'picioare-masa', title: 'Picior XY',
+    imgRender: produsNou12, aspect: 'landscape', hasSketch: false,
+    basePrice: null, priceOnRequest: true,
+    material: 'Profil oțel · vopsire electrostatică negru mat',
+    description: 'Picior XY cu geometrie dublă în X, pentru mese late sau de dimensiuni speciale. Dimensiuni și preț exact confirmate la cerere, în funcție de configurație.',
+    specs: [
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Dimensiuni', value: 'La cerere' },
+      { label: 'Livrare', value: 'Confirmăm termenul la comandă' },
+    ],
+  },
+  {
+    id: 'pmn-13', category: 'picioare-masa', title: 'Picior Masă Oval',
+    imgRender: produsNou13, aspect: 'landscape', hasSketch: false,
+    basePrice: 500, material: 'Țeavă rotundă Ø76 mm, bază disc Ø400 mm · vopsire electrostatică negru mat',
+    description: 'Bază pedestal cu coloană centrală și disc de sprijin, potrivită pentru blaturi rotunde sau ovale de dimensiuni medii.',
+    specs: [
+      { label: 'Bază', value: 'Disc Ø400 mm' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Înălțime', value: '~720 mm' },
+      { label: 'Livrare', value: '10 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-14', category: 'picioare-masa', title: 'Picior Tubular Cap Pătrat',
+    imgRender: produsNou14, aspect: 'landscape', hasSketch: false,
+    basePrice: 560, material: '4× țeavă rotundă Ø25 mm, bază în cruce · vopsire electrostatică negru mat',
+    description: 'Bază cu patru picioare zvelte și cadru în cruce, aspect minimalist pentru mese înalte sau de bar.',
+    specs: [
+      { label: 'Design', value: '4 picioare subțiri' },
+      { label: 'Bază', value: 'Stabilă, în cruce' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Livrare', value: '10 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-15', category: 'picioare-masa', title: 'Picior Pătrat Dublu',
+    imgRender: produsNou15, aspect: 'landscape', hasSketch: false,
+    basePrice: 850, material: '2× țeavă pătrată 60×60 mm · vopsire electrostatică negru mat',
+    description: 'Bază dublă cu profil pătrat, gândită pentru mese console sau blaturi dreptunghiulare late.',
+    specs: [
+      { label: 'Profil', value: 'Dublu 60×60 mm' },
+      { label: 'Bază', value: 'Dreptunghiulară, stabilă' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Livrare', value: '10 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-16', category: 'picioare-masa', title: 'Picior Masă Cafenea',
+    imgRender: produsNou16, aspect: 'landscape', hasSketch: false,
+    basePrice: 490, material: 'Țeavă rotundă Ø60 mm, bază disc Ø350 mm · vopsire electrostatică negru mat',
+    description: 'Picior dedicat măsuțelor de cafea, cu bază disc pentru stabilitate maximă la înălțime joasă.',
+    specs: [
+      { label: 'Bază', value: 'Disc Ø350 mm' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Înălțime', value: '~420 mm' },
+      { label: 'Livrare', value: '7 zile lucrătoare' },
+    ],
+  },
+  {
+    id: 'pmn-17', category: 'picioare-masa', title: 'Picior Anaconda',
+    imgRender: produsNou17, aspect: 'landscape', hasSketch: false,
+    basePrice: 390, material: 'Platbandă curbată 80×8 mm · vopsire electrostatică negru mat',
+    description: 'Piesă sculpturală Anaconda, din platbandă curbată manual — design unicat pentru mese statement.',
+    specs: [
+      { label: 'Fabricație', value: 'Manuală, piesă unicat' },
+      { label: 'Design', value: 'Sculptural, curbat' },
+      { label: 'Finisaj', value: 'Negru mat electrostatic' },
+      { label: 'Livrare', value: '12–15 zile lucrătoare' },
+    ],
+  },
+
   {
     id: 'di-1', category: 'design-interior', title: 'Dulap Industrial Genial',
     imgRender: di1, aspect: 'landscape', hasSketch: false,
@@ -478,7 +705,7 @@ function ProductModal({ product, onClose, onAddToCart }) {
       product,
       size: { label: 'Standard' },
       finish: { label: 'Negru Mat' },
-      price: product.basePrice,
+      price: product.basePrice ?? 0,
     });
     onClose();
   };
@@ -576,7 +803,11 @@ function ProductModal({ product, onClose, onAddToCart }) {
           <div className="space-y-3 border-t border-white/10 pt-5">
             <div>
               <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-[#cfc5ad]/50">Preț de bază</p>
-              <p className="text-2xl font-semibold text-[#f8f1e5]">{product.basePrice.toLocaleString('ro-RO')} RON</p>
+              {product.basePrice != null ? (
+                <p className="text-2xl font-semibold text-[#f8f1e5]">{product.basePrice.toLocaleString('ro-RO')} RON</p>
+              ) : (
+                <p className="text-2xl font-semibold text-[#f8f1e5]">Preț la cerere</p>
+              )}
               <p className="mt-0.5 text-[10px] text-[#cfc5ad]/40">Prețul final poate varia în funcție de dimensiuni</p>
             </div>
             <button
@@ -584,7 +815,7 @@ function ProductModal({ product, onClose, onAddToCart }) {
               onClick={handleAdd}
               className="flex w-full items-center justify-center gap-2 rounded-full bg-[#c5a059] py-3.5 text-xs uppercase tracking-[0.25em] text-[#0a0a0a] transition-all duration-300 hover:bg-[#b79245] hover:shadow-[0_0_24px_rgba(197,160,89,0.4)] active:scale-[0.98]"
             >
-              <ShoppingCart className="h-3.5 w-3.5" /> Adaugă în Coș
+              <ShoppingCart className="h-3.5 w-3.5" /> {product.priceOnRequest ? 'Cere Ofertă' : 'Adaugă în Coș'}
             </button>
             <p className="text-center text-[9px] uppercase tracking-[0.2em] text-[#cfc5ad]/35">
               Prețuri orientative · confirmăm înainte de execuție
@@ -608,7 +839,7 @@ function ProductCard({ product, onOpenModal, onAddToCart }) {
       product,
       size: { label: 'Standard' },
       finish: { label: 'Negru Mat' },
-      price: product.basePrice,
+      price: product.basePrice ?? 0,
     });
   };
 
@@ -653,8 +884,14 @@ function ProductCard({ product, onOpenModal, onAddToCart }) {
             {product.title}
           </p>
           <p className="mt-0.5 text-sm font-semibold text-[#c5a059]">
-            {product.basePrice.toLocaleString('ro-RO')}
-            <span className="ml-1 text-[10px] font-normal text-[#c5a059]/60">RON</span>
+            {product.basePrice != null ? (
+              <>
+                {product.basePrice.toLocaleString('ro-RO')}
+                <span className="ml-1 text-[10px] font-normal text-[#c5a059]/60">RON</span>
+              </>
+            ) : (
+              'La cerere'
+            )}
           </p>
         </div>
         <button
@@ -663,7 +900,7 @@ function ProductCard({ product, onOpenModal, onAddToCart }) {
           className="shrink-0 flex items-center gap-1.5 rounded-full border border-[#c5a059]/50 bg-[#c5a059]/10 px-3 py-2 text-[9px] uppercase tracking-[0.15em] text-[#c5a059] transition-all duration-200 hover:bg-[#c5a059] hover:text-[#0a0a0a] active:scale-95"
         >
           <ShoppingCart className="h-3 w-3" />
-          <span>Adaugă</span>
+          <span>{product.priceOnRequest ? 'Cere Ofertă' : 'Adaugă'}</span>
         </button>
       </div>
     </article>
