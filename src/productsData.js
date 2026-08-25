@@ -2,6 +2,22 @@ import productImg3 from './assets/randare 3.jpeg';
 import productImg4 from './assets/randare 4.jpeg';
 import randare1 from './assets/randare 1.jpeg';
 import randare2 from './assets/randare 2.jpeg';
+import produsNou1 from './assets/produse-noi/produs-nou-1.jpg';
+import produsNou2 from './assets/produse-noi/produs-nou-2.jpg';
+import produsNou3 from './assets/produse-noi/produs-nou-3.jpg';
+import produsNou4 from './assets/produse-noi/produs-nou-4.jpg';
+import produsNou5 from './assets/produse-noi/produs-nou-5.jpg';
+import produsNou6 from './assets/produse-noi/produs-nou-6.jpg';
+import produsNou7 from './assets/produse-noi/produs-nou-7.jpg';
+import produsNou8 from './assets/produse-noi/produs-nou-8.jpg';
+import produsNou9 from './assets/produse-noi/produs-nou-9.jpg';
+import produsNou10 from './assets/produse-noi/produs-nou-10.jpg';
+import produsNou11 from './assets/produse-noi/produs-nou-11.jpg';
+import produsNou13 from './assets/produse-noi/produs-nou-13.jpg';
+import produsNou14 from './assets/produse-noi/produs-nou-14.jpg';
+import produsNou15 from './assets/produse-noi/produs-nou-15.jpg';
+import produsNou16 from './assets/produse-noi/produs-nou-16.jpg';
+import produsNou17 from './assets/produse-noi/produs-nou-17.jpg';
 
 export const categoryLabels = {
   'Base & Structure':    'Structuri și Baze Metalice',
@@ -239,6 +255,232 @@ export const products = [
     detail:
       'Picior unic monobloc tăiat cu laser din tablă groasă de 15 mm și îndoit la presă hidraulică. Zero suduri vizibile — piesă de artă funcțională. Ediție limitată.',
     specs: ['Ediție limitată 50 ex/an', 'Tăiere laser CNC', 'Certificat de origine'],
+  },
+
+  // ─── Picioare de Masă — Noi (2026) ───────────────────────────────────────────
+  {
+    id: 'PM-11',
+    title: 'Picior Canon',
+    basePrice: 689,
+    price: '689 RON',
+    badge: 'Nou',
+    image: produsNou1,
+    category: 'Base & Structure',
+    material: 'Țeavă rotundă 100×40mm',
+    finish: 'Vopsire electrostatică alb mat',
+    detail:
+      'Picior tip Canon cu bază cruciformă lată, gândit pentru stabilitate maximă la mese mari. Finisaj alb mat pentru interioare luminoase, scandinave.',
+    specs: ['Bază cruciformă 700×700mm', 'Înălțime 740mm', 'Livrare în 10 zile lucrătoare'],
+  },
+  {
+    id: 'PM-12',
+    title: 'Picior Farm',
+    basePrice: 770,
+    price: '770 RON',
+    badge: 'Nou',
+    image: produsNou2,
+    category: 'Base & Structure',
+    material: 'Profil masiv 100×50mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Profil masiv Farm, robust și simplu, potrivit pentru mese de bucătărie sau birouri de tip atelier.',
+    specs: ['Înălțime 740mm, lungime 800mm', 'Profil gros 100×50mm', 'Livrare în 10 zile lucrătoare'],
+  },
+  {
+    id: 'PM-13',
+    title: 'Picior H',
+    basePrice: 780,
+    price: '780 RON / set',
+    badge: 'Nou',
+    image: produsNou3,
+    category: 'Base & Structure',
+    material: 'Profil masiv 100×100mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Set de două picioare tip H, cu profil gros de 100×100mm — soluție solidă pentru blaturi late sau lungi.',
+    specs: ['Vândut în set de 2 bucăți', 'Înălțime 740mm, lungime 770mm', 'Livrare în 10 zile lucrătoare'],
+  },
+  {
+    id: 'PM-14',
+    title: 'Picior Mânuță',
+    basePrice: 625,
+    price: '625 RON / set',
+    badge: 'Nou',
+    image: produsNou4,
+    category: 'Base & Structure',
+    material: 'Profil 80×40mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Set de două picioare Mânuță, profil compact, ideal pentru mese de zi cu zi în spații mai mici.',
+    specs: ['Vândut în set de 2 bucăți', 'Înălțime 740mm, lungime 600mm', 'Livrare în 8 zile lucrătoare'],
+  },
+  {
+    id: 'PM-15',
+    title: 'Picior Spin Salon',
+    basePrice: 790,
+    price: '790–830 RON',
+    badge: 'Nou',
+    image: produsNou5,
+    category: 'Base & Structure',
+    material: 'Țeavă 80×80mm sau 100×100mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Picior Spider Salon cu braț radiant, disponibil în două lungimi — pentru mese de living de dimensiuni medii sau mari.',
+    specs: ['Varianta 1: H740/L1400/l690', 'Varianta 2: H740/L1470/l710 (+40 RON)', 'Specifică varianta dorită la comandă'],
+  },
+  {
+    id: 'PM-16',
+    title: 'Picior U Mic',
+    basePrice: 410,
+    price: '410 RON / set',
+    badge: 'Nou',
+    image: produsNou6,
+    category: 'Base & Structure',
+    material: 'Profil 80×80mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Set de două picioare U Mic, înălțime joasă — gândite special pentru măsuțe de cafea sau console joase.',
+    specs: ['Vândut în set de 2 bucăți', 'Înălțime 340mm, lungime 580mm', 'Livrare în 7 zile lucrătoare'],
+  },
+  {
+    id: 'PM-17',
+    title: 'Picior U',
+    basePrice: 560,
+    price: '560 RON / set',
+    badge: 'Nou',
+    image: produsNou7,
+    category: 'Base & Structure',
+    material: 'Profil 80×40mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Set de două picioare U, profil 80×40mm, echilibru între stabilitate și eleganță minimalistă.',
+    specs: ['Vândut în set de 2 bucăți', 'Înălțime 740mm, lungime 770mm', 'Livrare în 10 zile lucrătoare'],
+  },
+  {
+    id: 'PM-18',
+    title: 'Picior UFO',
+    basePrice: 295,
+    price: '295 RON',
+    badge: 'Nou',
+    image: produsNou8,
+    category: 'Base & Structure',
+    material: 'Profil 40×30mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Picior UFO, compact și discret, potrivit pentru mese mici, birouri sau console de hol.',
+    specs: ['Înălțime 420mm, lungime 400mm', 'Format compact', 'Livrare în 7 zile lucrătoare'],
+  },
+  {
+    id: 'PM-19',
+    title: 'Picior V',
+    basePrice: 695,
+    price: '695 RON / set',
+    badge: 'Nou',
+    image: produsNou9,
+    category: 'Base & Structure',
+    material: 'Profil 80×40mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Set de două picioare V, cu geometrie deschisă pentru stabilitate laterală crescută.',
+    specs: ['Vândut în set de 2 bucăți', 'Înălțime 740mm, lungime 570mm', 'Livrare în 10 zile lucrătoare'],
+  },
+  {
+    id: 'PM-20',
+    title: 'Picior X Mic',
+    basePrice: 420,
+    price: '420 RON / set',
+    badge: 'Nou',
+    image: produsNou10,
+    category: 'Base & Structure',
+    material: 'Profil 80×80mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Set de două picioare X Mic, format compact, potrivit pentru mese de bistro sau spații reduse.',
+    specs: ['Vândut în set de 2 bucăți', 'Înălțime 370mm, lungime 580mm', 'Livrare în 7 zile lucrătoare'],
+  },
+  {
+    id: 'PM-21',
+    title: 'Picior X',
+    basePrice: 790,
+    price: '790 RON / set',
+    badge: 'Nou',
+    image: produsNou11,
+    category: 'Base & Structure',
+    material: 'Profil masiv 100×100mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Set de două picioare X, profil masiv 100×100mm — clasicul industrial, foarte stabil pe orice tip de blat.',
+    specs: ['Vândut în set de 2 bucăți', 'Înălțime 740mm, lungime 770mm', 'Livrare în 10 zile lucrătoare'],
+  },
+  {
+    id: 'PM-22',
+    title: 'Picior Masă Oval',
+    basePrice: 500,
+    price: '500 RON',
+    badge: 'Nou',
+    image: produsNou13,
+    category: 'Base & Structure',
+    material: 'Țeavă rotundă Ø76mm, bază disc Ø400mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Bază pedestal cu coloană centrală și disc de sprijin, potrivită pentru blaturi rotunde sau ovale de dimensiuni medii.',
+    specs: ['Înălțime aprox. 720mm', 'Bază disc Ø400mm', 'Livrare în 10 zile lucrătoare'],
+  },
+  {
+    id: 'PM-23',
+    title: 'Picior Tubular Cap Pătrat',
+    basePrice: 560,
+    price: '560 RON',
+    badge: 'Nou',
+    image: produsNou14,
+    category: 'Base & Structure',
+    material: '4× țeavă rotundă Ø25mm, bază în cruce',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Bază cu patru picioare zvelte și cadru în cruce, aspect minimalist pentru mese înalte sau de bar.',
+    specs: ['Design cu 4 picioare subțiri', 'Bază stabilă în cruce', 'Livrare în 10 zile lucrătoare'],
+  },
+  {
+    id: 'PM-24',
+    title: 'Picior Pătrat Dublu',
+    basePrice: 850,
+    price: '850 RON',
+    badge: 'Nou',
+    image: produsNou15,
+    category: 'Base & Structure',
+    material: '2× țeavă pătrată 60×60mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Bază dublă cu profil pătrat, gândită pentru mese console sau blaturi dreptunghiulare late.',
+    specs: ['Bază dreptunghiulară stabilă', 'Profil dublu 60×60mm', 'Livrare în 10 zile lucrătoare'],
+  },
+  {
+    id: 'PM-25',
+    title: 'Picior Masă Cafenea',
+    basePrice: 490,
+    price: '490 RON',
+    badge: 'Nou',
+    image: produsNou16,
+    category: 'Base & Structure',
+    material: 'Țeavă rotundă Ø60mm, bază disc Ø350mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Picior dedicat măsuțelor de cafea, cu bază disc pentru stabilitate maximă la înălțime joasă.',
+    specs: ['Înălțime joasă, aprox. 420mm', 'Bază disc Ø350mm', 'Livrare în 7 zile lucrătoare'],
+  },
+  {
+    id: 'PM-26',
+    title: 'Picior Anaconda',
+    basePrice: 390,
+    price: '390 RON',
+    badge: 'Nou',
+    image: produsNou17,
+    category: 'Base & Structure',
+    material: 'Platbandă curbată 80×8mm',
+    finish: 'Vopsire electrostatică negru mat',
+    detail:
+      'Piesă sculpturală Anaconda, din platbandă curbată manual — design unicat pentru mese statement.',
+    specs: ['Fabricație manuală, piesă unicat', 'Design sculptural curbat', 'Livrare în 12–15 zile lucrătoare'],
   },
 
   // ─── Culinary Steel ──────────────────────────────────────────────────────────

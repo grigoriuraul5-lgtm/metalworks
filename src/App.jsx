@@ -681,13 +681,16 @@ function App() {
         <section id="story" className="px-6 py-24 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
             <div className="space-y-6">
-              <p className="text-sm uppercase tracking-[0.35em] text-[#c5a059]">Despre noi (Portofoliu)</p>
+              <p className="text-sm uppercase tracking-[0.35em] text-[#c5a059]">Despre noi</p>
               <h2 className="text-4xl font-semibold leading-tight text-[#c5a059] sm:text-5xl">
                 Fabricație românească cu suflet industrial.
               </h2>
               <p className="max-w-2xl text-base leading-8 text-[#cfc5ad]">
                 KRAFT Metalworks combină rafinamentul estetic cu precizia ingineriei metalice. Fiecare componentă este evaluată pentru funcționalitate, durabilitate și impact vizual.
               </p>
+              <a href="#proiecte-custom" className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-[#c5a059] underline decoration-[#c5a059]/40 underline-offset-4 transition hover:decoration-[#c5a059]">
+                Vezi portofoliul nostru <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-3xl border border-white/5 bg-white/10 p-8 backdrop-blur-md">
@@ -700,70 +703,70 @@ function App() {
               </div>
             </div>
           </div>
-
-          <div className="mx-auto mt-16 max-w-7xl">
-            <div className="mb-6 flex items-center justify-between">
-              <p className="text-sm uppercase tracking-[0.3em] text-[#c5a059]">Selecție de lucrări finalizate</p>
-              <div className="hidden gap-2 sm:flex">
-                <button
-                  type="button"
-                  onClick={() => scrollPortfolio(-1)}
-                  aria-label="Derulează la stânga"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#c5a059] transition hover:border-[#c5a059]/60 hover:bg-[#c5a059]/10"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => scrollPortfolio(1)}
-                  aria-label="Derulează la dreapta"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#c5a059] transition hover:border-[#c5a059]/60 hover:bg-[#c5a059]/10"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            <div
-              ref={portfolioScrollRef}
-              className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            >
-              {(portfolioExpanded ? portfolioImages : portfolioImages.slice(0, 6)).map((src, i) => (
-                <div
-                  key={i}
-                  className="aspect-square w-[70%] flex-shrink-0 snap-start overflow-hidden rounded-2xl border border-white/10 bg-white/5 sm:w-[45%] lg:w-[23%]"
-                >
-                  <img src={src} alt={`Lucrare KRAFT Metalworks ${i + 1}`} className="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy" />
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-              <p className="text-xs text-[#cfc5ad]/60">Exemple din proiectele noastre — portofoliul complet este în continuă extindere.</p>
-              {!portfolioExpanded && portfolioImages.length > 6 && (
-                <button
-                  type="button"
-                  onClick={() => setPortfolioExpanded(true)}
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#c5a059]/40 bg-[#c5a059]/5 px-6 py-3 text-xs uppercase tracking-[0.25em] text-[#c5a059] transition duration-300 hover:border-[#c5a059] hover:bg-[#c5a059]/10"
-                >
-                  Vezi mai multe lucrări <ChevronRight className="h-4 w-4" />
-                </button>
-              )}
-            </div>
-          </div>
         </section>
 
         <section id="proiecte-custom" className="bg-[#0d0d0d] px-6 py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div>
               <div className="mb-10 max-w-2xl">
-                <p className="mb-3 text-sm uppercase tracking-[0.35em] text-[#c5a059]">Proiect la Comandă</p>
+                <p className="mb-3 text-sm uppercase tracking-[0.35em] text-[#c5a059]">Proiect la Comandă (Portofoliu)</p>
                 <h3 className="text-3xl font-semibold leading-tight text-[#f8f1e5] sm:text-4xl">
                   Ai o idee? Hai s-o construim împreună.
                 </h3>
                 <p className="mt-4 text-base leading-8 text-[#cfc5ad]/80">
                   Completează formularul cu detaliile proiectului tău și adaugă schițe sau fotografii. Echipa Kraft te contactează în 24 de ore.
                 </p>
+              </div>
+
+              <div className="mb-16">
+                <div className="mb-6 flex items-center justify-between">
+                  <p className="text-sm uppercase tracking-[0.3em] text-[#c5a059]">Selecție de lucrări finalizate</p>
+                  <div className="hidden gap-2 sm:flex">
+                    <button
+                      type="button"
+                      onClick={() => scrollPortfolio(-1)}
+                      aria-label="Derulează la stânga"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#c5a059] transition hover:border-[#c5a059]/60 hover:bg-[#c5a059]/10"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => scrollPortfolio(1)}
+                      aria-label="Derulează la dreapta"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#c5a059] transition hover:border-[#c5a059]/60 hover:bg-[#c5a059]/10"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  ref={portfolioScrollRef}
+                  className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                >
+                  {(portfolioExpanded ? portfolioImages : portfolioImages.slice(0, 6)).map((src, i) => (
+                    <div
+                      key={i}
+                      className="aspect-square w-[70%] flex-shrink-0 snap-start overflow-hidden rounded-2xl border border-white/10 bg-white/5 sm:w-[45%] lg:w-[23%]"
+                    >
+                      <img src={src} alt={`Lucrare KRAFT Metalworks ${i + 1}`} className="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy" />
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+                  <p className="text-xs text-[#cfc5ad]/60">Exemple din proiectele noastre — portofoliul complet este în continuă extindere.</p>
+                  {!portfolioExpanded && portfolioImages.length > 6 && (
+                    <button
+                      type="button"
+                      onClick={() => setPortfolioExpanded(true)}
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-[#c5a059]/40 bg-[#c5a059]/5 px-6 py-3 text-xs uppercase tracking-[0.25em] text-[#c5a059] transition duration-300 hover:border-[#c5a059] hover:bg-[#c5a059]/10"
+                    >
+                      Vezi mai multe lucrări <ChevronRight className="h-4 w-4" />
+                    </button>
+                  )}
+                </div>
               </div>
 
               <form
