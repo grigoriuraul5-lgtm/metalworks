@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="pg" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0f0f0f"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#pg)" />
+  <g opacity="0.06" fill="#c5a059">
+    <rect x="40" y="40" width="120" height="6" rx="3"/>
+    <rect x="40" y="64" width="80" height="6" rx="3"/>
+  </g>
+  <text x="50%" y="50%" fill="#7f7f7f" font-family="Inter, sans-serif" font-size="20" text-anchor="middle" alignment-baseline="middle">IMAGINE PRODUS</text>
+</svg>
