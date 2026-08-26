@@ -83,6 +83,9 @@ const CATEGORIES = [
   { id: 'design-interior', label: 'Design Interior & Exterior' },
 ];
 
+// Produsele cu preț fix afișat (rank 0) apar înaintea celor cu „Cere Ofertă" (rank 1).
+const priceRank = (p) => (p.isNew && !p.priceOnRequest ? 0 : 1);
+
 const PRODUCTS = [
   {
     id: 'pg-1', category: 'porti-garduri', title: 'Poartă Culisantă Meridian',
@@ -943,16 +946,15 @@ export function CatalogShowroom({ onAddToCart, onRequestQuote }) {
 
   const filtered = useMemo(() => {
     const base = activeCat === 'all' ? PRODUCTS : PRODUCTS.filter((p) => p.category === activeCat);
-    // Produsele noi (colecția 2026) apar mereu primele în listă.
-    return [...base].sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
+    // Produsele cu preț afișat (colecția nouă 2026, fără cele pe cerere) apar
+    // mereu primele — restul (cu buton „Cere Ofertă") vin după.
+    return [...base].sort((a, b) => priceRank(a) - priceRank(b));
   }, [activeCat]);
 
   const mobilePreview = useMemo(() => {
-    const cats = ['porti-garduri', 'feronerie', 'gratare', 'picioare-masa', 'design-interior'];
-    return cats
-      .map((cat) => PRODUCTS.find((p) => p.category === cat && p.isNew) || PRODUCTS.find((p) => p.category === cat))
-      .filter(Boolean)
-      .slice(0, 4);
+    // Pe mobil, teaser-ul din „Toate Produsele" respectă aceeași regulă:
+    // produsele cu preț afișat primele, restul după.
+    return [...PRODUCTS].sort((a, b) => priceRank(a) - priceRank(b)).slice(0, 4);
   }, []);
 
   const handleCatChange = (catId) => {
