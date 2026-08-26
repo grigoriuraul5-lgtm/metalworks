@@ -17,10 +17,33 @@ import portofoliu11 from './assets/portofoliu/portofoliu-11.jpg';
 import portofoliu12 from './assets/portofoliu/portofoliu-12.jpg';
 import portofoliu13 from './assets/portofoliu/portofoliu-13.jpg';
 import portofoliu14 from './assets/portofoliu/portofoliu-14.jpg';
+import lucrareReala1 from './assets/portofoliu-real/lucrare-reala-01.jpeg';
+import lucrareReala2 from './assets/portofoliu-real/lucrare-reala-02.jpeg';
+import lucrareReala3 from './assets/portofoliu-real/lucrare-reala-03.jpeg';
+import lucrareReala4 from './assets/portofoliu-real/lucrare-reala-04.jpeg';
+import lucrareReala5 from './assets/portofoliu-real/lucrare-reala-05.jpeg';
+import lucrareReala6 from './assets/portofoliu-real/lucrare-reala-06.jpeg';
+import lucrareReala7 from './assets/portofoliu-real/lucrare-reala-07.jpeg';
+import lucrareReala8 from './assets/portofoliu-real/lucrare-reala-08.jpeg';
+import lucrareReala9 from './assets/portofoliu-real/lucrare-reala-09.jpeg';
+import lucrareReala10 from './assets/portofoliu-real/lucrare-reala-10.jpeg';
+import lucrareReala11 from './assets/portofoliu-real/lucrare-reala-11.jpeg';
+import lucrareReala12 from './assets/portofoliu-real/lucrare-reala-12.jpeg';
+import lucrareReala13 from './assets/portofoliu-real/lucrare-reala-13.jpeg';
+import lucrareReala14 from './assets/portofoliu-real/lucrare-reala-14.jpeg';
+import lucrareReala15 from './assets/portofoliu-real/lucrare-reala-15.jpeg';
+import lucrareReala16 from './assets/portofoliu-real/lucrare-reala-16.jpeg';
+import lucrareReala17 from './assets/portofoliu-real/lucrare-reala-17.jpeg';
+import lucrareReala18 from './assets/portofoliu-real/lucrare-reala-18.jpeg';
 import { contactInfo } from './productsData.js';
 import { CatalogShowroom } from './CatalogShowroom.jsx';
 
 const portfolioImages = [
+  // ── Lucrări reale, din șantier/atelier (2026) — primele afișate ──
+  lucrareReala1, lucrareReala2, lucrareReala3, lucrareReala4, lucrareReala5, lucrareReala6,
+  lucrareReala7, lucrareReala8, lucrareReala9, lucrareReala10, lucrareReala11, lucrareReala12,
+  lucrareReala13, lucrareReala14, lucrareReala15, lucrareReala16, lucrareReala17, lucrareReala18,
+  // ── Arhivă randări/foto anterioare ──
   portofoliu10, portofoliu9, portofoliu11, portofoliu12, portofoliu13,
   portofoliu1, portofoliu2, portofoliu3, portofoliu4, portofoliu5, portofoliu6, portofoliu7, portofoliu8,
   portofoliu14,
@@ -139,7 +162,21 @@ function CustomRequestOverlay({ product, onClose }) {
         </button>
 
         <p className="mb-1 text-xs uppercase tracking-[0.35em] text-[#c5a059]">Cerere Personalizată</p>
-        <h3 className="mb-6 text-2xl font-semibold text-[#f8f1e5]">{product.title}</h3>
+
+        {product.imgRender && (
+          <div className="mb-5 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-3">
+            <img
+              src={product.imgRender}
+              alt={product.title}
+              className="h-16 w-16 shrink-0 rounded-xl object-cover"
+            />
+            <div className="min-w-0">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-[#cfc5ad]/50">Produs selectat</p>
+              <p className="truncate text-sm font-semibold text-[#f8f1e5]">{product.title}</p>
+            </div>
+          </div>
+        )}
+        <h3 className="mb-6 text-2xl font-semibold text-[#f8f1e5]">{product.imgRender ? 'Cerere ofertă pentru acest produs' : product.title}</h3>
 
         <form onSubmit={(e) => { e.preventDefault(); onClose(); }} className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
@@ -569,7 +606,7 @@ function App() {
           </div>
         </section>
 
-        <CatalogShowroom onAddToCart={addToCart} />
+        <CatalogShowroom onAddToCart={addToCart} onRequestQuote={setCustomRequestProduct} />
 
         <section id="heritage" className="bg-[#121212] px-6 py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">

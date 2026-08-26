@@ -425,7 +425,7 @@ const PRODUCTS = [
 
   // ─── Picioare de Masă — Colecție Nouă 2026 (fabricație proprie) ─────────────
   {
-    id: 'pmn-1', category: 'picioare-masa', title: 'Picior Canon',
+    id: 'pmn-1', category: 'picioare-masa', isNew: true, title: 'Picior Canon',
     imgRender: produsNou1, aspect: 'landscape', hasSketch: false,
     basePrice: 689, material: 'Țeavă rotundă 100×40 mm · vopsire electrostatică alb mat',
     description: 'Picior tip Canon cu bază cruciformă lată, gândit pentru stabilitate maximă la mese mari. Finisaj alb mat pentru interioare luminoase, scandinave.',
@@ -438,7 +438,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-2', category: 'picioare-masa', title: 'Picior Farm',
+    id: 'pmn-2', category: 'picioare-masa', isNew: true, title: 'Picior Farm',
     imgRender: produsNou2, aspect: 'landscape', hasSketch: false,
     basePrice: 770, material: 'Profil masiv 100×50 mm · vopsire electrostatică negru mat',
     description: 'Profil masiv Farm, robust și simplu, potrivit pentru mese de bucătărie sau birouri de tip atelier.',
@@ -450,7 +450,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-3', category: 'picioare-masa', title: 'Picior H',
+    id: 'pmn-3', category: 'picioare-masa', isNew: true, title: 'Picior H',
     imgRender: produsNou3, aspect: 'landscape', hasSketch: false,
     basePrice: 780, material: 'Profil masiv 100×100 mm · vopsire electrostatică negru mat',
     description: 'Set de două picioare tip H, cu profil gros de 100×100 mm — soluție solidă pentru blaturi late sau lungi.',
@@ -462,7 +462,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-4', category: 'picioare-masa', title: 'Picior Mânuță',
+    id: 'pmn-4', category: 'picioare-masa', isNew: true, title: 'Picior Mânuță',
     imgRender: produsNou4, aspect: 'landscape', hasSketch: false,
     basePrice: 625, material: 'Profil 80×40 mm · vopsire electrostatică negru mat',
     description: 'Set de două picioare Mânuță, profil compact, ideal pentru mese de zi cu zi în spații mai mici.',
@@ -474,7 +474,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-5', category: 'picioare-masa', title: 'Picior Spin Salon',
+    id: 'pmn-5', category: 'picioare-masa', isNew: true, title: 'Picior Spin Salon',
     imgRender: produsNou5, aspect: 'landscape', hasSketch: false,
     basePrice: 790, material: 'Țeavă 80×80 mm sau 100×100 mm · vopsire electrostatică negru mat',
     description: 'Picior Spider Salon cu braț radiant, disponibil în două lungimi — pentru mese de living de dimensiuni medii sau mari.',
@@ -486,7 +486,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-6', category: 'picioare-masa', title: 'Picior U Mic',
+    id: 'pmn-6', category: 'picioare-masa', isNew: true, title: 'Picior U Mic',
     imgRender: produsNou6, aspect: 'landscape', hasSketch: false,
     basePrice: 410, material: 'Profil 80×80 mm · vopsire electrostatică negru mat',
     description: 'Set de două picioare U Mic, înălțime joasă — gândite special pentru măsuțe de cafea sau console joase.',
@@ -498,7 +498,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-7', category: 'picioare-masa', title: 'Picior U',
+    id: 'pmn-7', category: 'picioare-masa', isNew: true, title: 'Picior U',
     imgRender: produsNou7, aspect: 'landscape', hasSketch: false,
     basePrice: 560, material: 'Profil 80×40 mm · vopsire electrostatică negru mat',
     description: 'Set de două picioare U, profil 80×40 mm, echilibru între stabilitate și eleganță minimalistă.',
@@ -510,7 +510,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-8', category: 'picioare-masa', title: 'Picior UFO',
+    id: 'pmn-8', category: 'picioare-masa', isNew: true, title: 'Picior UFO',
     imgRender: produsNou8, aspect: 'landscape', hasSketch: false,
     basePrice: 295, material: 'Profil 40×30 mm · vopsire electrostatică negru mat',
     description: 'Picior UFO, compact și discret, potrivit pentru mese mici, birouri sau console de hol.',
@@ -522,7 +522,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-9', category: 'picioare-masa', title: 'Picior V',
+    id: 'pmn-9', category: 'picioare-masa', isNew: true, title: 'Picior V',
     imgRender: produsNou9, aspect: 'landscape', hasSketch: false,
     basePrice: 695, material: 'Profil 80×40 mm · vopsire electrostatică negru mat',
     description: 'Set de două picioare V, cu geometrie deschisă pentru stabilitate laterală crescută.',
@@ -534,7 +534,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-10', category: 'picioare-masa', title: 'Picior X Mic',
+    id: 'pmn-10', category: 'picioare-masa', isNew: true, title: 'Picior X Mic',
     imgRender: produsNou10, aspect: 'landscape', hasSketch: false,
     basePrice: 420, material: 'Profil 80×80 mm · vopsire electrostatică negru mat',
     description: 'Set de două picioare X Mic, format compact, potrivit pentru mese de bistro sau spații reduse.',
@@ -546,7 +546,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-11', category: 'picioare-masa', title: 'Picior X',
+    id: 'pmn-11', category: 'picioare-masa', isNew: true, title: 'Picior X',
     imgRender: produsNou11, aspect: 'landscape', hasSketch: false,
     basePrice: 790, material: 'Profil masiv 100×100 mm · vopsire electrostatică negru mat',
     description: 'Set de două picioare X, profil masiv 100×100 mm — clasicul industrial, foarte stabil pe orice tip de blat.',
@@ -558,7 +558,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-12', category: 'picioare-masa', title: 'Picior XY',
+    id: 'pmn-12', category: 'picioare-masa', isNew: true, title: 'Picior XY',
     imgRender: produsNou12, aspect: 'landscape', hasSketch: false,
     basePrice: null, priceOnRequest: true,
     material: 'Profil oțel · vopsire electrostatică negru mat',
@@ -570,7 +570,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-13', category: 'picioare-masa', title: 'Picior Masă Oval',
+    id: 'pmn-13', category: 'picioare-masa', isNew: true, title: 'Picior Masă Oval',
     imgRender: produsNou13, aspect: 'landscape', hasSketch: false,
     basePrice: 500, material: 'Țeavă rotundă Ø76 mm, bază disc Ø400 mm · vopsire electrostatică negru mat',
     description: 'Bază pedestal cu coloană centrală și disc de sprijin, potrivită pentru blaturi rotunde sau ovale de dimensiuni medii.',
@@ -582,7 +582,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-14', category: 'picioare-masa', title: 'Picior Tubular Cap Pătrat',
+    id: 'pmn-14', category: 'picioare-masa', isNew: true, title: 'Picior Tubular Cap Pătrat',
     imgRender: produsNou14, aspect: 'landscape', hasSketch: false,
     basePrice: 560, material: '4× țeavă rotundă Ø25 mm, bază în cruce · vopsire electrostatică negru mat',
     description: 'Bază cu patru picioare zvelte și cadru în cruce, aspect minimalist pentru mese înalte sau de bar.',
@@ -594,7 +594,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-15', category: 'picioare-masa', title: 'Picior Pătrat Dublu',
+    id: 'pmn-15', category: 'picioare-masa', isNew: true, title: 'Picior Pătrat Dublu',
     imgRender: produsNou15, aspect: 'landscape', hasSketch: false,
     basePrice: 850, material: '2× țeavă pătrată 60×60 mm · vopsire electrostatică negru mat',
     description: 'Bază dublă cu profil pătrat, gândită pentru mese console sau blaturi dreptunghiulare late.',
@@ -606,7 +606,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-16', category: 'picioare-masa', title: 'Picior Masă Cafenea',
+    id: 'pmn-16', category: 'picioare-masa', isNew: true, title: 'Picior Masă Cafenea',
     imgRender: produsNou16, aspect: 'landscape', hasSketch: false,
     basePrice: 490, material: 'Țeavă rotundă Ø60 mm, bază disc Ø350 mm · vopsire electrostatică negru mat',
     description: 'Picior dedicat măsuțelor de cafea, cu bază disc pentru stabilitate maximă la înălțime joasă.',
@@ -618,7 +618,7 @@ const PRODUCTS = [
     ],
   },
   {
-    id: 'pmn-17', category: 'picioare-masa', title: 'Picior Anaconda',
+    id: 'pmn-17', category: 'picioare-masa', isNew: true, title: 'Picior Anaconda',
     imgRender: produsNou17, aspect: 'landscape', hasSketch: false,
     basePrice: 390, material: 'Platbandă curbată 80×8 mm · vopsire electrostatică negru mat',
     description: 'Piesă sculpturală Anaconda, din platbandă curbată manual — design unicat pentru mese statement.',
@@ -686,9 +686,10 @@ const PRODUCTS = [
 
 // ─────────────────────────────────────────────────────────────────────────────
 
-function ProductModal({ product, onClose, onAddToCart }) {
+function ProductModal({ product, onClose, onAddToCart, onRequestQuote }) {
   const [showSketch, setShowSketch] = useState(false);
   const isSketch = product.hasSketch && showSketch;
+  const isQuoteFlow = !product.isNew || product.priceOnRequest;
 
   useEffect(() => {
     const esc = (e) => { if (e.key === 'Escape') onClose(); };
@@ -701,6 +702,11 @@ function ProductModal({ product, onClose, onAddToCart }) {
   }, [onClose]);
 
   const handleAdd = () => {
+    if (isQuoteFlow) {
+      onRequestQuote(product);
+      onClose();
+      return;
+    }
     onAddToCart({
       product,
       size: { label: 'Standard' },
@@ -815,7 +821,7 @@ function ProductModal({ product, onClose, onAddToCart }) {
               onClick={handleAdd}
               className="flex w-full items-center justify-center gap-2 rounded-full bg-[#c5a059] py-3.5 text-xs uppercase tracking-[0.25em] text-[#0a0a0a] transition-all duration-300 hover:bg-[#b79245] hover:shadow-[0_0_24px_rgba(197,160,89,0.4)] active:scale-[0.98]"
             >
-              <ShoppingCart className="h-3.5 w-3.5" /> {product.priceOnRequest ? 'Cere Ofertă' : 'Adaugă în Coș'}
+              <ShoppingCart className="h-3.5 w-3.5" /> {isQuoteFlow ? 'Cere Ofertă' : 'Adaugă în Coș'}
             </button>
             <p className="text-center text-[9px] uppercase tracking-[0.2em] text-[#cfc5ad]/35">
               Prețuri orientative · confirmăm înainte de execuție
@@ -829,12 +835,17 @@ function ProductModal({ product, onClose, onAddToCart }) {
 
 // ─────────────────────────────────────────────────────────────────────────────
 
-function ProductCard({ product, onOpenModal, onAddToCart }) {
+function ProductCard({ product, onOpenModal, onAddToCart, onRequestQuote }) {
   const [showSketch, setShowSketch] = useState(false);
   const isSketch = product.hasSketch && showSketch;
+  const isQuoteFlow = !product.isNew || product.priceOnRequest;
 
   const handleAdd = (e) => {
     e.stopPropagation();
+    if (isQuoteFlow) {
+      onRequestQuote(product);
+      return;
+    }
     onAddToCart({
       product,
       size: { label: 'Standard' },
@@ -900,7 +911,7 @@ function ProductCard({ product, onOpenModal, onAddToCart }) {
           className="shrink-0 flex items-center gap-1.5 rounded-full border border-[#c5a059]/50 bg-[#c5a059]/10 px-3 py-2 text-[9px] uppercase tracking-[0.15em] text-[#c5a059] transition-all duration-200 hover:bg-[#c5a059] hover:text-[#0a0a0a] active:scale-95"
         >
           <ShoppingCart className="h-3 w-3" />
-          <span>{product.priceOnRequest ? 'Cere Ofertă' : 'Adaugă'}</span>
+          <span>{isQuoteFlow ? 'Cere Ofertă' : 'Adaugă'}</span>
         </button>
       </div>
     </article>
@@ -909,7 +920,7 @@ function ProductCard({ product, onOpenModal, onAddToCart }) {
 
 // ─────────────────────────────────────────────────────────────────────────────
 
-export function CatalogShowroom({ onAddToCart }) {
+export function CatalogShowroom({ onAddToCart, onRequestQuote }) {
   const [activeCat, setActiveCat]   = useState('all');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -924,14 +935,18 @@ export function CatalogShowroom({ onAddToCart }) {
     return () => mq.removeEventListener('change', handler);
   }, []);
 
-  const filtered = useMemo(
-    () => activeCat === 'all' ? PRODUCTS : PRODUCTS.filter((p) => p.category === activeCat),
-    [activeCat],
-  );
+  const filtered = useMemo(() => {
+    const base = activeCat === 'all' ? PRODUCTS : PRODUCTS.filter((p) => p.category === activeCat);
+    // Produsele noi (colecția 2026) apar mereu primele în listă.
+    return [...base].sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
+  }, [activeCat]);
 
   const mobilePreview = useMemo(() => {
     const cats = ['porti-garduri', 'feronerie', 'gratare', 'picioare-masa', 'design-interior'];
-    return cats.map((cat) => PRODUCTS.find((p) => p.category === cat)).filter(Boolean).slice(0, 4);
+    return cats
+      .map((cat) => PRODUCTS.find((p) => p.category === cat && p.isNew) || PRODUCTS.find((p) => p.category === cat))
+      .filter(Boolean)
+      .slice(0, 4);
   }, []);
 
   const handleCatChange = (catId) => {
@@ -956,6 +971,7 @@ export function CatalogShowroom({ onAddToCart }) {
           product={selectedProduct}
           onClose={() => setSelectedProduct(null)}
           onAddToCart={onAddToCart}
+          onRequestQuote={onRequestQuote}
         />
       )}
 
@@ -1043,6 +1059,7 @@ export function CatalogShowroom({ onAddToCart }) {
                   product={product}
                   onOpenModal={setSelectedProduct}
                   onAddToCart={onAddToCart}
+                  onRequestQuote={onRequestQuote}
                 />
               </div>
             ))}
