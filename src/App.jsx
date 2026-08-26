@@ -40,16 +40,17 @@ import { contactInfo } from './productsData.js';
 import { CatalogShowroom } from './CatalogShowroom.jsx';
 
 // ── Trimitere cereri către email (fără server propriu, via FormSubmit.co) ────
-// Prima cerere trimisă declanșează un email de confirmare unică către
-// contactInfo.email — trebuie confirmat o singură dată (click pe link) ca să
-// înceapă să curgă cererile mai departe.
+// Prima cerere trimisă vreodată de pe acest domeniu declanșează un email de
+// confirmare unică către contactInfo.email — trebuie confirmat O SINGURĂ
+// DATĂ (click pe linkul „Activate Form" din CEL MAI RECENT email primit de
+// la FormSubmit) ca să înceapă să curgă cererile mai departe, automat.
 async function sendLead(formEl, extraFields = {}) {
   const formData = new FormData(formEl);
 
-  // FormSubmit.co poate trimite emailul gol dacă formularul are un input de
-  // tip fișier fără nicio poză selectată (rămâne un File gol, name="",
-  // size=0, care strică parsarea restului câmpurilor la ei pe server) — îl
-  // scoatem explicit înainte de trimitere.
+  // FormSubmit poate trimite emailul gol dacă formularul are un input de tip
+  // fișier fără nicio poză selectată (rămâne un File gol, name="", size=0,
+  // care le strică parsarea restului câmpurilor pe server) — îl scoatem
+  // explicit înainte de trimitere.
   for (const [key, value] of Array.from(formData.entries())) {
     if (value instanceof File && value.size === 0 && value.name === '') {
       formData.delete(key);
@@ -1179,6 +1180,14 @@ function App() {
               {contactInfo.email}
             </a>
           </div>
+        </div>
+        <div className="mx-auto mt-6 flex max-w-7xl justify-center border-t border-white/5 pt-6 sm:justify-start">
+          <a
+            href="/politica-retur.html"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-xs uppercase tracking-[0.2em] text-[#cfc5ad]/70 transition-all hover:border-[#c5a059]/50 hover:text-[#c5a059]"
+          >
+            Politica de Retur
+          </a>
         </div>
       </footer>
     </div>
