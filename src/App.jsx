@@ -45,6 +45,17 @@ import { CatalogShowroom } from './CatalogShowroom.jsx';
 // înceapă să curgă cererile mai departe.
 async function sendLead(formEl, extraFields = {}) {
   const formData = new FormData(formEl);
+
+  // FormSubmit.co poate trimite emailul gol dacă formularul are un input de
+  // tip fișier fără nicio poză selectată (rămâne un File gol, name="",
+  // size=0, care strică parsarea restului câmpurilor la ei pe server) — îl
+  // scoatem explicit înainte de trimitere.
+  for (const [key, value] of Array.from(formData.entries())) {
+    if (value instanceof File && value.size === 0 && value.name === '') {
+      formData.delete(key);
+    }
+  }
+
   Object.entries(extraFields).forEach(([key, value]) => {
     if (value != null && value !== '') formData.append(key, value);
   });
@@ -320,8 +331,8 @@ function CheckoutOverlay({ isOpen, items, onClose, onOrderSuccess }) {
   const total = items.reduce((sum, item) => sum + item.price, 0);
 
   const orderSummary = items
-    .map((item) => `${item.product.title} · ${item.size.label} · ${item.finish.label} · ${item.price.toLocaleString('ro-RO')} RON`)
-    .join('\n');
+    .map((item, idx) => `${idx + 1}) ${item.product.title} · ${item.size.label} · ${item.finish.label} · ${item.price.toLocaleString('ro-RO')} RON`)
+    .join('   |   ');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -329,6 +340,7 @@ function CheckoutOverlay({ isOpen, items, onClose, onOrderSuccess }) {
     try {
       await sendLead(e.target, {
         _subject: 'Comandă nouă — KRAFT Metalworks',
+        numar_produse: items.length,
         comanda: orderSummary,
         total_estimat: `${total.toLocaleString('ro-RO')} RON`,
       });
