@@ -808,13 +808,19 @@ function ProductModal({ product, onClose, onAddToCart, onRequestQuote }) {
           </div>
           <div className="space-y-3 border-t border-white/10 pt-5">
             <div>
-              <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-[#cfc5ad]/50">Preț de bază</p>
-              {product.basePrice != null ? (
-                <p className="text-2xl font-semibold text-[#f8f1e5]">{product.basePrice.toLocaleString('ro-RO')} RON</p>
+              {isQuoteFlow ? (
+                <>
+                  <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-[#cfc5ad]/50">Ofertă</p>
+                  <p className="text-xl font-semibold text-[#c5a059]">Ofertă Personalizată</p>
+                  <p className="mt-0.5 text-[10px] text-[#cfc5ad]/40">Mai avantajos decât un preț fix — adaptăm totul exact proiectului tău.</p>
+                </>
               ) : (
-                <p className="text-2xl font-semibold text-[#f8f1e5]">Preț la cerere</p>
+                <>
+                  <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-[#cfc5ad]/50">Preț de bază</p>
+                  <p className="text-2xl font-semibold text-[#f8f1e5]">{product.basePrice.toLocaleString('ro-RO')} RON</p>
+                  <p className="mt-0.5 text-[10px] text-[#cfc5ad]/40">Prețul final poate varia în funcție de dimensiuni</p>
+                </>
               )}
-              <p className="mt-0.5 text-[10px] text-[#cfc5ad]/40">Prețul final poate varia în funcție de dimensiuni</p>
             </div>
             <button
               type="button"
@@ -895,13 +901,13 @@ function ProductCard({ product, onOpenModal, onAddToCart, onRequestQuote }) {
             {product.title}
           </p>
           <p className="mt-0.5 text-sm font-semibold text-[#c5a059]">
-            {product.basePrice != null ? (
+            {isQuoteFlow ? (
+              <span className="text-[10px] font-semibold uppercase tracking-[0.12em]">Ofertă Personalizată</span>
+            ) : (
               <>
                 {product.basePrice.toLocaleString('ro-RO')}
                 <span className="ml-1 text-[10px] font-normal text-[#c5a059]/60">RON</span>
               </>
-            ) : (
-              'La cerere'
             )}
           </p>
         </div>

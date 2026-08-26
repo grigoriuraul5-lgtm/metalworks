@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Shield, Sparkles, Mail, ChevronRight, ChevronLeft, Menu, X, ShoppingCart, Trash2, Upload } from 'lucide-react';
 import heroBG from './assets/imagine hero 1.jpeg';
+import heroBGMobile from './assets/imagine hero 1 mobile.jpeg';
 import logo1 from './assets/logo 1.png';
 import proiectArhitectural from './assets/proiect_arhitectural.jpg';
 import portofoliu1 from './assets/portofoliu/portofoliu-1.jpg';
@@ -37,6 +38,32 @@ import lucrareReala17 from './assets/portofoliu-real/lucrare-reala-17.jpeg';
 import lucrareReala18 from './assets/portofoliu-real/lucrare-reala-18.jpeg';
 import { contactInfo } from './productsData.js';
 import { CatalogShowroom } from './CatalogShowroom.jsx';
+
+// ── Trimitere cereri către email (fără server propriu, via FormSubmit.co) ────
+// Prima cerere trimisă declanșează un email de confirmare unică către
+// contactInfo.email — trebuie confirmat o singură dată (click pe link) ca să
+// înceapă să curgă cererile mai departe.
+async function sendLead(formEl, extraFields = {}) {
+  const formData = new FormData(formEl);
+  Object.entries(extraFields).forEach(([key, value]) => {
+    if (value != null && value !== '') formData.append(key, value);
+  });
+  if (!formData.get('_subject')) {
+    formData.append('_subject', 'Cerere nouă — KRAFT Metalworks');
+  }
+  formData.append('_captcha', 'false');
+  formData.append('_template', 'table');
+
+  const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(contactInfo.email)}`, {
+    method: 'POST',
+    headers: { Accept: 'application/json' },
+    body: formData,
+  });
+  if (!response.ok) {
+    throw new Error(`Trimitere eșuată (${response.status})`);
+  }
+  return response.json();
+}
 
 const portfolioImages = [
   // ── Lucrări reale, din șantier/atelier (2026) — primele afișate ──
@@ -145,7 +172,29 @@ function CartSidebar({ isOpen, items, onClose, onRemove, onCheckout }) {
 }
 
 function CustomRequestOverlay({ product, onClose }) {
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+
+  useEffect(() => {
+    setStatus('idle');
+  }, [product?.id]);
+
   if (!product) return null;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      await sendLead(e.target, {
+        _subject: `Cerere ofertă — ${product.title}`,
+        produs: product.title,
+        categorie: product.category || '',
+      });
+      setStatus('sent');
+      e.target.reset();
+    } catch (err) {
+      setStatus('error');
+    }
+  };
 
   return (
     <div
@@ -178,64 +227,116 @@ function CustomRequestOverlay({ product, onClose }) {
         )}
         <h3 className="mb-6 text-2xl font-semibold text-[#f8f1e5]">{product.imgRender ? 'Cerere ofertă pentru acest produs' : product.title}</h3>
 
-        <form onSubmit={(e) => { e.preventDefault(); onClose(); }} className="space-y-4">
-          <div className="grid gap-4 sm:grid-cols-2">
+        {status === 'sent' ? (
+          <div className="rounded-2xl border border-[#c5a059]/30 bg-[#c5a059]/10 p-6 text-center">
+            <p className="text-sm font-semibold text-[#f8f1e5]">Cererea a fost trimisă!</p>
+            <p className="mt-2 text-xs text-[#cfc5ad]/70">Echipa KRAFT te contactează în 24 de ore.</p>
+            <button
+              type="button"
+              onClick={onClose}
+              className="mt-5 rounded-full bg-[#c5a059] px-6 py-2.5 text-xs uppercase tracking-[0.2em] text-[#0a0a0a] transition hover:bg-[#b79245]"
+            >
+              Închide
+            </button>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                Nume
+                <input
+                  type="text"
+                  name="nume"
+                  required
+                  placeholder="Numele complet"
+                  className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
+                />
+              </label>
+              <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                Telefon
+                <input
+                  type="tel"
+                  name="telefon"
+                  required
+                  placeholder="+40 7xx xxx xxx"
+                  className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
+                />
+              </label>
+            </div>
             <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-              Nume
+              Email
+              <input
+                type="email"
+                name="email"
+                placeholder="email@exemplu.ro"
+                className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
+              />
+            </label>
+            <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+              Dimensiuni dorite
               <input
                 type="text"
-                placeholder="Numele complet"
+                name="dimensiuni"
+                placeholder="ex: 120×80 cm, grosime 8 mm..."
                 className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
               />
             </label>
             <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-              Telefon
-              <input
-                type="tel"
-                placeholder="+40 7xx xxx xxx"
+              Detalii suplimentare
+              <textarea
+                rows="3"
+                name="detalii"
+                placeholder="Alte cerințe tehnice sau estetice..."
                 className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
               />
             </label>
-          </div>
-          <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-            Email
-            <input
-              type="email"
-              placeholder="email@exemplu.ro"
-              className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
-            />
-          </label>
-          <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-            Dimensiuni dorite
-            <input
-              type="text"
-              placeholder="ex: 120×80 cm, grosime 8 mm..."
-              className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
-            />
-          </label>
-          <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-            Detalii suplimentare
-            <textarea
-              rows="3"
-              placeholder="Alte cerințe tehnice sau estetice..."
-              className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
-            />
-          </label>
-          <button
-            type="submit"
-            className="w-full rounded-full bg-[#c5a059] py-3.5 text-sm uppercase tracking-[0.25em] text-[#0a0a0a] transition-all duration-300 hover:bg-[#b79245]"
-          >
-            Trimite Cererea
-          </button>
-        </form>
+            <button
+              type="submit"
+              disabled={status === 'sending'}
+              className="w-full rounded-full bg-[#c5a059] py-3.5 text-sm uppercase tracking-[0.25em] text-[#0a0a0a] transition-all duration-300 hover:bg-[#b79245] disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {status === 'sending' ? 'Se trimite...' : 'Trimite Cererea'}
+            </button>
+            {status === 'error' && (
+              <p className="text-center text-xs text-red-400">
+                A apărut o eroare. Sună-ne direct la {contactInfo.phone}.
+              </p>
+            )}
+          </form>
+        )}
       </div>
     </div>
   );
 }
 
-function CheckoutOverlay({ isOpen, items, onClose }) {
+function CheckoutOverlay({ isOpen, items, onClose, onOrderSuccess }) {
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+
+  useEffect(() => {
+    if (isOpen) setStatus('idle');
+  }, [isOpen]);
+
   if (!isOpen) return null;
   const total = items.reduce((sum, item) => sum + item.price, 0);
+
+  const orderSummary = items
+    .map((item) => `${item.product.title} · ${item.size.label} · ${item.finish.label} · ${item.price.toLocaleString('ro-RO')} RON`)
+    .join('\n');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      await sendLead(e.target, {
+        _subject: 'Comandă nouă — KRAFT Metalworks',
+        comanda: orderSummary,
+        total_estimat: `${total.toLocaleString('ro-RO')} RON`,
+      });
+      setStatus('sent');
+    } catch (err) {
+      setStatus('error');
+    }
+  };
 
   return (
     <div
@@ -280,40 +381,58 @@ function CheckoutOverlay({ isOpen, items, onClose }) {
           </div>
 
           {/* Form */}
-          <form onSubmit={(e) => { e.preventDefault(); onClose(); }} className="space-y-4">
-            <p className="text-[10px] uppercase tracking-[0.35em] text-[#cfc5ad]/50">Date de contact și livrare</p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                Nume complet
-                <input type="text" required placeholder="Ion Popescu" className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
-              </label>
-              <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                Telefon
-                <input type="tel" required placeholder="+40 7xx xxx xxx" className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
-              </label>
+          {status === 'sent' ? (
+            <div className="rounded-2xl border border-[#c5a059]/30 bg-[#c5a059]/10 p-8 text-center">
+              <p className="text-base font-semibold text-[#f8f1e5]">Comanda a fost trimisă!</p>
+              <p className="mt-2 text-sm text-[#cfc5ad]/70">Echipa KRAFT confirmă disponibilitatea și termenul de execuție în 24h.</p>
+              <button
+                type="button"
+                onClick={() => { onOrderSuccess?.(); }}
+                className="mt-6 rounded-full bg-[#c5a059] px-8 py-3 text-xs uppercase tracking-[0.25em] text-[#0a0a0a] transition hover:bg-[#b79245]"
+              >
+                Închide
+              </button>
             </div>
-            <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-              Email
-              <input type="email" required placeholder="email@exemplu.ro" className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
-            </label>
-            <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-              Adresă livrare
-              <input type="text" placeholder="Stradă, număr, oraș, județ" className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
-            </label>
-            <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-              Mențiuni suplimentare (opțional)
-              <textarea rows="3" placeholder="Detalii de montaj, specificații speciale..." className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
-            </label>
-            <button
-              type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#c5a059] px-8 py-4 text-sm uppercase tracking-[0.25em] text-[#0a0a0a] transition duration-300 hover:bg-[#b79245] hover:shadow-[0_0_24px_rgba(197,160,89,0.4)]"
-            >
-              Confirmă Comanda <ArrowRight className="h-4 w-4" />
-            </button>
-            <p className="text-center text-[10px] uppercase tracking-[0.2em] text-[#cfc5ad]/40">
-              Echipa KRAFT va confirma disponibilitatea și termenul de execuție în 24h
-            </p>
-          </form>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <p className="text-[10px] uppercase tracking-[0.35em] text-[#cfc5ad]/50">Date de contact și livrare</p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                  Nume complet
+                  <input type="text" name="nume" required placeholder="Ion Popescu" className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
+                </label>
+                <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                  Telefon
+                  <input type="tel" name="telefon" required placeholder="+40 7xx xxx xxx" className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
+                </label>
+              </div>
+              <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                Email
+                <input type="email" name="email" required placeholder="email@exemplu.ro" className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
+              </label>
+              <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                Adresă livrare
+                <input type="text" name="adresa" placeholder="Stradă, număr, oraș, județ" className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
+              </label>
+              <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                Mențiuni suplimentare (opțional)
+                <textarea rows="3" name="mentiuni" placeholder="Detalii de montaj, specificații speciale..." className="mt-2 w-full rounded-2xl border border-white/10 bg-[#0f0f0f] px-4 py-3 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
+              </label>
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#c5a059] px-8 py-4 text-sm uppercase tracking-[0.25em] text-[#0a0a0a] transition duration-300 hover:bg-[#b79245] hover:shadow-[0_0_24px_rgba(197,160,89,0.4)] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {status === 'sending' ? 'Se trimite...' : 'Confirmă Comanda'} <ArrowRight className="h-4 w-4" />
+              </button>
+              {status === 'error' && (
+                <p className="text-center text-xs text-red-400">A apărut o eroare. Sună-ne direct la {contactInfo.phone}.</p>
+              )}
+              <p className="text-center text-[10px] uppercase tracking-[0.2em] text-[#cfc5ad]/40">
+                Echipa KRAFT va confirma disponibilitatea și termenul de execuție în 24h
+              </p>
+            </form>
+          )}
         </div>
       </div>
     </div>
@@ -438,6 +557,32 @@ function App() {
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [customRequestProduct, setCustomRequestProduct] = useState(null);
   const [portfolioExpanded, setPortfolioExpanded] = useState(false);
+  const [consultStatus, setConsultStatus] = useState('idle'); // idle | sending | sent | error
+  const [proiectStatus, setProiectStatus] = useState('idle'); // idle | sending | sent | error
+
+  const handleConsultSubmit = async (e) => {
+    e.preventDefault();
+    setConsultStatus('sending');
+    try {
+      await sendLead(e.target, { _subject: 'Cerere Consultanță Tehnică — KRAFT Metalworks' });
+      setConsultStatus('sent');
+      e.target.reset();
+    } catch (err) {
+      setConsultStatus('error');
+    }
+  };
+
+  const handleProiectSubmit = async (e) => {
+    e.preventDefault();
+    setProiectStatus('sending');
+    try {
+      await sendLead(e.target, { _subject: 'Cerere Proiect Custom — KRAFT Metalworks' });
+      setProiectStatus('sent');
+      e.target.reset();
+    } catch (err) {
+      setProiectStatus('error');
+    }
+  };
   const portfolioScrollRef = useRef(null);
 
   const scrollPortfolio = (dir) => {
@@ -490,7 +635,12 @@ function App() {
         onRemove={removeFromCart}
         onCheckout={() => { setCartOpen(false); setCheckoutOpen(true); }}
       />
-      <CheckoutOverlay isOpen={checkoutOpen} items={cartItems} onClose={() => setCheckoutOpen(false)} />
+      <CheckoutOverlay
+        isOpen={checkoutOpen}
+        items={cartItems}
+        onClose={() => setCheckoutOpen(false)}
+        onOrderSuccess={() => { setCartItems([]); setCheckoutOpen(false); }}
+      />
       <CustomRequestOverlay product={customRequestProduct} onClose={() => setCustomRequestProduct(null)} />
 
       <header
@@ -571,13 +721,21 @@ function App() {
       <main className="pt-20 md:pt-28">
         <section
           id="home"
-          className="relative overflow-hidden"
+          className="relative overflow-hidden hero-section"
           style={{
+            backgroundColor: '#0a0a0a',
             backgroundImage: `linear-gradient(180deg, rgba(10,10,10,0.6), rgba(10,10,10,0.85)), url(${heroBG})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         >
+          <style>{`
+            @media (max-width: 768px) {
+              .hero-section {
+                background-image: linear-gradient(180deg, rgba(10,10,10,0.6), rgba(10,10,10,0.85)), url(${heroBGMobile}) !important;
+              }
+            }
+          `}</style>
           <div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-7xl flex-col justify-center px-6 pb-24 pt-24 text-center md:min-h-[calc(100vh-112px)] lg:px-8">
             <span className="mb-6 inline-flex text-base font-bold uppercase tracking-[0.15em] text-[#c5a059] sm:text-xl sm:tracking-[0.35em]">
               Confecții metalice de precizie
@@ -654,63 +812,82 @@ function App() {
               </div>
 
               {/* Right: consultancy form */}
-              <form
-                onSubmit={(e) => e.preventDefault()}
-                className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-luxe"
-              >
-                <p className="mb-6 text-xs uppercase tracking-[0.35em] text-[#c5a059]">Cerere Consultanță Tehnică</p>
-                <div className="space-y-5">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                      Nume complet
-                      <input type="text" placeholder="Ion Popescu" className="mt-2 w-full rounded-3xl border border-white/10 bg-[#0f0f0f] px-4 py-3.5 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
-                    </label>
-                    <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                      Telefon
-                      <input type="tel" placeholder="+40 7xx xxx xxx" className="mt-2 w-full rounded-3xl border border-white/10 bg-[#0f0f0f] px-4 py-3.5 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
-                    </label>
-                  </div>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                    Email
-                    <input type="email" placeholder="email@exemplu.ro" className="mt-2 w-full rounded-3xl border border-white/10 bg-[#0f0f0f] px-4 py-3.5 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
-                  </label>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                    Tip Proiect
-                    <select className="mt-2 w-full appearance-none rounded-3xl border border-white/10 bg-[#0f0f0f] px-4 py-3.5 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20">
-                      <option value="">Selectează tipul proiectului</option>
-                      <option>Balustradă / Scară Arhitecturală</option>
-                      <option>Poartă / Gard Monumental</option>
-                      <option>Structură Exterioară / Pergolă</option>
-                      <option>Compartimentare / Design Interior</option>
-                      <option>Fațadă / Placare Exterioară</option>
-                      <option>Proiect Custom Complex</option>
-                    </select>
-                  </label>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                    Descrierea Proiectului
-                    <textarea
-                      rows="4"
-                      placeholder="Dimensiuni, materiale, destinație, termen dorit, buget estimat..."
-                      className="mt-2 w-full rounded-[1.5rem] border border-white/10 bg-[#0f0f0f] px-4 py-3.5 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
-                    />
-                  </label>
-                  <div>
-                    <p className="mb-2 text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">Schițe / Fotografii (opțional)</p>
-                    <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-[1.5rem] border border-dashed border-white/15 bg-white/3 px-6 py-6 transition-all hover:border-[#c5a059]/40 hover:bg-[#c5a059]/5">
-                      <Upload className="h-6 w-6 text-[#cfc5ad]/40" />
-                      <span className="text-xs text-[#cfc5ad]/60">Trage fișierele sau apasă pentru a selecta</span>
-                      <span className="text-[10px] uppercase tracking-[0.2em] text-[#cfc5ad]/40">PNG, JPG, PDF · max 10 MB</span>
-                      <input type="file" multiple accept=".png,.jpg,.jpeg,.pdf" className="sr-only" />
-                    </label>
-                  </div>
+              {consultStatus === 'sent' ? (
+                <div className="flex flex-col items-center justify-center rounded-[2rem] border border-[#c5a059]/30 bg-[#c5a059]/10 p-8 text-center shadow-luxe">
+                  <p className="text-lg font-semibold text-[#f8f1e5]">Cererea a fost trimisă!</p>
+                  <p className="mt-2 text-sm text-[#cfc5ad]/70">Echipa KRAFT te contactează în 24 de ore.</p>
                   <button
-                    type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#c5a059] px-8 py-4 text-sm uppercase tracking-[0.25em] text-[#0a0a0a] transition duration-300 hover:bg-[#b79245] hover:shadow-[0_0_20px_rgba(197,160,89,0.3)]"
+                    type="button"
+                    onClick={() => setConsultStatus('idle')}
+                    className="mt-6 rounded-full bg-[#c5a059] px-8 py-3 text-xs uppercase tracking-[0.25em] text-[#0a0a0a] transition hover:bg-[#b79245]"
                   >
-                    Trimite Cererea <ArrowRight className="h-4 w-4" />
+                    Trimite altă cerere
                   </button>
                 </div>
-              </form>
+              ) : (
+                <form
+                  onSubmit={handleConsultSubmit}
+                  className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-luxe"
+                >
+                  <p className="mb-6 text-xs uppercase tracking-[0.35em] text-[#c5a059]">Cerere Consultanță Tehnică</p>
+                  <div className="space-y-5">
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                        Nume complet
+                        <input type="text" name="nume" placeholder="Ion Popescu" className="mt-2 w-full rounded-3xl border border-white/10 bg-[#0f0f0f] px-4 py-3.5 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
+                      </label>
+                      <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                        Telefon
+                        <input type="tel" name="telefon" required placeholder="+40 7xx xxx xxx" className="mt-2 w-full rounded-3xl border border-white/10 bg-[#0f0f0f] px-4 py-3.5 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
+                      </label>
+                    </div>
+                    <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                      Email
+                      <input type="email" name="email" placeholder="email@exemplu.ro" className="mt-2 w-full rounded-3xl border border-white/10 bg-[#0f0f0f] px-4 py-3.5 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
+                    </label>
+                    <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                      Tip Proiect
+                      <select name="tip_proiect" className="mt-2 w-full appearance-none rounded-3xl border border-white/10 bg-[#0f0f0f] px-4 py-3.5 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20">
+                        <option value="">Selectează tipul proiectului</option>
+                        <option>Balustradă / Scară Arhitecturală</option>
+                        <option>Poartă / Gard Monumental</option>
+                        <option>Structură Exterioară / Pergolă</option>
+                        <option>Compartimentare / Design Interior</option>
+                        <option>Fațadă / Placare Exterioară</option>
+                        <option>Proiect Custom Complex</option>
+                      </select>
+                    </label>
+                    <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                      Descrierea Proiectului
+                      <textarea
+                        rows="4"
+                        name="descriere"
+                        placeholder="Dimensiuni, materiale, destinație, termen dorit, buget estimat..."
+                        className="mt-2 w-full rounded-[1.5rem] border border-white/10 bg-[#0f0f0f] px-4 py-3.5 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
+                      />
+                    </label>
+                    <div>
+                      <p className="mb-2 text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">Schițe / Fotografii (opțional)</p>
+                      <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-[1.5rem] border border-dashed border-white/15 bg-white/3 px-6 py-6 transition-all hover:border-[#c5a059]/40 hover:bg-[#c5a059]/5">
+                        <Upload className="h-6 w-6 text-[#cfc5ad]/40" />
+                        <span className="text-xs text-[#cfc5ad]/60">Trage fișierele sau apasă pentru a selecta</span>
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-[#cfc5ad]/40">PNG, JPG, PDF · max 10 MB</span>
+                        <input type="file" name="fisiere" multiple accept=".png,.jpg,.jpeg,.pdf" className="sr-only" />
+                      </label>
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={consultStatus === 'sending'}
+                      className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#c5a059] px-8 py-4 text-sm uppercase tracking-[0.25em] text-[#0a0a0a] transition duration-300 hover:bg-[#b79245] hover:shadow-[0_0_20px_rgba(197,160,89,0.3)] disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      {consultStatus === 'sending' ? 'Se trimite...' : 'Trimite Cererea'} <ArrowRight className="h-4 w-4" />
+                    </button>
+                    {consultStatus === 'error' && (
+                      <p className="text-center text-xs text-red-400">A apărut o eroare. Sună-ne direct la {contactInfo.phone}.</p>
+                    )}
+                  </div>
+                </form>
+              )}
             </div>
           </div>
         </section>
@@ -806,69 +983,88 @@ function App() {
                 </div>
               </div>
 
-              <form
-                onSubmit={(e) => e.preventDefault()}
-                className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-luxe lg:p-12"
-              >
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                    Nume complet
-                    <input type="text" placeholder="Ion Popescu" className="mt-3 w-full rounded-3xl border border-white/10 bg-[#111111] px-4 py-4 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
-                  </label>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                    Email
-                    <input type="email" placeholder="email@exemplu.ro" className="mt-3 w-full rounded-3xl border border-white/10 bg-[#111111] px-4 py-4 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
-                  </label>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                    Telefon
-                    <input type="tel" placeholder="+40 7xx xxx xxx" className="mt-3 w-full rounded-3xl border border-white/10 bg-[#111111] px-4 py-4 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
-                  </label>
+              {proiectStatus === 'sent' ? (
+                <div className="flex flex-col items-center justify-center rounded-[2rem] border border-[#c5a059]/30 bg-[#c5a059]/10 p-10 text-center shadow-luxe lg:p-14">
+                  <p className="text-xl font-semibold text-[#f8f1e5]">Cererea de proiect a fost trimisă!</p>
+                  <p className="mt-2 text-sm text-[#cfc5ad]/70">Echipa KRAFT te contactează în 24 de ore.</p>
+                  <button
+                    type="button"
+                    onClick={() => setProiectStatus('idle')}
+                    className="mt-6 rounded-full bg-[#c5a059] px-8 py-3 text-xs uppercase tracking-[0.25em] text-[#0a0a0a] transition hover:bg-[#b79245]"
+                  >
+                    Trimite altă cerere
+                  </button>
                 </div>
-
-                <div className="mt-6">
-                  <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                    Tip Proiect
-                    <select className="mt-3 w-full appearance-none rounded-3xl border border-white/10 bg-[#111111] px-4 py-4 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20">
-                      <option value="">Selectează tipul proiectului</option>
-                      <option value="balustrada">Balustradă / Scară</option>
-                      <option value="poarta">Poartă / Gard</option>
-                      <option value="mobilier">Mobilier Metalic</option>
-                      <option value="pergola">Pergolă / Structură Exterioară</option>
-                      <option value="feronerie">Feronerie Custom</option>
-                      <option value="arta">Artă / Sculptură</option>
-                      <option value="altele">Altele</option>
-                    </select>
-                  </label>
-                </div>
-
-                <div className="mt-6">
-                  <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
-                    Detalii Tehnice
-                    <textarea
-                      rows="5"
-                      placeholder="Dimensiuni, materiale preferate, destinație (interior/exterior), volum estimat, termen dorit..."
-                      className="mt-3 w-full rounded-[1.5rem] border border-white/10 bg-[#111111] px-4 py-4 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
-                    />
-                  </label>
-                </div>
-
-                <div className="mt-6">
-                  <p className="mb-3 text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">Schițe / Fotografii (opțional)</p>
-                  <label className="flex cursor-pointer flex-col items-center justify-center gap-3 rounded-[1.5rem] border border-dashed border-white/15 bg-white/3 px-6 py-8 transition-all hover:border-[#c5a059]/40 hover:bg-[#c5a059]/5">
-                    <Upload className="h-7 w-7 text-[#cfc5ad]/40" />
-                    <span className="text-sm text-[#cfc5ad]/60">Trage fișierele aici sau apasă pentru a selecta</span>
-                    <span className="text-[11px] uppercase tracking-[0.2em] text-[#cfc5ad]/40">PNG, JPG, PDF · max 10 MB</span>
-                    <input type="file" multiple accept=".png,.jpg,.jpeg,.pdf" className="sr-only" />
-                  </label>
-                </div>
-
-                <button
-                  type="submit"
-                  className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#c5a059] px-8 py-4 text-sm uppercase tracking-[0.25em] text-[#0a0a0a] transition duration-300 hover:bg-[#b79245] hover:shadow-[0_0_20px_rgba(197,160,89,0.3)]"
+              ) : (
+                <form
+                  onSubmit={handleProiectSubmit}
+                  className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-luxe lg:p-12"
                 >
-                  Trimite Cererea de Proiect <ArrowRight className="h-4 w-4" />
-                </button>
-              </form>
+                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                      Nume complet
+                      <input type="text" name="nume" placeholder="Ion Popescu" className="mt-3 w-full rounded-3xl border border-white/10 bg-[#111111] px-4 py-4 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
+                    </label>
+                    <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                      Email
+                      <input type="email" name="email" placeholder="email@exemplu.ro" className="mt-3 w-full rounded-3xl border border-white/10 bg-[#111111] px-4 py-4 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
+                    </label>
+                    <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                      Telefon
+                      <input type="tel" name="telefon" required placeholder="+40 7xx xxx xxx" className="mt-3 w-full rounded-3xl border border-white/10 bg-[#111111] px-4 py-4 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20" />
+                    </label>
+                  </div>
+
+                  <div className="mt-6">
+                    <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                      Tip Proiect
+                      <select name="tip_proiect" className="mt-3 w-full appearance-none rounded-3xl border border-white/10 bg-[#111111] px-4 py-4 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20">
+                        <option value="">Selectează tipul proiectului</option>
+                        <option value="balustrada">Balustradă / Scară</option>
+                        <option value="poarta">Poartă / Gard</option>
+                        <option value="mobilier">Mobilier Metalic</option>
+                        <option value="pergola">Pergolă / Structură Exterioară</option>
+                        <option value="feronerie">Feronerie Custom</option>
+                        <option value="arta">Artă / Sculptură</option>
+                        <option value="altele">Altele</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <div className="mt-6">
+                    <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
+                      Detalii Tehnice
+                      <textarea
+                        rows="5"
+                        name="detalii"
+                        placeholder="Dimensiuni, materiale preferate, destinație (interior/exterior), volum estimat, termen dorit..."
+                        className="mt-3 w-full rounded-[1.5rem] border border-white/10 bg-[#111111] px-4 py-4 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
+                      />
+                    </label>
+                  </div>
+
+                  <div className="mt-6">
+                    <p className="mb-3 text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">Schițe / Fotografii (opțional)</p>
+                    <label className="flex cursor-pointer flex-col items-center justify-center gap-3 rounded-[1.5rem] border border-dashed border-white/15 bg-white/3 px-6 py-8 transition-all hover:border-[#c5a059]/40 hover:bg-[#c5a059]/5">
+                      <Upload className="h-7 w-7 text-[#cfc5ad]/40" />
+                      <span className="text-sm text-[#cfc5ad]/60">Trage fișierele aici sau apasă pentru a selecta</span>
+                      <span className="text-[11px] uppercase tracking-[0.2em] text-[#cfc5ad]/40">PNG, JPG, PDF · max 10 MB</span>
+                      <input type="file" name="fisiere" multiple accept=".png,.jpg,.jpeg,.pdf" className="sr-only" />
+                    </label>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={proiectStatus === 'sending'}
+                    className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#c5a059] px-8 py-4 text-sm uppercase tracking-[0.25em] text-[#0a0a0a] transition duration-300 hover:bg-[#b79245] hover:shadow-[0_0_20px_rgba(197,160,89,0.3)] disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {proiectStatus === 'sending' ? 'Se trimite...' : 'Trimite Cererea de Proiect'} <ArrowRight className="h-4 w-4" />
+                  </button>
+                  {proiectStatus === 'error' && (
+                    <p className="mt-4 text-center text-xs text-red-400">A apărut o eroare. Sună-ne direct la {contactInfo.phone}.</p>
+                  )}
+                </form>
+              )}
             </div>
           </div>
         </section>
