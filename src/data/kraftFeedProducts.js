@@ -33,6 +33,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: '10 zile lucrătoare' },
     ],
     leadDays: 10,
+    shippingWeightKg: 12, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-farm',
@@ -48,6 +49,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: '10 zile lucrătoare' },
     ],
     leadDays: 10,
+    shippingWeightKg: 14, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-h',
@@ -63,6 +65,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: 'Set 2 bucăți · 10 zile lucrătoare' },
     ],
     leadDays: 10,
+    shippingWeightKg: 16, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-manuta',
@@ -78,6 +81,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: 'Set 2 bucăți · 8 zile lucrătoare' },
     ],
     leadDays: 8,
+    shippingWeightKg: 8, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-spin-salon',
@@ -93,6 +97,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: 'Specifică varianta dorită la comandă' },
     ],
     leadDays: 10,
+    shippingWeightKg: 13, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-u-mic',
@@ -108,6 +113,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: 'Set 2 bucăți · 7 zile lucrătoare' },
     ],
     leadDays: 7,
+    shippingWeightKg: 7, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-u',
@@ -123,6 +129,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: 'Set 2 bucăți · 10 zile lucrătoare' },
     ],
     leadDays: 10,
+    shippingWeightKg: 9, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-ufo',
@@ -138,6 +145,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: '7 zile lucrătoare' },
     ],
     leadDays: 7,
+    shippingWeightKg: 4, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-v',
@@ -153,6 +161,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: 'Set 2 bucăți · 10 zile lucrătoare' },
     ],
     leadDays: 10,
+    shippingWeightKg: 9, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-x-mic',
@@ -168,6 +177,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: 'Set 2 bucăți · 7 zile lucrătoare' },
     ],
     leadDays: 7,
+    shippingWeightKg: 7, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-x',
@@ -183,6 +193,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: 'Set 2 bucăți · 10 zile lucrătoare' },
     ],
     leadDays: 10,
+    shippingWeightKg: 16, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     // Fără preț fix încă (de completat de Raul) — exclus automat din feed-ul
@@ -200,6 +211,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: 'Confirmăm termenul la comandă' },
     ],
     leadDays: 10,
+    shippingWeightKg: 15, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-masa-oval',
@@ -215,6 +227,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: '10 zile lucrătoare' },
     ],
     leadDays: 10,
+    shippingWeightKg: 10, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-tubular-cap-patrat',
@@ -230,6 +243,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: '10 zile lucrătoare' },
     ],
     leadDays: 10,
+    shippingWeightKg: 6, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-patrat-dublu',
@@ -245,6 +259,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: '10 zile lucrătoare' },
     ],
     leadDays: 10,
+    shippingWeightKg: 14, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-masa-cafenea',
@@ -260,6 +275,7 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: '7 zile lucrătoare' },
     ],
     leadDays: 7,
+    shippingWeightKg: 7, // estimativ — ajustează cu greutatea reală măsurată
   },
   {
     slug: 'picior-anaconda',
@@ -275,5 +291,6 @@ export const KRAFT_PRODUCTS = [
       { label: 'Livrare', value: '12–15 zile lucrătoare' },
     ],
     leadDays: 15,
+    shippingWeightKg: 9, // estimativ — ajustează cu greutatea reală măsurată
   },
 ];

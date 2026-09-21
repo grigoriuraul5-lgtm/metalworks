@@ -31,17 +31,13 @@ function escapeXml(value) {
     .replace(/'/g, '&apos;');
 }
 
-function addDays(days) {
-  const d = new Date();
-  d.setDate(d.getDate() + days);
-  return d.toISOString().slice(0, 10);
-}
+const DEFAULT_SHIPPING_WEIGHT_KG = 15; // greutate implicită dacă produsul nu are `shippingWeightKg` propriu
 
 function buildItemXml(product) {
   const link = `${SITE_URL}/#produs-${product.slug}`;
   const imageLink = `${SITE_URL}/products/${product.slug}.jpg`;
   const price = `${product.basePrice.toFixed(2)} RON`;
-  const availabilityDate = addDays(product.leadDays ?? 10);
+  const weightKg = typeof product.shippingWeightKg === 'number' ? product.shippingWeightKg : DEFAULT_SHIPPING_WEIGHT_KG;
 
   return `
     <item>
@@ -50,12 +46,12 @@ function buildItemXml(product) {
       <g:description>${escapeXml(product.description)}</g:description>
       <g:link>${escapeXml(link)}</g:link>
       <g:image_link>${escapeXml(imageLink)}</g:image_link>
-      <g:availability>backorder</g:availability>
-      <g:availability_date>${availabilityDate}</g:availability_date>
+      <g:availability>in_stock</g:availability>
       <g:price>${escapeXml(price)}</g:price>
       <g:brand>${escapeXml(BRAND)}</g:brand>
       <g:condition>new</g:condition>
       <g:google_product_category>${escapeXml(GOOGLE_PRODUCT_CATEGORY)}</g:google_product_category>
+      <g:shipping_weight>${weightKg.toFixed(2)} kg</g:shipping_weight>
     </item>`;
 }
 
