@@ -1,3 +1,4 @@
+import { contact, companyAddressLine } from './siteConfig.js';
 import productImg3 from './assets/randare 3.jpeg';
 import productImg4 from './assets/randare 4.jpeg';
 import randare1 from './assets/randare 1.jpeg';
@@ -29,11 +30,11 @@ export const categoryLabels = {
 };
 
 export const contactInfo = {
-  phone:    '+40 743 096 269',
-  phone2:   '+40 746 333 104',
-  email:    'contact@kraftmetalworks.ro',
-  address:  'Str. Industriilor 14, Cluj-Napoca, România',
-  schedule: 'Luni–Vineri: 09:00–18:00',
+  phone:    contact.phone,
+  phone2:   contact.phone2,
+  email:    contact.email,
+  address:  companyAddressLine(),
+  schedule: contact.schedule,
 };
 
 export const categoryDefaults = {

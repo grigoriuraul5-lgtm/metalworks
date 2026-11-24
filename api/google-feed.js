@@ -34,7 +34,7 @@ function escapeXml(value) {
 const DEFAULT_SHIPPING_WEIGHT_KG = 15; // greutate implicită dacă produsul nu are `shippingWeightKg` propriu
 
 function buildItemXml(product) {
-  const link = `${SITE_URL}/#produs-${product.slug}`;
+  const link = `${SITE_URL}/produs/${product.slug}`; // pagină dedicată, cu prețul vizibil (cerință Merchant Center)
   const imageLink = `${SITE_URL}/products/${product.slug}.jpg`;
   const price = `${product.basePrice.toFixed(2)} RON`;
   const weightKg = typeof product.shippingWeightKg === 'number' ? product.shippingWeightKg : DEFAULT_SHIPPING_WEIGHT_KG;

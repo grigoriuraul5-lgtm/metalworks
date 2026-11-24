@@ -110,7 +110,7 @@ const PRODUCTS = [
       { label: 'Material', value: 'Oțel Corten A (EN 10025-5)' },
       { label: 'Grosime profil', value: '4 mm' },
       { label: 'Finisaj', value: 'Patinare naturală / Negru mat' },
-      { label: 'Rezistență', value: '50+ ani exterior fără vopsire' },
+      { label: 'Protecție', value: 'Patină naturală, fără vopsire' },
       { label: 'Mecanism', value: 'Manual · Electric opțional' },
     ],
   },
@@ -175,20 +175,20 @@ const PRODUCTS = [
       { label: 'Material', value: 'Oțel carbon / Inox AISI 304' },
       { label: 'Execuție', value: 'Sudat MIG/TIG + șlefuit manual' },
       { label: 'Finisaj', value: 'Negru mat satinat' },
-      { label: 'Toleranță', value: '±0,2 mm' },
+      { label: 'Toleranță', value: 'Conform desenului de execuție' },
       { label: 'Prindere', value: 'Sudare sau șuruburi M8 inox' },
     ],
   },
   {
     id: 'fer-2', category: 'feronerie', title: 'Mâner Arhitectural Precision',
     imgRender: ferR2, imgSketch: ferS2, aspect: 'portrait', hasSketch: true,
-    basePrice: 520, material: 'Inox AISI 304 · frezat CNC · toleranță ±0,1 mm',
-    description: 'Mâner monobloc frezat CNC din inox AISI 304, cu toleranțe dimensionale de ±0,1 mm. Fiecare piesă este inspectată individual și livrată cu certificat de conformitate. Finisaj ales: satinat periat 180 grit, mat sau oglindă.',
+    basePrice: 520, material: 'Inox AISI 304 · frezat CNC · finisaj la alegere',
+    description: 'Mâner monobloc frezat CNC din inox AISI 304, executat după desenul aprobat de client. Fiecare piesă este verificată individual înainte de livrare. Finisaj ales: satinat periat 180 grit, mat sau oglindă.',
     specs: [
       { label: 'Material', value: 'Inox AISI 304' },
       { label: 'Execuție', value: 'Frezare CNC + lefuire manuală' },
       { label: 'Finisaj', value: 'Satinat / Mat / Oglindă' },
-      { label: 'Toleranță', value: '±0,1 mm' },
+      { label: 'Toleranță', value: 'Conform desenului de execuție' },
       { label: 'Lungime standard', value: '300 mm / 600 mm' },
     ],
   },
@@ -247,12 +247,12 @@ const PRODUCTS = [
   {
     id: 'gr-3', category: 'gratare', title: 'Grătar Corten Natura',
     imgRender: grat3, aspect: 'landscape', hasSketch: false,
-    basePrice: 2200, material: 'Oțel Corten A · patinare naturală · rezistență 50+ ani',
-    description: 'Grătar outdoor din oțel Corten A cu patinare naturală auto-protectivă — fără nicio vopsire necesară pe durata de viață a produsului. Caracterul industrial-rustic și rezistența de 50+ ani la exterior îl recomandă pentru proiecte de arhitectură peisagistică și amenajări premium.',
+    basePrice: 2200, material: 'Oțel Corten A · patinare naturală auto-protectivă',
+    description: 'Grătar outdoor din oțel Corten A cu patinare naturală auto-protectivă — fără nicio vopsire necesară pe durata de viață a produsului. Caracterul industrial-rustic și faptul că nu necesită întreținere la exterior îl recomandă pentru proiecte de arhitectură peisagistică și amenajări premium.',
     specs: [
       { label: 'Material', value: 'Oțel Corten A (EN 10025-5)' },
       { label: 'Finisaj', value: 'Patinare naturală auto-protectivă' },
-      { label: 'Rezistență exterior', value: '50+ ani fără vopsire' },
+      { label: 'Exterior', value: 'Fără vopsire — patina protejează oțelul' },
       { label: 'Greutate', value: '~38 kg/m²' },
       { label: 'Dimensiuni', value: 'Complet la comandă' },
     ],
@@ -274,12 +274,12 @@ const PRODUCTS = [
     id: 'gr-5', category: 'gratare', title: 'Grătar Premium Inox',
     imgRender: grat5, aspect: 'landscape', hasSketch: false,
     basePrice: 2800, material: 'Inox AISI 304 · bare rotunde Ø12 mm · periat 180 grit',
-    description: 'Execuție de înaltă clasă din bare rotunde Ø12 mm în inox AISI 304, periat la 180 grit pentru un aspect curat și premium. Rezistența la coroziune testată 1000h spray salin îl recomandă pentru instalații maritime sau restaurante de lux.',
+    description: 'Execuție de înaltă clasă din bare rotunde Ø12 mm în inox AISI 304, periat la 180 grit pentru un aspect curat și premium. Rezistența naturală la coroziune a inoxului AISI 304 îl recomandă pentru instalații maritime sau restaurante de lux.',
     specs: [
       { label: 'Material', value: 'Inox AISI 304' },
       { label: 'Bare', value: 'Rotunde Ø12 mm' },
       { label: 'Finisaj', value: 'Periat 180 grit' },
-      { label: 'Rezistență coroziune', value: '1.000h spray salin' },
+      { label: 'Coroziune', value: 'Inox AISI 304, potrivit pentru exterior' },
       { label: 'Dimensiuni', value: 'La comandă' },
     ],
   },
@@ -583,26 +583,26 @@ function ProductModal({ product, onClose, onAddToCart, onRequestQuote }) {
         <div className="flex w-full flex-col justify-between gap-5 overflow-y-auto border-t border-white/10 p-6 sm:p-8 lg:w-80 lg:border-t-0 lg:border-l lg:p-8">
           <div className="space-y-5">
             <div>
-              <p className="mb-1 text-[10px] uppercase tracking-[0.3em] text-[#cfc5ad]/50">{catLabel}</p>
+              <p className="mb-1 text-[10px] uppercase tracking-[0.3em] text-[#cfc5ad]/70">{catLabel}</p>
               <h2 className="text-2xl font-semibold leading-tight text-[#c5a059]">{product.title}</h2>
             </div>
             {product.description && (
               <p className="text-sm leading-7 text-[#cfc5ad]/80">{product.description}</p>
             )}
             <div>
-              <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-[#cfc5ad]/50">Material</p>
+              <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-[#cfc5ad]/70">Material</p>
               <p className="text-sm leading-6 text-[#cfc5ad]">{product.material}</p>
             </div>
             {product.specs && product.specs.length > 0 && (
               <div className="space-y-2">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-[#cfc5ad]/50">Specificații Tehnice</p>
+                <p className="text-[10px] uppercase tracking-[0.3em] text-[#cfc5ad]/70">Specificații Tehnice</p>
                 <div className="rounded-2xl border border-white/8 bg-white/4">
                   {product.specs.map(({ label, value }, i) => (
                     <div
                       key={label}
                       className={`flex items-baseline justify-between gap-3 px-4 py-2.5 ${i < product.specs.length - 1 ? 'border-b border-white/5' : ''}`}
                     >
-                      <span className="shrink-0 text-[10px] uppercase tracking-[0.15em] text-[#cfc5ad]/50">{label}</span>
+                      <span className="shrink-0 text-[10px] uppercase tracking-[0.15em] text-[#cfc5ad]/70">{label}</span>
                       <span className="text-right text-xs text-[#f8f1e5]">{value}</span>
                     </div>
                   ))}
@@ -614,15 +614,15 @@ function ProductModal({ product, onClose, onAddToCart, onRequestQuote }) {
             <div>
               {isQuoteFlow ? (
                 <>
-                  <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-[#cfc5ad]/50">Ofertă</p>
+                  <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-[#cfc5ad]/70">Ofertă</p>
                   <p className="text-xl font-semibold text-[#c5a059]">Ofertă Personalizată</p>
-                  <p className="mt-0.5 text-[10px] text-[#cfc5ad]/40">Mai avantajos decât un preț fix — adaptăm totul exact proiectului tău.</p>
+                  <p className="mt-0.5 text-[10px] text-[#cfc5ad]/70">Mai avantajos decât un preț fix — adaptăm totul exact proiectului tău.</p>
                 </>
               ) : (
                 <>
-                  <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-[#cfc5ad]/50">Preț de bază</p>
+                  <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-[#cfc5ad]/70">Preț de bază</p>
                   <p className="text-2xl font-semibold text-[#f8f1e5]">{product.basePrice.toLocaleString('ro-RO')} RON</p>
-                  <p className="mt-0.5 text-[10px] text-[#cfc5ad]/40">Prețul final poate varia în funcție de dimensiuni</p>
+                  <p className="mt-0.5 text-[10px] text-[#cfc5ad]/70">Prețul final poate varia în funcție de dimensiuni</p>
                 </>
               )}
             </div>
@@ -633,8 +633,13 @@ function ProductModal({ product, onClose, onAddToCart, onRequestQuote }) {
             >
               <ShoppingCart className="h-3.5 w-3.5" /> {isQuoteFlow ? 'Cere Ofertă' : 'Adaugă în Coș'}
             </button>
-            <p className="text-center text-[9px] uppercase tracking-[0.2em] text-[#cfc5ad]/35">
-              Prețuri orientative · confirmăm înainte de execuție
+            {product.slug && (
+              <a href={`/produs/${product.slug}`} className="block text-center text-[10px] uppercase tracking-[0.25em] text-[#c5a059]/80 underline decoration-[#c5a059]/30 underline-offset-4 hover:text-[#c5a059]">
+                Vezi fișa completă a produsului
+              </a>
+            )}
+            <p className="text-center text-[9px] uppercase tracking-[0.2em] text-[#cfc5ad]/70">
+              Prețuri confirmate înainte de execuție
             </p>
           </div>
         </div>
@@ -673,6 +678,8 @@ function ProductCard({ product, onOpenModal, onAddToCart, onRequestQuote }) {
         <img
           src={product.imgRender}
           alt={product.title}
+          loading="lazy"
+          decoding="async"
           className={`w-full h-auto block transition-all duration-500 group-hover:brightness-[1.04] ${isSketch ? 'opacity-0' : 'opacity-100'}`}
         />
         {product.hasSketch && product.imgSketch && (
@@ -710,7 +717,7 @@ function ProductCard({ product, onOpenModal, onAddToCart, onRequestQuote }) {
             ) : (
               <>
                 {product.basePrice.toLocaleString('ro-RO')}
-                <span className="ml-1 text-[10px] font-normal text-[#c5a059]/60">RON</span>
+                <span className="ml-1 text-[10px] font-normal text-[#c5a059]/80">RON</span>
               </>
             )}
           </p>
@@ -729,6 +736,8 @@ function ProductCard({ product, onOpenModal, onAddToCart, onRequestQuote }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+
+export { PRODUCTS, CATEGORIES };
 
 export function CatalogShowroom({ onAddToCart, onRequestQuote }) {
   const [activeCat, setActiveCat]   = useState('all');
@@ -793,6 +802,9 @@ export function CatalogShowroom({ onAddToCart, onRequestQuote }) {
             <h2 className="text-4xl font-semibold leading-tight text-[#c5a059] sm:text-5xl">
               Catalog Produse de Serie & Sursă de Inspirație.
             </h2>
+            <a href="/picioare-masa-metalice" className="mt-4 inline-block text-xs uppercase tracking-[0.25em] text-[#c5a059] underline decoration-[#c5a059]/30 underline-offset-4 hover:decoration-[#c5a059]">
+              Toate picioarele de masă metalice, cu prețuri →
+            </a>
             <p className="mt-6 max-w-2xl text-base leading-8 text-[#cfc5ad]/90">
               Produsele afișate reprezintă doar o parte din capacitatea tehnică și viziunea echipei noastre.
               Dincolo de modelele de serie, suntem gata să transpunem în realitate orice schiță sau idee custom,
@@ -818,6 +830,7 @@ export function CatalogShowroom({ onAddToCart, onRequestQuote }) {
           {/* ── Mobile: dropdown ── */}
           <div className="relative mb-8 sm:hidden">
             <select
+              aria-label="Categorie produse"
               value={activeCat}
               onChange={(e) => handleCatChange(e.target.value)}
               className="w-full appearance-none rounded-2xl border border-[#c5a059]/30 bg-[#111] px-5 py-4 pr-12 text-sm text-[#f8f1e5] outline-none transition-all focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20"
@@ -850,12 +863,12 @@ export function CatalogShowroom({ onAddToCart, onRequestQuote }) {
 
           {/* ── Product count ── */}
           <div className="mb-5 flex items-center justify-between">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-[#cfc5ad]/40">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-[#cfc5ad]/70">
               {showMobileLimit
                 ? `${displayedProducts.length} din ${filtered.length} produse`
                 : `${filtered.length} ${filtered.length === 1 ? 'produs' : 'produse'}`}
             </p>
-            <p className="hidden text-[10px] uppercase tracking-[0.2em] text-[#cfc5ad]/30 sm:block">
+            <p className="hidden text-[10px] uppercase tracking-[0.2em] text-[#cfc5ad]/70 sm:block">
               Click pe produs pentru detalii complete
             </p>
           </div>
@@ -890,13 +903,13 @@ export function CatalogShowroom({ onAddToCart, onRequestQuote }) {
                 {isExpanded ? (
                   <>
                     Ascunde din Produse
-                    <span className="text-[#cfc5ad]/60 normal-case tracking-normal">(revino la secțiunile de sus)</span>
+                    <span className="text-[#cfc5ad]/70 normal-case tracking-normal">(revino la secțiunile de sus)</span>
                     <span className="text-base leading-none">▴</span>
                   </>
                 ) : (
                   <>
                     Explorează Toată Colecția
-                    <span className="text-[#cfc5ad]/60 normal-case tracking-normal">(vezi toate cele {PRODUCTS.length} produse)</span>
+                    <span className="text-[#cfc5ad]/70 normal-case tracking-normal">(vezi toate cele {PRODUCTS.length} produse)</span>
                     <span className="text-base leading-none">▾</span>
                   </>
                 )}
@@ -907,7 +920,7 @@ export function CatalogShowroom({ onAddToCart, onRequestQuote }) {
           {/* ── CTA ── */}
           <div className="mt-16 flex flex-col items-center gap-4 text-center">
             <div className="h-px w-12 bg-[#c5a059]/30" />
-            <p className="text-xs uppercase tracking-[0.35em] text-[#cfc5ad]/50">
+            <p className="text-xs uppercase tracking-[0.35em] text-[#cfc5ad]/70">
               Dimensiuni diferite sau model custom?
             </p>
             <a
