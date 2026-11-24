@@ -108,6 +108,7 @@ Cotație pentru fișiere tehnice (DXF, DWG, STEP, PDF): în cel mult 24 de ore l
 - [Debitare laser țeavă și tablă](${SITE_URL}${DEBITARE_PATH}): după fișiere DXF/DWG/STEP/PDF; oțel carbon, inox AISI 304, Corten; sudură TIG/MIG și vopsire electrostatică.
 - [Porți și garduri metalice](${SITE_URL}/porti-garduri-metalice): porți batante și culisante, garduri cu modele debitate laser, la comandă.
 - [Balustrade metalice](${SITE_URL}/balustrade-metalice): scări, balcoane, terase; profile sau panouri debitate laser.
+- [Pensiuni și HoReCa](${SITE_URL}/confectii-metalice-pensiuni-horeca): pachet complet de elemente metalice pentru pensiuni, hoteluri, restaurante.
 - [Confecții metalice Maramureș](${SITE_URL}/confectii-metalice-maramures) · [Cluj-Napoca](${SITE_URL}/confectii-metalice-cluj-napoca)
 
 ## Produse de serie

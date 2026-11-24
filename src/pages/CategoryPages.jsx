@@ -23,6 +23,7 @@ import imgPicioare from '../assets/portofoliu/portofoliu-1.jpg';
 export const PICIOARE_PATH = '/picioare-masa-metalice';
 export const PORTI_PATH = '/porti-garduri-metalice';
 export const BALUSTRADE_PATH = '/balustrade-metalice';
+export const HORECA_PATH = '/confectii-metalice-pensiuni-horeca';
 
 export const PICIOARE_FAQ = [
   { q: 'Prețul afișat este pentru un picior sau pentru un set?', a: 'Prețul afișat pe fiecare produs corespunde configurației descrise în fișa produsului. Dacă ai nevoie de un set pentru o masă anume, scrie-ne dimensiunea blatului și îți confirmăm exact ce primești.' },
@@ -45,6 +46,13 @@ export const BALUSTRADE_FAQ = [
   { q: 'Cum se calculează prețul unei balustrade?', a: 'Prețul se calculează pe metru liniar și depinde de model, înălțime, tipul de prindere (pe treaptă, lateral sau în pardoseală), materiale și finisaj. Trimite lungimea și o poză cu locul de montaj pentru ofertă.' },
   { q: 'Lucrați cu arhitecți și firme de construcții?', a: 'Da. Primim proiectul în DWG, DXF sau PDF și livrăm balustradele pe etape, conform graficului de lucrări.' },
   { q: 'Ce înălțime trebuie să aibă o balustradă?', a: 'Înălțimea minimă se stabilește conform normativelor aplicabile și proiectului clădirii. O verificăm împreună cu tine sau cu proiectantul înainte de execuție.' },
+];
+
+export const HORECA_FAQ = [
+  { q: 'Ce poate face KRAFT Metalworks pentru o pensiune?', a: 'Tot ce e metal: firmă luminoasă sau panou cu numele pensiunii debitat laser, poartă și gard, balustrade de terasă și scări, grătare și vetre de foc, structuri de foișor, mobilier de exterior și cadre metalice pentru paturi.' },
+  { q: 'Pot comanda totul într-o singură ofertă?', a: 'Da. Primești un singur proiect, o singură ofertă și un singur termen de livrare pentru toate piesele, în același stil și aceeași culoare.' },
+  { q: 'Lucrați și pentru restaurante și hoteluri?', a: 'Da. Pentru HoReCa producem și serii identice: picioare de masă, cadre de paturi, rafturi și elemente decorative pentru mai multe camere sau locații.' },
+  { q: 'În cât timp primesc oferta?', a: 'În cel mult 24 de ore lucrătoare după ce primim pozele, dimensiunile sau planul.' },
 ];
 
 export const listedProducts = () => KRAFT_PRODUCTS.filter((p) => !p.discontinued);
@@ -311,6 +319,41 @@ export function BalustradePage() {
         subject="Cerere ofertă balustrade metalice — KRAFT Metalworks"
         product="Balustrade metalice"
         detailsPlaceholder="Ex: balustradă scară interioară, 6 m liniari, prindere laterală, negru mat..."
+      />
+    </SiteShell>
+  );
+}
+
+export function HorecaPage() {
+  return (
+    <SiteShell>
+      <CustomCategoryContent
+        path={HORECA_PATH}
+        crumb="Confecții metalice pentru pensiuni și HoReCa"
+        eyebrow="Pensiuni · Hoteluri · Restaurante"
+        title="Tot ce e metal la pensiunea ta, într-o singură comandă."
+        lead="Firmă debitată laser, poartă, balustrade de terasă, grătar, vatră de foc, mobilier de exterior și cadre de paturi, proiectate în același stil și produse în Maramureș. Un singur proiect, o singură ofertă, un singur termen."
+        heroImage={imgLaserPanel}
+        types={[
+          ['Identitate', 'Firmă sau panou cu numele pensiunii, debitat laser, cu sau fără iluminare.'],
+          ['Exterior', 'Poartă, gard, balustrade de terasă, structuri de foișor și pergole.'],
+          ['Grădină și foc', 'Grătare, vetre de foc, suporturi de lemne, jardiniere din Corten.'],
+          ['Camere și restaurant', 'Picioare de masă, cadre de paturi, rafturi și elemente decorative în serie.'],
+        ]}
+        gallery={[
+          { src: imgLaserPanel, alt: 'Panou metalic decorativ debitat laser' },
+          { src: imgPanouri, alt: 'Panouri metalice decorative pentru gard și terasă' },
+          { src: imgPoarta, alt: 'Poartă metalică în execuție' },
+          { src: imgBalustrada1, alt: 'Balustradă metalică pentru terasă, în execuție' },
+          { src: imgPicioare, alt: 'Picioare de masă metalice pentru restaurant' },
+          { src: imgForjat, alt: 'Elemente metalice decorative' },
+        ]}
+        galleryTitle="Lucrări din atelier."
+        faqs={HORECA_FAQ}
+        faqTitle="Despre proiectele pentru pensiuni și HoReCa."
+        subject="Cerere ofertă pensiune / HoReCa — KRAFT Metalworks"
+        product="Pachet metal pensiune / HoReCa"
+        detailsPlaceholder="Ex: pensiune în Breb, firmă la intrare, balustradă terasă 12 m, grătar de exterior, 8 cadre de pat 160×200..."
       />
     </SiteShell>
   );

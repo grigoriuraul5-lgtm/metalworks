@@ -7,7 +7,7 @@ import { TermsPage, PrivacyPage } from './pages/LegalPages.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 import {
   PicioareMasaPage, PortiGarduriPage, BalustradePage, PICIOARE_PATH, PORTI_PATH, BALUSTRADE_PATH,
-  PICIOARE_FAQ, PORTI_FAQ, BALUSTRADE_FAQ, listedProducts,
+  PICIOARE_FAQ, PORTI_FAQ, BALUSTRADE_FAQ, listedProducts, HorecaPage, HORECA_PATH, HORECA_FAQ,
 } from './pages/CategoryPages.jsx';
 import { LocalPage, LOCAL_PAGES } from './pages/LocalPages.jsx';
 import { POSTS, getPost } from './content/blog.js';
@@ -122,6 +122,22 @@ export function getRoutes() {
           breadcrumbSchema([{ name: 'Acasă', path: '/' }, { name: 'Balustrade metalice', path: BALUSTRADE_PATH }]),
         ),
         priority: '0.9',
+      },
+    },
+    {
+      path: HORECA_PATH,
+      Component: HorecaPage,
+      head: {
+        title: 'Confecții Metalice pentru Pensiuni și HoReCa — Maramureș | KRAFT Metalworks',
+        description: 'Firmă debitată laser, porți, balustrade de terasă, grătare, vetre de foc, mobilier de exterior și cadre de paturi pentru pensiuni, hoteluri și restaurante. Un singur proiect și o ofertă în 24h, producție în Maramureș.',
+        keywords: [...BASE_KEYWORDS, 'confectii metalice pensiuni', 'firma luminoasa pensiune', 'mobilier metalic horeca', 'balustrade terasa pensiune', 'gratar exterior pensiune', 'pensiuni maramures'],
+        jsonLd: graph(
+          organizationSchema(),
+          serviceSchema({ name: 'Confecții metalice pentru pensiuni și HoReCa', description: 'Pachet complet de elemente metalice pentru pensiuni, hoteluri și restaurante.', path: HORECA_PATH, serviceType: 'Confecții metalice HoReCa' }),
+          faqSchema(HORECA_FAQ),
+          breadcrumbSchema([{ name: 'Acasă', path: '/' }, { name: 'Pensiuni și HoReCa', path: HORECA_PATH }]),
+        ),
+        priority: '0.8',
       },
     },
     ...LOCAL_PAGES.map((page) => ({

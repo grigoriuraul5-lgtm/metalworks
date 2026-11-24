@@ -427,6 +427,7 @@ function NavigationOverlay({ isOpen, onClose }) {
   const b2bLinks = [
     { label: 'Porți și Garduri', href: '/porti-garduri-metalice' },
     { label: 'Balustrade', href: '/balustrade-metalice' },
+    { label: 'Pensiuni & HoReCa', href: '/confectii-metalice-pensiuni-horeca' },
     { label: 'Somiere de Serie', href: '/somiere-metalice-serie' },
     { label: 'Debitare Laser', href: '/debitare-laser-teava-tabla' },
     { label: 'Blog Tehnic', href: '/blog' },
@@ -787,6 +788,7 @@ function SiteFooter() {
           <a href="/debitare-laser-teava-tabla" className={`block ${linkClass}`}>Debitare laser țeavă și tablă</a>
           <a href="/porti-garduri-metalice" className={`block ${linkClass}`}>Porți și garduri metalice</a>
           <a href="/balustrade-metalice" className={`block ${linkClass}`}>Balustrade metalice</a>
+          <a href="/confectii-metalice-pensiuni-horeca" className={`block ${linkClass}`}>Pensiuni și HoReCa</a>
         </div>
         <div className="space-y-2">
           <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-[#c5a059]/90">Resurse</p>
