@@ -55,6 +55,27 @@ const portfolioImages = [
   portofoliu14,
 ];
 
+const CUSTOM_WORK = [
+  ['Porți și garduri', '/porti-garduri-metalice'],
+  ['Balustrade', '/balustrade-metalice'],
+  ['Scări metalice', '/scari-metalice'],
+  ['Pereți despărțitori loft', '/pereti-despartitori-metalici-loft'],
+  ['Copertine și grilaje', '/copertine-grilaje-metalice'],
+  ['Mobilier industrial', '/mobilier-metalic-industrial'],
+  ['Mese și picioare de masă', '/picioare-masa-metalice'],
+  ['Rafturi și etajere', '/mobilier-metalic-industrial'],
+  ['Cadre de pat și somiere', '/somiere-metalice-serie'],
+  ['Firme și panouri debitate laser', '/confectii-metalice-pensiuni-horeca'],
+  ['Grătare și vetre de foc', '/confectii-metalice-pensiuni-horeca'],
+  ['Feronerie custom', '/feronerie-accesorii-metalice'],
+  ['Mânere și balamale', '/feronerie-accesorii-metalice'],
+  ['Piese după desen DXF', '/debitare-laser-teava-tabla'],
+  ['Piese strunjite și frezate CNC', '/prelucrari-metalice-cnc'],
+  ['Structuri metalice', '/confectii-metalice-la-comanda'],
+  ['Obiecte de design și metal art', '/confectii-metalice-la-comanda'],
+  ['Proiectare 3D', '/proiectare-3d-confectii-metalice'],
+];
+
 function HomePage() {
   const { addToCart, requestQuote } = useShop();
   const [portfolioExpanded, setPortfolioExpanded] = useState(false);
@@ -318,6 +339,28 @@ function HomePage() {
                 </h3>
                 <p className="mt-4 text-base leading-8 text-[#cfc5ad]/80">
                   Completează formularul cu detaliile proiectului tău și adaugă schițe sau fotografii. Echipa Kraft te contactează în 24 de ore.
+                </p>
+              </div>
+
+              <div className="mb-16">
+                <p className="mb-5 text-sm uppercase tracking-[0.3em] text-[#c5a059]">Ce putem face la comandă</p>
+                <ul className="flex flex-wrap gap-2.5">
+                  {CUSTOM_WORK.map(([label, href]) => (
+                    <li key={label}>
+                      <a
+                        href={href}
+                        className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-xs uppercase tracking-[0.15em] text-[#d8ccb6] transition hover:border-[#c5a059]/60 hover:text-[#c5a059]"
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 text-sm leading-7 text-[#cfc5ad]/80">
+                  Nu e în listă? Dacă e din metal, probabil îl putem face.{' '}
+                  <a href="/confectii-metalice-la-comanda" className="text-[#c5a059] underline decoration-[#c5a059]/30 underline-offset-4 hover:decoration-[#c5a059]">
+                    Vezi tot ce producem la comandă →
+                  </a>
                 </p>
               </div>
 
