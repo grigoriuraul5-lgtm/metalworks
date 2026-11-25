@@ -17,7 +17,7 @@ export const DEBITARE_FAQ = [
   },
   {
     q: 'Ce materiale prelucrați?',
-    a: 'Oțel carbon (inclusiv S235 și S355), inox AISI 304 și oțel Corten, sub formă de tablă, țeavă rotundă, rectangulară și profile.',
+    a: 'Oțel carbon (OL37, OL52, S235, S355), tablă neagră, decapată, zincată și striată, inox AISI 304 și 316, aluminiu și oțel Corten, sub formă de tablă, țeavă pătrată, dreptunghiulară și rotundă, profile și bară plină. Alama și cuprul le debităm la cerere.',
   },
   {
     q: 'Ce toleranțe obțineți la debitare?',
@@ -26,6 +26,14 @@ export const DEBITARE_FAQ = [
   {
     q: 'Există o cantitate minimă de comandă?',
     a: 'Lucrăm atât prototipuri și piese unicat, cât și serii. Prețul pe bucată scade odată cu volumul, pentru că pregătirea mașinii se face o singură dată pe comandă.',
+  },
+  {
+    q: 'Cât costă debitarea laser pe metru liniar?',
+    a: 'Prețul nu se stabilește doar pe metru liniar: contează materialul, grosimea, lungimea totală de tăiere, numărul de găuri și cantitatea. Trimite fișierul DXF și primești prețul exact în 24 de ore. Detalii în ghidul nostru despre prețul debitării laser.',
+  },
+  {
+    q: 'Faceți și debitare cu plasmă sau waterjet?',
+    a: 'Da. Laserul fiber e potrivit pentru majoritatea pieselor; pentru tablă foarte groasă folosim debitarea cu plasmă, iar debitarea cu jet de apă (waterjet) o facem la cerere, prin parteneri.',
   },
   {
     q: 'Puteți face și sudura și vopsirea?',
@@ -42,7 +50,8 @@ const FORMATS = [
 
 const CAPABILITIES = [
   ['Debitare laser tablă', 'Piese plane, panouri decorative, flanșe, plăci de prindere, repere pentru ansambluri.'],
-  ['Debitare laser țeavă și profile', 'Țeavă rotundă, rectangulară și profile, cu decupaje și îmbinări gata pentru sudură.'],
+  ['Debitare laser țeavă și profil', 'Țeavă rotundă, pătrată și dreptunghiulară și profile, tăiate cu laser fiber CNC, cu decupaje și îmbinări gata pentru sudură.'],
+  ['Debitare plasmă și waterjet', 'Plasmă pentru tablă groasă; debitare cu jet de apă la cerere, prin parteneri.'],
   ['Sudură TIG / MIG', 'Ansambluri sudate, cadre, structuri, cu cordon curat acolo unde rămâne vizibil.'],
   ['Vopsire în câmp electrostatic', 'Finisaj uniform și rezistent, în orice culoare RAL.'],
 ];
@@ -124,7 +133,7 @@ function DebitareContent() {
           <SectionHeading eyebrow="Ce executăm" title="Piesa finită, de la un singur furnizor.">
             Nu muți reperele între ateliere: debitarea, sudura și vopsirea se fac în aceeași fabrică, după același desen aprobat.
           </SectionHeading>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {CAPABILITIES.map(([t, d]) => (
               <div key={t} className="rounded-3xl border border-white/5 bg-white/10 p-8 backdrop-blur-md">
                 <p className="text-sm uppercase tracking-[0.25em] text-[#c5a059]">{t}</p>
@@ -134,7 +143,7 @@ function DebitareContent() {
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
-              ['Materiale', 'Oțel carbon S235 / S355, inox AISI 304, oțel Corten.'],
+              ['Materiale', 'Oțel carbon S235 / S355, inox 304 / 316, aluminiu, Corten, tablă zincată și striată.'],
               ['Toleranțe', 'Confirmate în scris în oferta tehnică, per reper, în funcție de material și grosime.'],
               ['Volume', 'De la prototip și piese unicat până la serii; prețul pe bucată scade cu volumul.'],
             ].map(([t, d]) => (

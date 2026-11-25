@@ -425,6 +425,7 @@ function NavigationOverlay({ isOpen, onClose }) {
     { label: 'Contact', id: 'contact' },
   ];
   const b2bLinks = [
+    { label: 'Confecții la Comandă', href: '/confectii-metalice-la-comanda' },
     { label: 'Porți și Garduri', href: '/porti-garduri-metalice' },
     { label: 'Balustrade', href: '/balustrade-metalice' },
     { label: 'Pensiuni & HoReCa', href: '/confectii-metalice-pensiuni-horeca' },
@@ -781,7 +782,18 @@ function SiteFooter() {
         </div>
       </div>
 
-      <div className="mx-auto mt-8 grid max-w-7xl gap-8 border-t border-white/5 pt-8 text-center sm:grid-cols-3 sm:text-left">
+      <div className="mx-auto mt-8 grid max-w-7xl gap-8 border-t border-white/5 pt-8 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-4">
+        <div className="space-y-2">
+          <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-[#c5a059]/90">Producție la comandă</p>
+          <a href="/confectii-metalice-la-comanda" className={`block ${linkClass}`}>Confecții metalice la comandă</a>
+          <a href="/prelucrari-metalice-cnc" className={`block ${linkClass}`}>Îndoire CNC, sudură, vopsire</a>
+          <a href="/proiectare-3d-confectii-metalice" className={`block ${linkClass}`}>Proiectare 3D și DXF</a>
+          <a href="/feronerie-accesorii-metalice" className={`block ${linkClass}`}>Feronerie și accesorii</a>
+          <a href="/scari-metalice" className={`block ${linkClass}`}>Scări metalice</a>
+          <a href="/mobilier-metalic-industrial" className={`block ${linkClass}`}>Mobilier metalic industrial</a>
+          <a href="/pereti-despartitori-metalici-loft" className={`block ${linkClass}`}>Pereți despărțitori loft</a>
+          <a href="/copertine-grilaje-metalice" className={`block ${linkClass}`}>Copertine și grilaje</a>
+        </div>
         <div className="space-y-2">
           <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-[#c5a059]/90">Servicii B2B</p>
           <a href="/somiere-metalice-serie" className={`block ${linkClass}`}>Cadre metalice somiere — producție de serie</a>

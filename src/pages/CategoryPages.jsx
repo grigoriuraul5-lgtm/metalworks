@@ -30,6 +30,7 @@ export const PICIOARE_FAQ = [
   { q: 'Pot comanda altă înălțime, lățime sau culoare?', a: 'Da. Toate modelele se pot produce la alte dimensiuni și în orice culoare RAL, prin cerere de ofertă personalizată. Răspundem în 24 de ore lucrătoare.' },
   { q: 'În cât timp primesc picioarele de masă?', a: 'Modelele de serie se execută la comandă, de regulă în 10 zile lucrătoare, plus transportul prin curier în toată România.' },
   { q: 'Ce înălțime trebuie să aibă picioarele pentru o masă de dining?', a: 'Înălțimea totală a unei mese de dining este de obicei 72–76 cm. Scazi grosimea blatului și obții înălțimea necesară a piciorului.' },
+  { q: 'Puteți face picioare de masă după un model de pe internet?', a: 'Da. Trimite poza modelului (spider, trapez, cadru A sau alt design) și dimensiunile mesei. Facem desenul, îți confirmăm prețul și producem modelul la dimensiunea ta.' },
   { q: 'Vindeți și către tâmplării sau producători de mobilă?', a: 'Da. Pentru volume recurente oferim prețuri de serie și livrări programate. Cere o ofertă B2B din formularul de pe pagină.' },
 ];
 
@@ -106,7 +107,7 @@ function PicioareContent() {
         crumbs={[{ name: 'Acasă', path: '/' }, { name: 'Picioare de masă metalice', path: PICIOARE_PATH }]}
         eyebrow="Colecția de serie · Prețuri publice"
         title="Picioare de masă metalice, produse în România."
-        lead={`${listedProducts().length} modele pentru mese de dining, birouri, cafenele și HoReCa: U, X, H, V, picior central și modele decorative. Vopsite electrostatic, executate la comandă în 10 zile lucrătoare, livrate prin curier în toată țara.`}
+        lead={`${listedProducts().length} modele pentru mese de dining, birouri, cafenele și HoReCa: cadru U, X, A, H, trapez, picior central, spider (păianjen) și modele debitate laser, din profil metalic în stil industrial. Vopsite electrostatic, executate la comandă în 10 zile lucrătoare, livrate prin curier în toată țara.`}
         primary={{ label: 'Vezi modelele', href: '#modele' }}
         secondary={{ label: 'Cum alegi înălțimea', href: '/blog/picioare-masa-metalice-cum-alegi-profilul' }}
       />
@@ -162,7 +163,7 @@ function Gallery({ images }) {
   );
 }
 
-function CustomCategoryContent({ path, crumb, eyebrow, title, lead, heroImage, gallery, galleryTitle, types, faqs, subject, product, detailsPlaceholder, faqTitle }) {
+export function CustomCategoryContent({ path, crumb, eyebrow, title, lead, heroImage, gallery, galleryTitle, types, typesTitle, faqs, subject, product, detailsPlaceholder, faqTitle, extra }) {
   const { openQuote } = useShop();
   const scrollToForm = (e) => {
     e.preventDefault();
@@ -177,11 +178,11 @@ function CustomCategoryContent({ path, crumb, eyebrow, title, lead, heroImage, g
         title={title}
         lead={lead}
         primary={{ label: 'Cere ofertă gratuită', href: '#cotatie', onClick: scrollToForm }}
-        secondary={{ label: 'Vezi lucrări', href: '#lucrari' }}
+        secondary={gallery?.length ? { label: 'Vezi lucrări', href: '#lucrari' } : undefined}
       />
       <section className={sectionClass}>
         <div className="mx-auto max-w-7xl">
-          <SectionHeading eyebrow="Ce executăm" title={`${crumb}, la comandă.`} />
+          <SectionHeading eyebrow="Ce executăm" title={typesTitle || `${crumb}, la comandă.`} />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {types.map(([t, d]) => (
               <div key={t} className="rounded-3xl border border-white/5 bg-white/10 p-6 backdrop-blur-md">
@@ -192,14 +193,17 @@ function CustomCategoryContent({ path, crumb, eyebrow, title, lead, heroImage, g
           </div>
         </div>
       </section>
-      <section id="lucrari" className={`${sectionClass} scroll-mt-24 bg-[#121212]`}>
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading eyebrow="Din atelier" title={galleryTitle}>
-            Fotografii reale din producție, înainte de vopsire și livrare.
-          </SectionHeading>
-          <Gallery images={gallery} />
-        </div>
-      </section>
+      {extra}
+      {gallery?.length > 0 && (
+        <section id="lucrari" className={`${sectionClass} scroll-mt-24 bg-[#121212]`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionHeading eyebrow="Din atelier" title={galleryTitle}>
+              Fotografii reale din producție, înainte de vopsire și livrare.
+            </SectionHeading>
+            <Gallery images={gallery} />
+          </div>
+        </section>
+      )}
       <section className={sectionClass}>
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
@@ -267,7 +271,7 @@ export function PortiGarduriPage() {
         types={[
           ['Porți batante', 'Una sau două canate, cu portiță asortată, pregătite pentru automatizare.'],
           ['Porți culisante', 'Pentru intrări largi sau spațiu limitat, cu structură dimensionată pe deschidere.'],
-          ['Panouri de gard', 'Modele moderne din profile sau panouri decorative debitate laser.'],
+          ['Panouri de gard', 'Modele moderne din profile sau panouri de gard laser cut, debitate laser după modelul ales.'],
           ['Elemente decorative', 'Modele clasice tip fier forjat, executate pe desenul ales de tine.'],
         ]}
         gallery={[
@@ -302,7 +306,7 @@ export function BalustradePage() {
         types={[
           ['Scări interioare', 'Balustrade cu prindere pe treaptă sau laterală, pe forma exactă a scării.'],
           ['Balcoane și terase', 'Structuri pentru exterior, vopsite electrostatic pentru rezistență la intemperii.'],
-          ['Panouri decorative', 'Umplutură debitată laser, cu model geometric, vegetal sau logo.'],
+          ['Panouri decorative', 'Balustradă debitată laser sau din tablă perforată, cu model geometric, vegetal sau logo; variante din inox sau aluminiu.'],
           ['Proiecte de serie', 'Balustrade identice pentru blocuri, hoteluri și ansambluri rezidențiale.'],
         ]}
         gallery={[

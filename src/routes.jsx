@@ -10,6 +10,7 @@ import {
   PICIOARE_FAQ, PORTI_FAQ, BALUSTRADE_FAQ, listedProducts, HorecaPage, HORECA_PATH, HORECA_FAQ,
 } from './pages/CategoryPages.jsx';
 import { LocalPage, LOCAL_PAGES } from './pages/LocalPages.jsx';
+import { ServicePage, SERVICE_PAGES } from './pages/ServicePages.jsx';
 import { POSTS, getPost } from './content/blog.js';
 import { KRAFT_PRODUCTS } from './data/kraftFeedProducts.js';
 import {
@@ -50,7 +51,7 @@ export function getRoutes() {
       head: {
         title: 'Cadre Metalice Somiere în Serie — 500–1.000 buc / 2 săpt. | KRAFT Metalworks',
         description: SOMIERE_DESC,
-        keywords: [...BASE_KEYWORDS, 'cadre metalice somiere', 'somiere metalice serie', 'producator cadre somiere', 'somiere horeca', 'casete lamele 68x8'],
+        keywords: [...BASE_KEYWORDS, 'cadre metalice somiere', 'somiere metalice serie', 'somiere pat metalice', 'cadru pat metalic', 'structura metalica pat', 'somiera metalica rezistenta', 'somiera cu lamele fag', 'producator cadre somiere', 'somiere horeca', 'casete lamele 68x8'],
         jsonLd: graph(
           organizationSchema(),
           serviceSchema({ name: 'Producție de serie cadre metalice pentru somiere', description: SOMIERE_DESC, path: SOMIERE_PATH, serviceType: 'Producție de serie confecții metalice' }),
@@ -64,9 +65,9 @@ export function getRoutes() {
       path: DEBITARE_PATH,
       Component: DebitarePage,
       head: {
-        title: 'Debitare Laser Țeavă & Tablă Maramureș - Cluj | KRAFT Metalworks',
+        title: 'Debitare Laser Tablă, Țeavă și Profil — Laser Fiber CNC, Maramureș - Cluj | KRAFT Metalworks',
         description: DEBITARE_DESC,
-        keywords: [...BASE_KEYWORDS, 'debitare laser dxf', 'taiere laser metal', 'debitare laser inox', 'debitare laser baia mare', 'debitare laser cluj'],
+        keywords: [...BASE_KEYWORDS, 'debitare laser dxf', 'taiere laser metal', 'debitare laser inox', 'debitare laser baia mare', 'debitare laser cluj', 'debitare laser profil', 'taiere laser fiber', 'taiere laser cnc', 'debitare plasma', 'debitare waterjet', 'pret debitare laser metru liniar', 'furnizor debitare laser', 'servicii de debitare la comanda', 'debitare laser b2b', 'debitari industriale de precizie', 'sheet metal laser cutting'],
         jsonLd: graph(
           organizationSchema(),
           serviceSchema({ name: 'Debitare laser țeavă și tablă', description: DEBITARE_DESC, path: DEBITARE_PATH, serviceType: 'Debitare laser' }),
@@ -82,7 +83,7 @@ export function getRoutes() {
       head: {
         title: 'Picioare de Masă Metalice — Prețuri, Modele U, X, H | KRAFT Metalworks',
         description: `Picioare de masă metalice produse în România: ${listedProducts().length} modele (U, X, H, V, picior central), vopsite electrostatic, prețuri publice de la ${Math.min(...listedProducts().filter((p) => p.basePrice).map((p) => p.basePrice))} RON. Livrare în toată țara.`,
-        keywords: [...BASE_KEYWORDS, 'picioare masa metalice', 'picioare metalice masa', 'picioare masa industriale', 'picior masa metalic x', 'picioare masa u', 'cadru metalic masa'],
+        keywords: [...BASE_KEYWORDS, 'picioare masa metalice', 'picioare metalice masa', 'picioare masa industriale', 'picioare masa stil industrial', 'picior masa metalic x', 'picioare masa u', 'picioare masa trapez', 'picioare masa spider', 'picioare masa paianjen', 'picioare masa debitate laser', 'picioare masa profil metalic', 'cadru metalic masa', 'baze metalice mese'],
         jsonLd: graph(
           organizationSchema(),
           itemListSchema(listedProducts()),
@@ -98,7 +99,7 @@ export function getRoutes() {
       head: {
         title: 'Porți și Garduri Metalice la Comandă — Maramureș, Cluj | KRAFT Metalworks',
         description: 'Porți batante și culisante, portițe și garduri metalice pe dimensiunile tale, cu modele debitate laser și vopsire electrostatică. Producție în Sighetu Marmației, livrare Baia Mare, Cluj și național. Ofertă în 24h.',
-        keywords: [...BASE_KEYWORDS, 'porti metalice', 'garduri metalice', 'porti culisante', 'porti batante', 'gard metalic modern', 'porti metalice baia mare', 'porti metalice cluj', 'porti metalice sighet'],
+        keywords: [...BASE_KEYWORDS, 'porti metalice', 'porti debitate laser', 'garduri metalice', 'panouri gard laser cut', 'porti culisante', 'porti batante', 'gard metalic modern', 'porti metalice baia mare', 'porti metalice cluj', 'porti metalice sighet'],
         jsonLd: graph(
           organizationSchema(),
           serviceSchema({ name: 'Porți și garduri metalice la comandă', description: 'Porți batante, culisante și garduri metalice pe dimensiunile clientului.', path: PORTI_PATH, serviceType: 'Confecții metalice — porți și garduri' }),
@@ -114,7 +115,7 @@ export function getRoutes() {
       head: {
         title: 'Balustrade Metalice Moderne pentru Scări, Balcoane, Terase | KRAFT Metalworks',
         description: 'Balustrade metalice moderne la comandă pentru scări interioare, balcoane și terase: profile metalice sau panouri debitate laser, vopsite electrostatic. Ofertă în 24h, livrare în Maramureș, Cluj și național.',
-        keywords: [...BASE_KEYWORDS, 'balustrade metalice', 'balustrada metalica scara', 'balustrade balcon', 'balustrade moderne', 'balustrade metalice cluj', 'balustrade baia mare'],
+        keywords: [...BASE_KEYWORDS, 'balustrade metalice', 'balustrada metalica scara', 'balustrade balcon', 'balustrade moderne', 'balustrada debitata laser', 'balustrada tabla perforata', 'balustrada inox', 'balustrada aluminiu', 'balustrade metalice cluj', 'balustrade baia mare'],
         jsonLd: graph(
           organizationSchema(),
           serviceSchema({ name: 'Balustrade metalice la comandă', description: 'Balustrade metalice pentru scări, balcoane și terase.', path: BALUSTRADE_PATH, serviceType: 'Confecții metalice — balustrade' }),
@@ -140,6 +141,23 @@ export function getRoutes() {
         priority: '0.8',
       },
     },
+    ...SERVICE_PAGES.map((page) => ({
+      path: page.path,
+      Component: ServicePage,
+      props: { path: page.path },
+      head: {
+        title: page.head.title,
+        description: page.head.description,
+        keywords: [...BASE_KEYWORDS, ...page.head.keywords],
+        jsonLd: graph(
+          organizationSchema(),
+          serviceSchema({ name: page.crumb, description: page.head.description, path: page.path, serviceType: page.head.serviceType }),
+          faqSchema(page.faqs),
+          breadcrumbSchema([{ name: 'Acasă', path: '/' }, { name: page.crumb, path: page.path }]),
+        ),
+        priority: '0.8',
+      },
+    })),
     ...LOCAL_PAGES.map((page) => ({
       path: page.path,
       Component: LocalPage,

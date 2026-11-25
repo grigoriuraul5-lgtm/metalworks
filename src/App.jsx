@@ -158,10 +158,13 @@ function HomePage() {
               </p>
               <nav aria-label="Servicii" className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-[0.25em]">
                 {[
+                  ['Confecții la comandă', '/confectii-metalice-la-comanda'],
                   ['Porți și garduri', '/porti-garduri-metalice'],
                   ['Balustrade', '/balustrade-metalice'],
                   ['Debitare laser', '/debitare-laser-teava-tabla'],
                   ['Somiere de serie', '/somiere-metalice-serie'],
+                  ['Scări metalice', '/scari-metalice'],
+                  ['Mobilier industrial', '/mobilier-metalic-industrial'],
                 ].map(([t, href]) => (
                   <a key={href} href={href} className="text-[#c5a059] underline decoration-[#c5a059]/30 underline-offset-4 transition hover:decoration-[#c5a059]">{t} →</a>
                 ))}

@@ -49,6 +49,12 @@ export function organizationSchema() {
       'Picioare de masă metalice',
       'Porți și garduri metalice',
       'Balustrade metalice',
+      'Scări metalice',
+      'Mobilier metalic industrial',
+      'Îndoire tablă CNC',
+      'Strunjire și frezare CNC',
+      'Proiectare 3D confecții metalice',
+      'Feronerie metalică',
     ],
     contactPoint: [
       {

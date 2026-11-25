@@ -121,7 +121,7 @@ function SomiereContent() {
         crumbs={[{ name: 'Acasă', path: '/' }, { name: 'Somiere de serie', path: SOMIERE_PATH }]}
         eyebrow="B2B · Producție de serie"
         title="Cadre metalice pentru somiere, 500–1.000 de bucăți la fiecare 2 săptămâni."
-        lead="Pentru fabrici de mobilă, hoteluri, pensiuni și rețele HoReCa. Profil perforat la pas de 38 mm pentru casete de 68 × 8 mm și lamele din fag, sudat și vopsit electrostatic, livrat în loturi la date fixe."
+        lead="Somiere de pat metalice și cadre de pat rezistente, pentru fabrici de mobilă, hoteluri, pensiuni și rețele HoReCa. Profil perforat la pas de 38 mm pentru casete de 68 × 8 mm și lamele din fag, sudat și vopsit electrostatic, livrat în loturi la date fixe."
         primary={{ label: 'Cere cotație de serie', href: '#cotatie-serie', onClick: scrollToForm }}
         secondary={{ label: 'Descarcă fișa tehnică', href: SOMIERE_PDF, download: true }}
       />

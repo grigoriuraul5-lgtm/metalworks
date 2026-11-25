@@ -111,6 +111,11 @@ Cotație pentru fișiere tehnice (DXF, DWG, STEP, PDF): în cel mult 24 de ore l
 - [Pensiuni și HoReCa](${SITE_URL}/confectii-metalice-pensiuni-horeca): pachet complet de elemente metalice pentru pensiuni, hoteluri, restaurante.
 - [Confecții metalice Maramureș](${SITE_URL}/confectii-metalice-maramures) · [Cluj-Napoca](${SITE_URL}/confectii-metalice-cluj-napoca)
 
+## Producție la comandă
+- [Confecții metalice la comandă](${SITE_URL}/confectii-metalice-la-comanda): piese unicat, prototipare, serie mică și mare, subansamble industriale, structuri.
+- [Prelucrări CNC](${SITE_URL}/prelucrari-metalice-cnc): îndoire tablă abkant CNC, strunjire și frezare CNC, sudură MIG-MAG/TIG/robotizată, sablare, vopsire electrostatică, zincare prin parteneri.
+- [Scări metalice](${SITE_URL}/scari-metalice) · [Mobilier metalic industrial](${SITE_URL}/mobilier-metalic-industrial) · [Pereți despărțitori loft](${SITE_URL}/pereti-despartitori-metalici-loft) · [Feronerie și accesorii](${SITE_URL}/feronerie-accesorii-metalice) · [Copertine și grilaje](${SITE_URL}/copertine-grilaje-metalice) · [Proiectare 3D și DXF](${SITE_URL}/proiectare-3d-confectii-metalice)
+
 ## Produse de serie
 - [Colecția de picioare de masă](${SITE_URL}/picioare-masa-metalice): ${priced.length} modele, prețuri publice în RON.
 ${priced.map((p) => `- [${p.title}](${SITE_URL}/produs/${p.slug}): ${p.priceOnRequest || !p.basePrice ? 'preț la cerere' : `${p.basePrice} RON`}`).join('\n')}
@@ -144,11 +149,14 @@ ${BRAND_NAME} (${BRAND_ALT_NAMES.join(', ')}) este un brand românesc de confec�
 - Program: ${contact.schedule}
 ${company.legalName ? `- Firmă: ${company.legalName}${company.cui ? `, CUI ${company.cui}` : ''}${company.regCom ? `, ${company.regCom}` : ''}\n` : ''}
 ## Capabilități tehnice
-- Debitare laser de tablă și țeavă (rotundă, rectangulară, profile)
-- Sudură TIG și MIG
-- Vopsire în câmp electrostatic, orice culoare RAL
+- Debitare laser fiber CNC de tablă, țeavă și profil; debitare plasmă; waterjet la cerere prin parteneri
+- Îndoire tablă pe abkant CNC, strunjire și frezare CNC, perforare și embosare tablă
+- Sudură MIG-MAG, TIG/WIG, sudură robotizată pentru serii, sudură inox și aluminiu
+- Sablare, vopsire în câmp electrostatic (pulbere), periere și lustruire inox; galvanizare și zincare prin parteneri
+- Proiectare 3D, desene de execuție CAD și fișiere DXF
 - Asamblare și livrare de piese finite
-- Materiale: oțel carbon S235 / S355, inox AISI 304, oțel Corten
+- Materiale: oțel carbon OL37/OL52/S235/S355, tablă neagră, decapată, zincată, striată, inox AISI 304/316, aluminiu, oțel Corten; alamă și cupru la cerere
+- Semifabricate: țeavă pătrată, dreptunghiulară, rotundă, profile HEA/HEB/IPE/UNP, cornier, platbandă, bară plină
 - Fișiere acceptate: DXF, DWG, STEP/STP, PDF cotat, schițe foto
 - Toleranțele se confirmă în scris în oferta tehnică, per reper, în funcție de material și grosime
 - Volume: de la prototip la serii mari
