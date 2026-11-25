@@ -24,11 +24,11 @@ import imgPicioare from '../assets/portofoliu/portofoliu-1.jpg';
 
 const MATERIALS = [
   ['Oțel carbon', 'OL37, OL52, S235, S355 — tablă neagră HR/CR, tablă decapată, oțel de structură'],
-  ['Inox', 'AISI 304 și AISI 316, finisaj satinat, mat sau oglindă'],
-  ['Aluminiu', 'AlMg3 și alte aliaje uzuale, tablă și profile'],
+  ['Inox', 'AISI 304, finisaj satinat, mat sau oglindă. Ai nevoie de AISI 316 pentru exterior agresiv? Întreabă-ne.'],
+  ['Aluminiu', 'Lucrezi cu aluminiu (AlMg3, AlSi)? Spune-ne aliajul și grosimea și îți confirmăm în 24h.'],
   ['Oțel Corten', 'oțel autoprotejat cu patină naturală, pentru exterior'],
   ['Tablă zincată și striată', 'tablă zincată, tablă striată / lăcrimată pentru trepte și platforme'],
-  ['Neferoase', 'alamă, cupru și bronz, la cerere, pentru elemente decorative'],
+  ['Neferoase', 'Alamă, cupru sau bronz pentru elemente decorative? Trimite-ne proiectul și verificăm ce se poate.'],
 ];
 
 const PROFILES = [
@@ -91,7 +91,7 @@ export const SERVICE_PAGES = [
       { q: 'Lucrați și serie mică, nu doar serie mare?', a: 'Da. Facem piese unicat, prototipuri, serie mică și serie mare. Prețul pe bucată scade odată cu volumul, pentru că pregătirea producției se face o singură dată.' },
       { q: 'Cum primesc un deviz pentru confecții metalice?', a: 'Trimite schița, desenul CAD, fișierul DXF sau câteva poze cu dimensiuni. Primești devizul cu preț, termen și materiale în cel mult 24 de ore lucrătoare.' },
       { q: 'Unde livrați?', a: 'Producem în Sighetu Marmației, Maramureș, și livrăm în Baia Mare, Cluj-Napoca, în toată Transilvania și în restul României.' },
-      { q: 'Do you work with international clients?', a: 'Yes. KRAFT Metalworks offers custom metal fabrication and sheet metal laser cutting from Romania for clients across the EU. Send your DXF, DWG or STEP files and we reply with a quote within 24 working hours.' },
+      { q: 'Do you work with clients outside Romania?', a: 'KRAFT Metalworks does custom metal fabrication and sheet metal laser cutting in Romania. Have a project abroad? Send your DXF, DWG or STEP files and we will tell you within 24 working hours whether and how we can deliver it.' },
     ],
     faqTitle: 'Despre confecțiile metalice la comandă.',
     subject: 'Cerere deviz confecții metalice — KRAFT Metalworks',
@@ -109,17 +109,17 @@ export const SERVICE_PAGES = [
     crumb: 'Prelucrări metalice CNC',
     eyebrow: 'Procese tehnologice de producție',
     title: 'Îndoire CNC, uzinare, sudură și finisare, sub același acoperiș.',
-    lead: 'După debitare, piesa trece prin îndoire pe abkant CNC, uzinare mecanică, sudură MIG-MAG sau TIG, sablare și vopsire în câmp electrostatic. Pentru zincare termică sau electrolitică și debitare waterjet lucrăm cu parteneri verificați, ca să primești piesa finită de la un singur furnizor.',
+    lead: 'După debitare, piesa trece prin îndoire pe abkant CNC, uzinare mecanică, sudură MIG-MAG sau TIG, sablare și vopsire în câmp electrostatic. Ai nevoie de zincare, galvanizare sau alt proces special? Spune-ne de la început și îți spunem în 24h ce variantă avem pentru proiectul tău.',
     heroImage: imgCnc,
     typesTitle: 'Ce operații executăm.',
     types: [
       ['Îndoire tablă CNC', 'Bituire și îndoire pe abkant CNC, cu unghiuri repetabile de la prima piesă la ultima.'],
       ['Uzinare mecanică', 'Strunjire CNC și frezare CNC pentru bucșe, axe, flanșe și piese de precizie.'],
-      ['Sudură', 'Sudură MIG-MAG pentru structuri, sudură TIG / WIG pentru inox și aluminiu, sudură robotizată pentru serii, cu cordon polizat fin unde rămâne vizibil.'],
+      ['Sudură', 'Sudură MIG-MAG pentru structuri și TIG / WIG pentru inox, cu cordon polizat fin unde rămâne vizibil. Ai o serie mare? Întreabă-ne despre sudura robotizată.'],
       ['Finisare', 'Sablare metalică, vopsire în câmp electrostatic (vopsire pulbere), periere și satinare inox, lustruire.'],
-      ['Perforare și embosare', 'Tablă perforată cu model custom și embosare pentru panouri decorative și fațade.'],
-      ['Protecție anticorozivă', 'Galvanizare la cald, zincare termică sau electrolitică prin parteneri, plus vopsire în strat gros pentru exterior.'],
-      ['Debitare', 'Debitare laser fiber pentru tablă, țeavă și profil, debitare plasmă pentru tablă groasă, waterjet la cerere.'],
+      ['Perforare tablă', 'Tablă perforată cu model custom pentru panouri decorative și fațade. Te interesează și embosarea? Întreabă-ne.'],
+      ['Protecție anticorozivă', 'Vopsire electrostatică pentru exterior. Ai nevoie de piese galvanizate la cald sau zincate? Spune-ne și verificăm varianta potrivită.'],
+      ['Debitare', 'Debitare laser fiber pentru tablă, țeavă și profil. Tablă foarte groasă sau material sensibil la căldură? Întreabă-ne despre plasmă sau waterjet.'],
       ['Asamblare', 'Montaj de subansamble, feronerie și verificare dimensională înainte de livrare.'],
     ],
     gallery: [
@@ -131,8 +131,8 @@ export const SERVICE_PAGES = [
     galleryTitle: 'Procese din fabrică.',
     faqs: [
       { q: 'Faceți îndoire de tablă pe abkant CNC?', a: 'Da. Îndoim tablă pe abkant CNC după desenul tău, inclusiv piese debitate laser care trebuie apoi îndoite și sudate.' },
-      { q: 'Ce tip de sudură folosiți?', a: 'Sudură MIG-MAG pentru structuri din oțel, sudură TIG / WIG pentru inox și aluminiu, iar pentru serii mari sudură robotizată. Acolo unde sudura rămâne la vedere, o polizăm fin.' },
-      { q: 'Puteți face și zincare sau galvanizare?', a: 'Da, prin parteneri: galvanizare la cald, zincare termică sau electrolitică. Organizăm noi transportul, iar piesa vine înapoi gata de livrare.' },
+      { q: 'Ce tip de sudură folosiți?', a: 'Sudură MIG-MAG pentru structuri din oțel și TIG / WIG pentru inox. Acolo unde sudura rămâne la vedere, o polizăm fin. Pentru serii mari sau aluminiu, spune-ne volumul și îți confirmăm soluția.' },
+      { q: 'Puteți face și zincare sau galvanizare?', a: 'Spune-ne de la început că ai nevoie de piese zincate sau galvanizate la cald. Verificăm varianta disponibilă pentru dimensiunile și cantitatea ta și ți-o confirmăm în ofertă.' },
       { q: 'Care e diferența dintre vopsirea electrostatică și vopsirea clasică?', a: 'Vopsirea în câmp electrostatic folosește pulbere care se polimerizează în cuptor. Stratul e mai uniform și mai rezistent la zgârieturi decât vopseaua lichidă, potrivit și pentru exterior.' },
     ],
     faqTitle: 'Despre procesele de producție.',
@@ -141,7 +141,7 @@ export const SERVICE_PAGES = [
     detailsPlaceholder: 'Ex: 200 piese din tablă 3 mm, debitare + îndoire + vopsire RAL 9005, desen atașat...',
     head: {
       title: 'Îndoire Tablă CNC, Strunjire, Frezare, Sudură MIG-TIG, Vopsire | KRAFT Metalworks',
-      description: 'Prelucrări metalice CNC: îndoire tablă pe abkant CNC, strunjire și frezare CNC, sudură MIG-MAG, TIG și robotizată, sablare, vopsire în câmp electrostatic, zincare prin parteneri. Ofertă în 24h.',
+      description: 'Prelucrări metalice CNC: îndoire tablă pe abkant CNC, strunjire și frezare CNC, sudură MIG-MAG și TIG, sablare, vopsire în câmp electrostatic. Ai nevoie de zincare sau sudură robotizată? Întreabă-ne. Ofertă în 24h.',
       keywords: ['indoire tabla cnc', 'abkant cnc', 'bituire tabla', 'strunjire cnc', 'frezare cnc', 'uzinare mecanica', 'sudura mig mag', 'sudura tig', 'sudura robotizata', 'sudura aluminiu inox', 'vopsire in camp electrostatic', 'vopsire pulbere', 'sablare metalica', 'galvanizare la cald', 'zincare termica', 'perforare tabla', 'embosare metalica', 'periere inox'],
       serviceType: 'Prelucrări metalice CNC',
     },
@@ -167,7 +167,7 @@ export const SERVICE_PAGES = [
     faqs: [
       { q: 'Faceți scări metalice pe măsură?', a: 'Da. Fiecare scară se proiectează pe măsurătorile golului, ale înălțimii între niveluri și pe tipul treptelor dorite. Primești desenul spre aprobare înainte de producție.' },
       { q: 'Ce trepte se pot monta pe structura metalică?', a: 'Trepte din lemn masiv, din tablă striată, din tablă perforată sau din sticlă, în funcție de stil și de utilizare.' },
-      { q: 'Faceți și scări exterioare?', a: 'Da. Pentru exterior folosim protecție anticorozivă potrivită: vopsire electrostatică sau zincare prin parteneri.' },
+      { q: 'Faceți și scări exterioare?', a: 'Da. Pentru exterior folosim vopsire electrostatică potrivită. Dacă vrei structura zincată, spune-ne și verificăm varianta.' },
     ],
     faqTitle: 'Despre scările metalice.',
     subject: 'Cerere ofertă scară metalică — KRAFT Metalworks',
@@ -211,7 +211,7 @@ export const SERVICE_PAGES = [
     galleryTitle: 'Mobilier metalic din atelier.',
     faqs: [
       { q: 'Faceți mobilier metalic după designul meu?', a: 'Da. Trimite o schiță, o poză de inspirație sau dimensiunile, iar noi facem proiectul 3D și execuția.' },
-      { q: 'Combinați metalul cu lemnul?', a: 'Da. Producem structura metalică și o putem livra cu blat sau polițe din lemn masiv, ori doar structura, pentru tâmplarul tău.' },
+      { q: 'Combinați metalul cu lemnul?', a: 'Producem structura metalică gata pentru blat sau polițe din lemn. Vrei și lemnul de la noi? Întreabă-ne și îți spunem ce variante avem; altfel livrăm doar structura, pentru tâmplarul tău.' },
       { q: 'Lucrați pentru producători de mobilă?', a: 'Da. Pentru producătorii de mobilă facem cadre și componente metalice în serie, cu livrări programate.' },
     ],
     faqTitle: 'Despre mobilierul metalic.',
@@ -230,7 +230,7 @@ export const SERVICE_PAGES = [
     crumb: 'Pereți despărțitori loft',
     eyebrow: 'Loft partitions · Uși cu profil metalic',
     title: 'Pereți despărțitori metalici și uși loft cu sticlă.',
-    lead: 'Pereți despărțitori în stil loft și uși cu profil metalic subțire și sticlă, pentru apartamente, birouri și spații comerciale. Rama metalică o producem noi, la milimetru; sticla o montăm împreună cu partenerii noștri.',
+    lead: 'Pereți despărțitori în stil loft și uși cu profil metalic subțire și sticlă, pentru apartamente, birouri și spații comerciale. Rama metalică o producem noi, la milimetru; pentru sticlă și montaj îți spunem în ofertă ce variante ai.',
     heroImage: imgPanou,
     types: [
       ['Pereți despărțitori', 'Compartimentare cu ramă metalică și sticlă, care păstrează lumina în toată casa.'],
@@ -239,8 +239,8 @@ export const SERVICE_PAGES = [
       ['Finisaj', 'Negru mat clasic sau orice culoare RAL, cu feronerie asortată.'],
     ],
     faqs: [
-      { q: 'Faceți pereți loft pe măsură?', a: 'Da. Măsurăm golul, facem desenul ramei și producem structura metalică pe dimensiunile exacte, iar sticla se montează în ramă.' },
-      { q: 'Ce sticlă se poate folosi?', a: 'Sticlă securizată clară, mată, fumurie sau reeded (cu striații), în funcție de cât de multă intimitate vrei.' },
+      { q: 'Faceți pereți loft pe măsură?', a: 'Da. Pe baza dimensiunilor golului facem desenul ramei și producem structura metalică pe dimensiunile exacte. Varianta de sticlă și montajul ți le confirmăm în ofertă.' },
+      { q: 'Ce sticlă se poate folosi?', a: 'De obicei se folosește sticlă securizată clară, mată, fumurie sau reeded (cu striații). Spune-ne ce îți place și îți confirmăm în ofertă ce variantă putem livra.' },
       { q: 'Se pot face și uși glisante?', a: 'Da, uși batante sau glisante, cu feronerie potrivită greutății ușii.' },
     ],
     faqTitle: 'Despre pereții loft.',
@@ -275,7 +275,7 @@ export const SERVICE_PAGES = [
     faqs: [
       { q: 'Faceți feronerie custom pentru producători de mobilă?', a: 'Da. Producem componente metalice pentru mobilier în serie, după desenul vostru: plăcuțe, colțare, suporturi, baze și mânere.' },
       { q: 'Care e cantitatea minimă?', a: 'Lucrăm de la câteva bucăți pentru prototip până la serii de mii de bucăți. Prețul pe bucată scade odată cu volumul.' },
-      { q: 'În ce finisaje se pot livra?', a: 'Brut, vopsit electrostatic în orice culoare RAL, zincat prin parteneri sau din inox periat.' },
+      { q: 'În ce finisaje se pot livra?', a: 'Brut, vopsit electrostatic în orice culoare RAL sau din inox periat. Ai nevoie de piese zincate? Întreabă-ne.' },
     ],
     faqTitle: 'Despre feronerie și accesorii.',
     subject: 'Cerere ofertă feronerie / accesorii metalice — KRAFT Metalworks',
@@ -308,9 +308,9 @@ export const SERVICE_PAGES = [
     ],
     galleryTitle: 'Elemente metalice din atelier.',
     faqs: [
-      { q: 'Ce acoperire poate avea copertina?', a: 'Sticlă securizată, policarbonat compact sau tablă, în funcție de lumina dorită și de buget.' },
+      { q: 'Ce acoperire poate avea copertina?', a: 'Structura metalică o producem noi. Pentru acoperire (sticlă, policarbonat sau tablă) spune-ne ce preferi și îți confirmăm în ofertă variantele disponibile.' },
       { q: 'Grilajele pot fi și decorative?', a: 'Da. Le producem cu model debitat laser sau cu elemente tip fier forjat, ca să se potrivească cu poarta și gardul casei.' },
-      { q: 'Cum se protejează la exterior?', a: 'Prin vopsire în câmp electrostatic sau zincare prin parteneri, pentru rezistență la intemperii.' },
+      { q: 'Cum se protejează la exterior?', a: 'Prin vopsire în câmp electrostatic, potrivită pentru exterior. Dacă vrei și zincare, spune-ne și verificăm varianta.' },
     ],
     faqTitle: 'Despre copertine și grilaje.',
     subject: 'Cerere ofertă copertină / grilaje — KRAFT Metalworks',
@@ -339,7 +339,7 @@ export const SERVICE_PAGES = [
     faqs: [
       { q: 'Am doar o schiță de mână. E suficient?', a: 'Da. O schiță cu dimensiunile principale și o poză a locului de montaj sunt suficiente ca să pornim proiectul 3D.' },
       { q: 'Primesc fișierele DXF?', a: 'Da. Fișierele de execuție sunt pregătite pentru debitare laser și pot fi folosite la producția în fabrica noastră.' },
-      { q: 'Proiectul se plătește separat?', a: 'Pentru lucrările comandate la noi, proiectarea face parte din ofertă. Pentru proiecte livrate doar ca fișiere, primești un preț separat.' },
+      { q: 'Proiectul se plătește separat?', a: 'Îți spunem din prima ofertă dacă proiectarea e inclusă în lucrare sau are un preț separat, înainte să începem.' },
     ],
     faqTitle: 'Despre proiectare.',
     subject: 'Cerere proiectare 3D — KRAFT Metalworks',

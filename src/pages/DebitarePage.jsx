@@ -17,7 +17,7 @@ export const DEBITARE_FAQ = [
   },
   {
     q: 'Ce materiale prelucrați?',
-    a: 'Oțel carbon (OL37, OL52, S235, S355), tablă neagră, decapată, zincată și striată, inox AISI 304 și 316, aluminiu și oțel Corten, sub formă de tablă, țeavă pătrată, dreptunghiulară și rotundă, profile și bară plină. Alama și cuprul le debităm la cerere.',
+    a: 'Oțel carbon (OL37, OL52, S235, S355), tablă neagră, decapată, zincată și striată, inox AISI 304 și oțel Corten, sub formă de tablă, țeavă pătrată, dreptunghiulară și rotundă, profile și bară plină. Lucrezi cu aluminiu, inox 316, alamă sau cupru? Trimite fișierul și îți confirmăm în 24h.',
   },
   {
     q: 'Ce toleranțe obțineți la debitare?',
@@ -33,7 +33,7 @@ export const DEBITARE_FAQ = [
   },
   {
     q: 'Faceți și debitare cu plasmă sau waterjet?',
-    a: 'Da. Laserul fiber e potrivit pentru majoritatea pieselor; pentru tablă foarte groasă folosim debitarea cu plasmă, iar debitarea cu jet de apă (waterjet) o facem la cerere, prin parteneri.',
+    a: 'Laserul fiber e potrivit pentru majoritatea pieselor. Ai tablă foarte groasă sau un material care nu suportă căldura? Spune-ne grosimea și materialul și îți confirmăm dacă și cum îl putem debita cu plasmă sau waterjet.',
   },
   {
     q: 'Puteți face și sudura și vopsirea?',
@@ -51,7 +51,7 @@ const FORMATS = [
 const CAPABILITIES = [
   ['Debitare laser tablă', 'Piese plane, panouri decorative, flanșe, plăci de prindere, repere pentru ansambluri.'],
   ['Debitare laser țeavă și profil', 'Țeavă rotundă, pătrată și dreptunghiulară și profile, tăiate cu laser fiber CNC, cu decupaje și îmbinări gata pentru sudură.'],
-  ['Debitare plasmă și waterjet', 'Plasmă pentru tablă groasă; debitare cu jet de apă la cerere, prin parteneri.'],
+  ['Plasmă sau waterjet?', 'Ai tablă foarte groasă sau un material sensibil la căldură? Întreabă-ne și îți spunem în 24h ce soluție avem.'],
   ['Sudură TIG / MIG', 'Ansambluri sudate, cadre, structuri, cu cordon curat acolo unde rămâne vizibil.'],
   ['Vopsire în câmp electrostatic', 'Finisaj uniform și rezistent, în orice culoare RAL.'],
 ];
@@ -143,7 +143,7 @@ function DebitareContent() {
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
-              ['Materiale', 'Oțel carbon S235 / S355, inox 304 / 316, aluminiu, Corten, tablă zincată și striată.'],
+              ['Materiale', 'Oțel carbon S235 / S355, inox 304, Corten, tablă zincată și striată. Alt material? Întreabă-ne.'],
               ['Toleranțe', 'Confirmate în scris în oferta tehnică, per reper, în funcție de material și grosime.'],
               ['Volume', 'De la prototip și piese unicat până la serii; prețul pe bucată scade cu volumul.'],
             ].map(([t, d]) => (

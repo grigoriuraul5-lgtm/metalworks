@@ -113,7 +113,7 @@ Cotație pentru fișiere tehnice (DXF, DWG, STEP, PDF): în cel mult 24 de ore l
 
 ## Producție la comandă
 - [Confecții metalice la comandă](${SITE_URL}/confectii-metalice-la-comanda): piese unicat, prototipare, serie mică și mare, subansamble industriale, structuri.
-- [Prelucrări CNC](${SITE_URL}/prelucrari-metalice-cnc): îndoire tablă abkant CNC, strunjire și frezare CNC, sudură MIG-MAG/TIG/robotizată, sablare, vopsire electrostatică, zincare prin parteneri.
+- [Prelucrări CNC](${SITE_URL}/prelucrari-metalice-cnc): îndoire tablă abkant CNC, strunjire și frezare CNC, sudură MIG-MAG/TIG, sablare, vopsire electrostatică; zincare și alte procese speciale la cerere.
 - [Scări metalice](${SITE_URL}/scari-metalice) · [Mobilier metalic industrial](${SITE_URL}/mobilier-metalic-industrial) · [Pereți despărțitori loft](${SITE_URL}/pereti-despartitori-metalici-loft) · [Feronerie și accesorii](${SITE_URL}/feronerie-accesorii-metalice) · [Copertine și grilaje](${SITE_URL}/copertine-grilaje-metalice) · [Proiectare 3D și DXF](${SITE_URL}/proiectare-3d-confectii-metalice)
 
 ## Produse de serie
@@ -149,13 +149,13 @@ ${BRAND_NAME} (${BRAND_ALT_NAMES.join(', ')}) este un brand românesc de confec�
 - Program: ${contact.schedule}
 ${company.legalName ? `- Firmă: ${company.legalName}${company.cui ? `, CUI ${company.cui}` : ''}${company.regCom ? `, ${company.regCom}` : ''}\n` : ''}
 ## Capabilități tehnice
-- Debitare laser fiber CNC de tablă, țeavă și profil; debitare plasmă; waterjet la cerere prin parteneri
-- Îndoire tablă pe abkant CNC, strunjire și frezare CNC, perforare și embosare tablă
-- Sudură MIG-MAG, TIG/WIG, sudură robotizată pentru serii, sudură inox și aluminiu
-- Sablare, vopsire în câmp electrostatic (pulbere), periere și lustruire inox; galvanizare și zincare prin parteneri
+- Debitare laser fiber CNC de tablă, țeavă și profil; plasmă sau waterjet: la cerere, după verificarea fezabilității
+- Îndoire tablă pe abkant CNC, strunjire și frezare CNC, perforare tablă
+- Sudură MIG-MAG și TIG/WIG, inclusiv inox; sudură robotizată și aluminiu: la cerere
+- Sablare, vopsire în câmp electrostatic (pulbere), periere și lustruire inox; galvanizare și zincare: la cerere
 - Proiectare 3D, desene de execuție CAD și fișiere DXF
 - Asamblare și livrare de piese finite
-- Materiale: oțel carbon OL37/OL52/S235/S355, tablă neagră, decapată, zincată, striată, inox AISI 304/316, aluminiu, oțel Corten; alamă și cupru la cerere
+- Materiale: oțel carbon OL37/OL52/S235/S355, tablă neagră, decapată, zincată, striată, inox AISI 304, oțel Corten; inox 316, aluminiu, alamă și cupru: la cerere, după verificare
 - Semifabricate: țeavă pătrată, dreptunghiulară, rotundă, profile HEA/HEB/IPE/UNP, cornier, platbandă, bară plină
 - Fișiere acceptate: DXF, DWG, STEP/STP, PDF cotat, schițe foto
 - Toleranțele se confirmă în scris în oferta tehnică, per reper, în funcție de material și grosime

@@ -193,6 +193,16 @@ export function CustomCategoryContent({ path, crumb, eyebrow, title, lead, heroI
           </div>
         </div>
       </section>
+      <section className="px-6 pb-4 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 rounded-3xl border border-[#c5a059]/20 bg-[#c5a059]/5 p-6 sm:flex-row sm:items-center">
+          <p className="text-sm leading-6 text-[#cfc5ad]">
+            <span className="font-semibold text-[#f8f1e5]">Nu găsești exact ce cauți?</span> Spune-ne piesa, materialul sau procesul de care ai nevoie. Verificăm cu fabrica și îți răspundem în 24 de ore.
+          </p>
+          <a href="#cotatie" onClick={scrollToForm} className="shrink-0 rounded-full border border-[#c5a059]/60 px-6 py-3 text-xs uppercase tracking-[0.25em] text-[#c5a059] transition hover:bg-[#c5a059]/10">
+            Întreabă-ne
+          </a>
+        </div>
+      </section>
       {extra}
       {gallery?.length > 0 && (
         <section id="lucrari" className={`${sectionClass} scroll-mt-24 bg-[#121212]`}>
@@ -306,7 +316,7 @@ export function BalustradePage() {
         types={[
           ['Scări interioare', 'Balustrade cu prindere pe treaptă sau laterală, pe forma exactă a scării.'],
           ['Balcoane și terase', 'Structuri pentru exterior, vopsite electrostatic pentru rezistență la intemperii.'],
-          ['Panouri decorative', 'Balustradă debitată laser sau din tablă perforată, cu model geometric, vegetal sau logo; variante din inox sau aluminiu.'],
+          ['Panouri decorative', 'Balustradă debitată laser sau din tablă perforată, cu model geometric, vegetal sau logo; variante din inox; aluminiu la cerere.'],
           ['Proiecte de serie', 'Balustrade identice pentru blocuri, hoteluri și ansambluri rezidențiale.'],
         ]}
         gallery={[

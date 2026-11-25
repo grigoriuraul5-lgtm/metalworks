@@ -68,7 +68,7 @@ function TermsContent() {
 
       <h2>6. Garanție și conformitate</h2>
       <p>
-        Răspundem pentru conformitatea produselor conform legii (Legea 449/2003 și OUG 140/2021). Dacă produsul are un defect de
+        Răspundem pentru conformitatea produselor conform legii (OUG 140/2021 privind vânzarea de bunuri). Dacă produsul are un defect de
         fabricație sau nu corespunde comenzii confirmate, îl reparăm, îl înlocuim sau îți rambursăm suma, fără costuri
         suplimentare pentru tine.
       </p>
