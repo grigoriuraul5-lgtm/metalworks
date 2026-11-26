@@ -57,5 +57,11 @@ async function deliver(formEl, extraFields) {
     body: fallback,
   });
   if (!response.ok) throw new Error(`Trimitere eșuată (${response.status})`);
+  // FormSubmit răspunde 200 și când formularul nu e activat sau cererea e respinsă
+  // ({ success: "false" }). Fără verificarea asta, clientul vedea „trimis” iar emailul se pierdea.
+  const data = await response.json().catch(() => ({}));
+  if (String(data.success) !== 'true') {
+    throw new Error(data.message || 'Trimiterea nu a fost confirmată');
+  }
   return { ok: true, via: 'formsubmit' };
 }

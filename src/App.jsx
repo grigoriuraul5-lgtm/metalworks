@@ -3,7 +3,7 @@ import { ArrowRight, Shield, Sparkles, Mail, ChevronRight, ChevronLeft } from 'l
 import heroBG from './assets/imagine hero 1.jpeg';
 import heroBGMobile from './assets/imagine hero 1 mobile.jpeg';
 import logo1 from './assets/logo 1.png';
-import proiectArhitectural from './assets/proiect_arhitectural.jpg';
+import proiectArhitectural from './assets/portofoliu-real/lucrare-reala-05.jpeg';
 import portofoliu1 from './assets/portofoliu/portofoliu-1.jpg';
 import portofoliu2 from './assets/portofoliu/portofoliu-2.jpg';
 import portofoliu3 from './assets/portofoliu/portofoliu-3.jpg';
@@ -237,7 +237,7 @@ function HomePage() {
                 <div className="relative overflow-hidden rounded-[2rem] border border-white/5 shadow-luxe bg-[#0a0a0a]">
                   <img
                     src={proiectArhitectural}
-                    alt="Proiect arhitectural Kraft Metalworks"
+                    alt="Debitare laser în fabrica partener KRAFT Metalworks"
                     className="w-full h-auto block max-h-[85vh] object-contain"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/25 to-black/65" />
@@ -302,12 +302,14 @@ function HomePage() {
                       Tip Proiect
                       <select name="tip_proiect" className="mt-2 w-full appearance-none rounded-3xl border border-white/10 bg-[#0f0f0f] px-4 py-3.5 text-sm text-[#f8f1e5] outline-none transition focus:border-[#c5a059] focus:ring-2 focus:ring-[#c5a059]/20">
                         <option value="">Selectează tipul proiectului</option>
-                        <option>Balustradă / Scară Arhitecturală</option>
-                        <option>Poartă / Gard Monumental</option>
-                        <option>Structură Exterioară / Pergolă</option>
-                        <option>Compartimentare / Design Interior</option>
-                        <option>Fațadă / Placare Exterioară</option>
-                        <option>Proiect Custom Complex</option>
+                        <option>Picioare / baze de masă</option>
+                        <option>Mobilier metalic industrial</option>
+                        <option>Feronerie și accesorii mobilier</option>
+                        <option>Obiect de design din metal</option>
+                        <option>Perete despărțitor loft</option>
+                        <option>Serie pentru producători</option>
+                        <option>Scară, balustradă, poartă</option>
+                        <option>Alt proiect custom</option>
                       </select>
                     </label>
                     <label className="block text-xs uppercase tracking-[0.18em] text-[#cfc5ad]">
@@ -361,7 +363,7 @@ function HomePage() {
                 <p className="mt-4 text-sm leading-7 text-[#cfc5ad]">Producem în aceeași fabrică din Maramureș care execută de peste 30 de ani structuri metalice pentru reședințe, spații comerciale și industrie.</p>
               </div>
               <div className="rounded-3xl border border-white/5 bg-white/10 p-8 backdrop-blur-md">
-                <p className="text-sm uppercase tracking-[0.25em] text-[#c5a059]">Toleranțe stricte</p>
+                <p className="text-sm uppercase tracking-[0.25em] text-[#c5a059]">Verificat înainte de livrare</p>
                 <p className="mt-4 text-sm leading-7 text-[#cfc5ad]">Fiecare piesă este verificată dimensional și la finisaj înainte de livrare, după desenul de execuție aprobat de tine.</p>
               </div>
             </div>
