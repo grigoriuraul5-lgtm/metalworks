@@ -806,7 +806,7 @@ export const products = [
     material: 'Oțel Corten A · tablă 3 mm perforată',
     finish: 'Patină naturală Corten',
     detail: 'Sistem modular de placare exterioară cu tablă Corten perforată, fixată pe structură secundară din profile galvanizate. Reduce sarcina termică și creează identitate vizuală.',
-    specs: ['Module 600×1200 mm', 'Structură galvanizată inclusă', 'Garanție 30 ani exterior'],
+    specs: ['Module 600×1200 mm', 'Structură de prindere inclusă', 'Pentru exterior'],
   },
 
   // ─── Industrial Art ──────────────────────────────────────────────────────────
@@ -886,9 +886,9 @@ export const products = [
     image: productImg3,
     category: 'Urban Facade',
     material: 'Oțel zincat S235 + vopsire pulbere',
-    finish: 'Zincare 85µm + RAL custom',
+    finish: 'Vopsire electrostatică RAL',
     detail: 'Parapet structural pentru balcoane și terase, cu umplutură din tablă expandată sau lamele orizontale. Conform normelor EN 1337. Proiectat pentru longevitate maximă.',
-    specs: ['Înălțime: 100–120 cm', 'Zincare 85µm garantat', 'Certificare EN 1337'],
+    specs: ['Înălțime: 100–120 cm', 'Zincare? Întreabă-ne', 'Detalii tehnice în ofertă'],
   },
 ];
 
