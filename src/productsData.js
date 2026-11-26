@@ -821,7 +821,7 @@ export const products = [
     material: 'Oțel carbon S355 · tablă 6 mm decupată laser',
     finish: 'Ulei de protecție + lac mat',
     detail: 'Compoziție abstractă tăiată laser din tablă groasă, cu relief creat prin îndoiri la presă. Fiecare piesă este unică. Livrată gata de montaj cu sistem de prindere invizibil.',
-    specs: ['Dimensiune: 800×600 mm', 'Sistem prindere inclus', 'Certificat de autenticitate'],
+    specs: ['Dimensiune: 800×600 mm', 'Sistem prindere inclus', 'Piesă unicat'],
   },
   {
     id: 'IA-02',
@@ -887,7 +887,7 @@ export const products = [
     category: 'Urban Facade',
     material: 'Oțel zincat S235 + vopsire pulbere',
     finish: 'Vopsire electrostatică RAL',
-    detail: 'Parapet structural pentru balcoane și terase, cu umplutură din tablă expandată sau lamele orizontale. Conform normelor EN 1337. Proiectat pentru longevitate maximă.',
+    detail: 'Parapet structural pentru balcoane și terase, cu umplutură din tablă expandată sau lamele orizontale. Proiectat pe dimensiunile balconului.',
     specs: ['Înălțime: 100–120 cm', 'Zincare? Întreabă-ne', 'Detalii tehnice în ofertă'],
   },
 ];
