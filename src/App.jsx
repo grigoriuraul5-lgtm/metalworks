@@ -56,34 +56,34 @@ const portfolioImages = [
 ];
 
 const TOP_CATEGORIES = [
-  ['Porți și garduri', '/porti-garduri-metalice'],
-  ['Balustrade', '/balustrade-metalice'],
-  ['Scări metalice', '/scari-metalice'],
   ['Picioare de masă', '/picioare-masa-metalice'],
   ['Mobilier industrial', '/mobilier-metalic-industrial'],
+  ['Feronerie custom', '/feronerie-accesorii-metalice'],
+  ['Obiecte de design', '/confectii-metalice-la-comanda'],
   ['Pereți loft', '/pereti-despartitori-metalici-loft'],
-  ['Debitare laser', '/debitare-laser-teava-tabla'],
-  ['Somiere în serie', '/somiere-metalice-serie'],
+  ['Serie mică pentru producători', '/somiere-metalice-serie'],
+  ['Piese după desen', '/debitare-laser-teava-tabla'],
+  ['Scări și balustrade', '/scari-metalice'],
 ];
 
 const CUSTOM_WORK = [
-  ['Porți și garduri', '/porti-garduri-metalice'],
-  ['Balustrade', '/balustrade-metalice'],
-  ['Scări metalice', '/scari-metalice'],
-  ['Pereți despărțitori loft', '/pereti-despartitori-metalici-loft'],
-  ['Copertine și grilaje', '/copertine-grilaje-metalice'],
-  ['Mobilier industrial', '/mobilier-metalic-industrial'],
   ['Mese și picioare de masă', '/picioare-masa-metalice'],
+  ['Mobilier industrial', '/mobilier-metalic-industrial'],
   ['Rafturi și etajere', '/mobilier-metalic-industrial'],
-  ['Cadre de pat și somiere', '/somiere-metalice-serie'],
-  ['Firme și panouri debitate laser', '/confectii-metalice-pensiuni-horeca'],
-  ['Grătare și vetre de foc', '/confectii-metalice-pensiuni-horeca'],
   ['Feronerie custom', '/feronerie-accesorii-metalice'],
   ['Mânere și balamale', '/feronerie-accesorii-metalice'],
+  ['Obiecte de design și metal art', '/confectii-metalice-la-comanda'],
+  ['Pereți despărțitori loft', '/pereti-despartitori-metalici-loft'],
+  ['Cadre de pat și somiere', '/somiere-metalice-serie'],
+  ['Firme și panouri debitate laser', '/confectii-metalice-pensiuni-horeca'],
   ['Piese după desen DXF', '/debitare-laser-teava-tabla'],
   ['Piese strunjite și frezate CNC', '/prelucrari-metalice-cnc'],
+  ['Grătare și vetre de foc', '/confectii-metalice-pensiuni-horeca'],
+  ['Scări metalice', '/scari-metalice'],
+  ['Balustrade', '/balustrade-metalice'],
+  ['Porți și garduri', '/porti-garduri-metalice'],
+  ['Copertine și grilaje', '/copertine-grilaje-metalice'],
   ['Structuri metalice', '/confectii-metalice-la-comanda'],
-  ['Obiecte de design și metal art', '/confectii-metalice-la-comanda'],
   ['Proiectare 3D', '/proiectare-3d-confectii-metalice'],
 ];
 
@@ -156,7 +156,7 @@ function HomePage() {
               Inginerie de Precizie.
             </p>
             <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-[#d8ccb6] sm:text-lg">
-              Specialiști în balustrade arhitecturale, scări metalice și design industrial modern, executate într-o fabrică partener cu peste 30 de ani de experiență în prelucrarea oțelului.
+              Piese metalice custom pentru interior: picioare și cadre de masă, mobilier industrial, feronerie și obiecte de design, în unicat sau serie mică. Executate într-o fabrică partener cu peste 30 de ani de experiență în prelucrarea oțelului.
             </p>
             <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a

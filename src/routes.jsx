@@ -46,8 +46,8 @@ export function getRoutes() {
       path: '/',
       Component: App,
       head: {
-        title: 'Confecții Metalice la Comandă & Debitare Laser | KRAFT',
-        description: 'Confecții metalice la comandă: porți, garduri, balustrade, scări, picioare de masă și debitare laser. Producție în Maramureș, livrare în toată România.',
+        title: 'Piese Metalice Custom, Mobilier și Feronerie | KRAFT Metalworks',
+        description: 'Piese metalice custom pentru interior: picioare de masă, mobilier industrial, feronerie și obiecte de design, unicat sau serie mică. Livrare în toată România.',
         keywords: [...BASE_KEYWORDS, 'picioare de masa metalice', 'porti metalice', 'garduri metalice', 'balustrade metalice'],
         jsonLd: graph(organizationSchema(), localBusinessSchema(), websiteSchema()),
         priority: '1.0',

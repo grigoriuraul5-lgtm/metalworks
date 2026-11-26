@@ -97,7 +97,7 @@ const priced = KRAFT_PRODUCTS.filter((p) => !p.discontinued);
 
 const llms = `# ${BRAND_NAME}
 
-> ${BRAND_NAME} este un brand românesc de confecții metalice de precizie: debitare laser țeavă și tablă, sudură TIG/MIG, vopsire în câmp electrostatic, producție de serie (cadre metalice pentru somiere, picioare de masă) și proiecte custom (porți, garduri, balustrade, feronerie). Producție în ${location}; deservim Sighetu Marmației, Baia Mare, Cluj-Napoca, Transilvania și livrăm în toată România.
+> ${BRAND_NAME} este un brand românesc de piese metalice custom pentru interior și mobilier: picioare și cadre de masă, mobilier industrial și loft, feronerie și accesorii de mobilier, obiecte de design, în unicat sau serie mică pentru producători, designeri și arhitecți. Realizăm și debitare laser după desen, producție de serie (cadre de somiere) și, la cerere, porți, garduri și balustrade. Producție în ${location}; deservim Sighetu Marmației, Baia Mare, Cluj-Napoca, Transilvania și livrăm în toată România.
 
 Variante de nume: ${BRAND_ALT_NAMES.join(', ')}.
 Contact: ${contact.phone} · ${contact.phone2} · ${contact.email} · WhatsApp https://wa.me/${contact.whatsapp} · ${contact.schedule}.

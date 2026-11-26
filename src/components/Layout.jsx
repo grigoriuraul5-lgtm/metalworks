@@ -426,11 +426,12 @@ function NavigationOverlay({ isOpen, onClose }) {
   ];
   const b2bLinks = [
     { label: 'Confecții la Comandă', href: '/confectii-metalice-la-comanda' },
-    { label: 'Porți și Garduri', href: '/porti-garduri-metalice' },
-    { label: 'Balustrade', href: '/balustrade-metalice' },
+    { label: 'Mobilier Industrial', href: '/mobilier-metalic-industrial' },
+    { label: 'Feronerie & Accesorii', href: '/feronerie-accesorii-metalice' },
+    { label: 'Picioare de Masă', href: '/picioare-masa-metalice' },
+    { label: 'Serie pentru Producători', href: '/somiere-metalice-serie' },
     { label: 'Pensiuni & HoReCa', href: '/confectii-metalice-pensiuni-horeca' },
-    { label: 'Somiere de Serie', href: '/somiere-metalice-serie' },
-    { label: 'Debitare Laser', href: '/debitare-laser-teava-tabla' },
+    { label: 'Porți & Balustrade', href: '/porti-garduri-metalice' },
     { label: 'Blog Tehnic', href: '/blog' },
   ];
 
