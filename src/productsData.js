@@ -129,7 +129,7 @@ export const products = [
     finish: 'Vopsire electrostatică mată',
     detail:
       'Geometrie Spider cu 4 brațe radiante sudate TIG seamless. Ideale pentru blăcuri din lemn masiv sau marmură. Livrare în 10 zile lucrătoare.',
-    specs: ['Sarcină max: 350 kg', 'H reglabilă 68–76 cm', 'Suduri șlefuite la invizibil'],
+    specs: ['Sarcină confirmată în ofertă', 'H reglabilă 68–76 cm', 'Suduri șlefuite la invizibil'],
   },
   {
     id: 'PM-02',
@@ -143,7 +143,7 @@ export const products = [
     finish: 'Finisaj periat brushed',
     detail:
       'Profil X dublu din platbandă lată de 10 cm. Estetică brutal-industrială cu precizia atelierului elvețian. Suport pentru blăcuri de până la 3 m lungime.',
-    specs: ['Sarcină max: 500 kg', 'Finisaj periat 180 grit', 'Șuruburi M10 incluse'],
+    specs: ['Sarcină confirmată în ofertă', 'Finisaj periat 180 grit', 'Șuruburi M10 incluse'],
   },
   {
     id: 'PM-03',
@@ -157,7 +157,7 @@ export const products = [
     finish: 'Vopsire epoxidică negru mat',
     detail:
       'Geometrie trapezoidală asimetrică — un statement vizual puternic. Suduri continue MIG cu cordon uniform, finisate mecanic la oglindă. Dimensionare la cerere.',
-    specs: ['Sarcină max: 650 kg', 'Configurabil la comandă', 'Certificare EN 1335'],
+    specs: ['Sarcină confirmată în ofertă', 'Configurabil la comandă', 'Dimensiuni la comandă'],
   },
   {
     id: 'PM-04',
@@ -170,7 +170,7 @@ export const products = [
     material: 'Oțel bara rotundă Ø12 mm · forjat',
     finish: 'Negru mat satinat',
     detail:
-      'Picioare slim hairpin în 3 tije, forjate la cald și sudate TIG. Estetică industrială retro cu rezistență de top. Disponibile în seturi de 4 bucăți.',
+      'Picioare slim hairpin în 3 tije, forjate la cald și sudate TIG. Estetică industrială retro. Disponibile în seturi de 4 bucăți.',
     specs: ['Set 4 picioare incluse', 'H: 71 cm standard', 'Vopsire electrostatică'],
   },
   {
@@ -185,7 +185,7 @@ export const products = [
     finish: 'Vopsire praf negru grofat',
     detail:
       'Design trestle simetric cu traversă centrală și brațe înclinate la 72°. Stabilitate maximă pentru blăcuri mari de conferință sau dining industrial.',
-    specs: ['Sarcină max: 400 kg', 'Lățime: 60 cm standard', 'Reglabil ±3 cm'],
+    specs: ['Sarcină confirmată în ofertă', 'Lățime: 60 cm standard', 'Reglabil ±3 cm'],
   },
   {
     id: 'PM-06',
@@ -199,7 +199,7 @@ export const products = [
     finish: 'Patină chimică antică + lac mat',
     detail:
       'Cruce centrală cu 4 brațe la 90°, forjate manual și tratate cu patinare chimică pentru aspect aged premium. Piesă unicat la comandă.',
-    specs: ['Unicat la comandă', 'Tratament anti-oxidare', 'Certificat artizanat'],
+    specs: ['Unicat la comandă', 'Tratament anti-oxidare', 'Execuție manuală'],
   },
   {
     id: 'PM-07',
@@ -213,7 +213,7 @@ export const products = [
     finish: 'Primer epoxi + lac PU mat',
     detail:
       'Profil pătrat tubular cu decupaj geometric lateral — estetică box minimalist. Ideal pentru birouri executive și săli de conferință arhitecturale.',
-    specs: ['Sarcină max: 450 kg', 'Profil 80×80 mm', 'Personalizabil culoare RAL'],
+    specs: ['Sarcină confirmată în ofertă', 'Profil 80×80 mm', 'Personalizabil culoare RAL'],
   },
   {
     id: 'PM-08',
@@ -227,7 +227,7 @@ export const products = [
     finish: 'Vopsire electrostatică antracit',
     detail:
       'Cadru dublu H cu nervuri de rigidizare interioare. Soluția ideală pentru mese de 4–6 metri în spații contract. Livrare cu montaj inclus în Cluj.',
-    specs: ['Sarcină max: 600 kg', 'L masă: 2–6 m', 'Montaj inclus Cluj'],
+    specs: ['Sarcină confirmată în ofertă', 'L masă: 2–6 m', 'Montaj la cerere'],
   },
   {
     id: 'PM-09',
@@ -241,7 +241,7 @@ export const products = [
     finish: 'Vopsire praf ivory sau negru',
     detail:
       'Geometrie angulară în formă de V răsturnat — silhouette slim cu stabilitate excelentă. Populare în proiecte hoteliere și restaurante cu design contemporan.',
-    specs: ['Sarcină max: 300 kg', 'H: 72 cm', 'Disponibil ivory / negru'],
+    specs: ['Sarcină confirmată în ofertă', 'H: 72 cm', 'Disponibil ivory / negru'],
   },
   {
     id: 'PM-10',
@@ -255,7 +255,7 @@ export const products = [
     finish: 'Finisaj periat 240 grit sau vopsit',
     detail:
       'Picior unic monobloc tăiat cu laser din tablă groasă de 15 mm și îndoit la presă hidraulică. Zero suduri vizibile — piesă de artă funcțională. Ediție limitată.',
-    specs: ['Ediție limitată 50 ex/an', 'Tăiere laser CNC', 'Certificat de origine'],
+    specs: ['Ediție limitată', 'Tăiere laser CNC', 'Produs în România'],
   },
 
   // ─── Picioare de Masă — Noi (2026) ───────────────────────────────────────────
@@ -497,7 +497,7 @@ export const products = [
     finish: 'Patină naturală auto-protectivă',
     detail:
       'Grătar masiv cu bare de 25×8 mm sudate la interval precis de 12 mm. Oțelul Corten dezvoltă în timp un strat rugos estetic care protejează piesa fără vopsire suplimentară.',
-    specs: ['Greutate: 38 kg/m²', 'Rezistență termică 800°C', 'Tăiere laser CNC'],
+    specs: ['Greutate în ofertă', 'Oțel debitat laser', 'Tăiere laser CNC'],
   },
   {
     id: 'GD-02',
@@ -508,10 +508,10 @@ export const products = [
     image: productImg3,
     category: 'Culinary Steel',
     material: 'Oțel carbon S355J2 · 10 mm',
-    finish: 'Vopsire termorezistentă 600°C',
+    finish: 'Vopsire termorezistentă',
     detail:
       'Structură masivă din bare pătrate de 30×30 mm forjate la cald. Suduri cu penetrare completă, control radiografic. Destinat grătarelor premium și spațiilor publice.',
-    specs: ['Greutate: 52 kg/m²', 'Dimensionare custom', 'Garanție 10 ani structurală'],
+    specs: ['Greutate în ofertă', 'Dimensionare custom', 'Garanție conform legii'],
   },
   {
     id: 'GD-03',
@@ -524,8 +524,8 @@ export const products = [
     material: 'Oțel inox AISI 316L · 8 mm',
     finish: 'Finisaj oglindă electropolizat',
     detail:
-      'Vârful colecției. Bare din inox marin electropolizat cu reflexii neutre și rezistență la coroziune în medii saline. Geometrie hexagonală tăiată cu laser de precizie ±0,05 mm.',
-    specs: ['Rezistență salin: 1000h', 'Finisaj Ra < 0.4 μm', 'Certificare alimentară'],
+      'Vârful colecției. Bare din inox marin electropolizat cu reflexii neutre și rezistență la coroziune în medii saline. Geometrie hexagonală debitată laser.',
+    specs: ['Pentru exterior', 'Inox periat', 'Detalii tehnice în ofertă'],
   },
   {
     id: 'GD-04',
@@ -553,7 +553,7 @@ export const products = [
     finish: 'Grunduire epoxi bicomponent',
     detail:
       'Matrice de platbenzi verticale sudate la interval de 15 mm, cu bare transversale la 200 mm. Rezistență mecanică superioară față de soluțiile presate standard.',
-    specs: ['Interval 15 mm', 'Sarcină: 4 kN/m²', 'Tratament epoxi naval'],
+    specs: ['Interval 15 mm', 'Sarcină confirmată în ofertă', 'Vopsire electrostatică'],
   },
   {
     id: 'GD-06',
@@ -581,7 +581,7 @@ export const products = [
     finish: 'Grunduire zinc + vopsire termorezistentă',
     detail:
       'Tablă groasă cu model de perforații arcuite tăiate CNC, alternând goluri eliptice cu bare masive. Joc fascinant de lumini și umbre pentru terase și grătare premium.',
-    specs: ['Perforații CNC ±0,05 mm', 'Rezistență 600°C', 'Design exclusiv Kraft'],
+    specs: ['Perforații CNC', 'Vopsire termorezistentă', 'Design exclusiv Kraft'],
   },
   {
     id: 'GD-08',
@@ -594,8 +594,8 @@ export const products = [
     material: 'Oțel carbon S355 · tablă expandată 8 mm',
     finish: 'Zincare la cald + vopsire antracit',
     detail:
-      'Tablă expandată industrială romb 50×100 mm, zincare la cald 85 µm garantată 25 de ani. Soluție arhitecturală pentru poduri pietonale și terase suspendate.',
-    specs: ['Zincare 85µm / 25 ani', 'Romb 50×100 mm', 'Certificare structurală'],
+      'Tablă expandată industrială romb 50×100 mm. Ai nevoie de zincare la cald? Întreabă-ne. Soluție arhitecturală pentru poduri pietonale și terase suspendate.',
+    specs: ['Zincare? Întreabă-ne', 'Romb 50×100 mm', 'Detalii tehnice în ofertă'],
   },
   {
     id: 'GD-09',
@@ -609,7 +609,7 @@ export const products = [
     finish: 'Patină accelerată în atelier',
     detail:
       'Format mare de până la 2×4 m dintr-o singură bucată, patinare accelerată controlată în atelier pentru aspect uniform. Soluție pentru fațade și pavimente exterioare.',
-    specs: ['Format max 2×4 m', 'Patinare controlată', 'Rezistență 50 ani exterior'],
+    specs: ['Format max 2×4 m', 'Patinare controlată', 'Pentru exterior'],
   },
   {
     id: 'GD-10',
@@ -638,8 +638,8 @@ export const products = [
     material: 'Oțel inox AISI 304 · forjat',
     finish: 'Finisaj satinat mat',
     detail:
-      'Set de 2 balamale masive pentru uși grele de până la 180 kg. Ax din oțel inox Ø25 mm cu rulmenți sigilați pe viață. Reglaj tridimensional după montaj.',
-    specs: ['Capacitate: 180 kg/ușă', 'Reglaj 3D ±5 mm', 'Rezistență 500.000 cicluri'],
+      'Set de 2 balamale masive pentru uși grele. Ax din oțel inox Ø25 mm cu rulmenți. Reglaj tridimensional după montaj.',
+    specs: ['Pentru uși grele', 'Reglaj 3D ±5 mm', 'Detalii tehnice în ofertă'],
   },
   {
     id: 'FC-02',
@@ -666,8 +666,8 @@ export const products = [
     material: 'Oțel inox AISI 316 · CNC',
     finish: 'Anodizat negru sau argintiu',
     detail:
-      'Set de console și cleme de fixare cu profil minimalist pentru sisteme de balustrade fără sudură vizibilă. Tăiate CNC cu toleranță de ±0,1 mm pentru ajustaj perfect.',
-    specs: ['Toleranță ±0,1 mm', 'Kit complet cu șuruburi', 'Compatibil profil 40×40'],
+      'Set de console și cleme de fixare cu profil minimalist pentru sisteme de balustrade fără sudură vizibilă. Debitate CNC pentru un ajustaj curat.',
+    specs: ['Debitare CNC', 'Kit complet cu șuruburi', 'Compatibil profil 40×40'],
   },
   {
     id: 'FC-04',
@@ -694,8 +694,8 @@ export const products = [
     material: 'Oțel laminat S235 · platbandă 50×8 mm',
     finish: 'Vopsire epoxidică neagră',
     detail:
-      'Console de raft cu profil L slim, tăiate cu plasmă și sudate TIG. Prindere în perete cu 4 puncte M8 și capete rotunjite CNC. Sarcină admisă 120 kg/pereche.',
-    specs: ['Sarcină: 120 kg/pereche', 'Lungimi 30–80 cm', 'Personalizabil lățime'],
+      'Console de raft cu profil L slim, debitate laser și sudate TIG. Prindere în perete cu 4 puncte M8 și capete rotunjite CNC.',
+    specs: ['Sarcină confirmată în ofertă', 'Lungimi 30–80 cm', 'Personalizabil lățime'],
   },
   {
     id: 'FC-06',
@@ -709,7 +709,7 @@ export const products = [
     finish: 'Satinat mat sau cromat oglindă',
     detail:
       'Sistem de prindere punctuală pentru sticlă structurală 12–21 mm. Rotulă internă ±15° pentru compensarea toleranțelor de montaj. Zero șuruburi vizibile.',
-    specs: ['Compatibil sticlă 12–21 mm', 'Rotulă ±15°', 'Certificare structurală'],
+    specs: ['Compatibil sticlă 12–21 mm', 'Rotulă ±15°', 'Detalii tehnice în ofertă'],
   },
   {
     id: 'FC-07',
@@ -722,8 +722,8 @@ export const products = [
     material: 'Oțel laminat S235 · profil T 40×40 mm',
     finish: 'Finisaj negru mat sau natural',
     detail:
-      'Set de 2 suporți pentru rafturi în stil loft industrial. Prindere pe șină de perete sau direct în beton. Design cu nervuri vizibile. Capacitate 80 kg per suport.',
-    specs: ['Set 2 suporți', 'Sarcină: 80 kg/suport', 'H raft: 25–60 cm reglabil'],
+      'Set de 2 suporți pentru rafturi în stil loft industrial. Prindere pe șină de perete sau direct în beton. Design cu nervuri vizibile.',
+    specs: ['Set 2 suporți', 'Sarcină confirmată în ofertă', 'H raft: 25–60 cm reglabil'],
   },
   {
     id: 'FC-08',
@@ -736,8 +736,8 @@ export const products = [
     material: 'Oțel masiv S355 · frezat CNC 3 axe',
     finish: 'Zincare electrolitică + vopsire',
     detail:
-      'Cuplaje pentru structuri tubulare din oțel folosite în pergole, carporturi și structuri temporare. Toleranță ±0,05 mm pentru asamblare fără forțare.',
-    specs: ['Toleranță ±0,05 mm', 'Compatibil tub Ø48', 'Set 4 cuplaje'],
+      'Cuplaje pentru structuri tubulare din oțel folosite în pergole, carporturi și structuri temporare.',
+    specs: ['Debitare CNC', 'Compatibil tub Ø48', 'Set 4 cuplaje'],
   },
   {
     id: 'FC-09',
@@ -751,7 +751,7 @@ export const products = [
     finish: 'Periat sau vopsire RAL custom',
     detail:
       'Mânere continue pentru uși pivotante grele, cu sistem de prindere through-bolt ascunsă. Lungime personalizabilă până la 2,4 m. Compatibil balamale pivot Kraft.',
-    specs: ['Lungimi până la 2,4 m', 'Prindere through-bolt', 'Compatibil uși 300 kg'],
+    specs: ['Lungimi până la 2,4 m', 'Prindere through-bolt', 'Pentru uși grele'],
   },
   {
     id: 'FC-10',
@@ -793,7 +793,7 @@ export const products = [
     material: 'Oțel carbon · tablă expandată 3 mm',
     finish: 'Patinare chimică sau vopsire',
     detail: 'Panou separator cu model hexagonal tăiat laser, montat în cadru metalic aparent. Joc dinamic de lumini și umbre. Disponibil în formate standard sau la comandă.',
-    specs: ['Format max: 1200×2400 mm', 'Deschidere hex: 40 mm', 'Greutate: 8 kg/m²'],
+    specs: ['Format max: 1200×2400 mm', 'Deschidere hex: 40 mm', 'Greutate în ofertă'],
   },
   {
     id: 'AM-03',
@@ -834,7 +834,7 @@ export const products = [
     material: 'Oțel masiv S355 · platbandă 80×12 mm',
     finish: 'Patinare chimică aged + lac mat',
     detail: 'Consolă de perete cu geometrie angulară asimetrică, forjată și patinată manual. Combinată cu blat de lemn sau sticlă, devine un statement funcțional-sculptural.',
-    specs: ['Lungime 60 cm', 'Sarcină: 80 kg', 'Finisaj unic per comandă'],
+    specs: ['Lungime 60 cm', 'Sarcină confirmată în ofertă', 'Finisaj unic per comandă'],
   },
   {
     id: 'IA-03',
@@ -847,7 +847,7 @@ export const products = [
     material: 'Oțel carbon · bară Ø20 mm turnată',
     finish: 'Negru mat oxidat + ceară',
     detail: 'Lampă de podea cu braț articulat din oțel forjat manual. Soclu greu anti-răsturnare, cablaj textile inclus. Ediție limitată 30 bucăți/an.',
-    specs: ['H: 160 cm (podea)', 'Soclu: 4 kg', 'Ediție limitată 30 ex/an'],
+    specs: ['H: 160 cm (podea)', 'Soclu: 4 kg', 'Ediție limitată'],
   },
 
   // ─── Urban Facade ────────────────────────────────────────────────────────────
