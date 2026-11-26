@@ -55,6 +55,17 @@ const portfolioImages = [
   portofoliu14,
 ];
 
+const TOP_CATEGORIES = [
+  ['Porți și garduri', '/porti-garduri-metalice'],
+  ['Balustrade', '/balustrade-metalice'],
+  ['Scări metalice', '/scari-metalice'],
+  ['Picioare de masă', '/picioare-masa-metalice'],
+  ['Mobilier industrial', '/mobilier-metalic-industrial'],
+  ['Pereți loft', '/pereti-despartitori-metalici-loft'],
+  ['Debitare laser', '/debitare-laser-teava-tabla'],
+  ['Somiere în serie', '/somiere-metalice-serie'],
+];
+
 const CUSTOM_WORK = [
   ['Porți și garduri', '/porti-garduri-metalice'],
   ['Balustrade', '/balustrade-metalice'],
@@ -164,6 +175,33 @@ function HomePage() {
             </div>
           </div>
         </section>
+
+        <nav aria-label="Ce producem" className="border-y border-white/10 bg-[#0d0d0d] px-6 py-8 lg:px-8">
+          <div className="mx-auto flex max-w-7xl flex-col gap-5 lg:flex-row lg:items-center lg:gap-8">
+            <p className="shrink-0 text-xs uppercase tracking-[0.3em] text-[#c5a059]">Ce producem</p>
+            <ul className="flex flex-wrap gap-2.5">
+              {TOP_CATEGORIES.map(([label, href]) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-xs uppercase tracking-[0.15em] text-[#d8ccb6] transition hover:border-[#c5a059]/60 hover:text-[#c5a059]"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="#proiecte-custom"
+                  onClick={scrollTo('proiecte-custom')}
+                  className="inline-flex rounded-full border border-[#c5a059]/60 px-4 py-2.5 text-xs uppercase tracking-[0.15em] text-[#c5a059] transition hover:bg-[#c5a059] hover:text-[#0a0a0a]"
+                >
+                  Vezi tot ce facem →
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
         <CatalogShowroom onAddToCart={addToCart} onRequestQuote={requestQuote} />
 

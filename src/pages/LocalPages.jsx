@@ -19,9 +19,10 @@ export const LOCAL_PAGES = [
     cities: 'Sighetu Marmației, Baia Mare, Borșa, Vișeu de Sus și tot județul',
     image: imgMM,
     title: 'Confecții metalice în Maramureș — Sighetu Marmației și Baia Mare',
+    seoTitle: 'Confecții Metalice Maramureș: Sighet, Baia Mare',
     h1: 'Confecții metalice în Maramureș, direct de la producător.',
     lead: 'Producem în Sighetu Marmației: porți, garduri, balustrade, picioare de masă, debitare laser și structuri metalice. Pentru clienții din Maramureș, asta înseamnă comunicare directă cu cei care execută lucrarea și transport scurt.',
-    description: 'Confecții metalice în Maramureș: porți, garduri, balustrade, debitare laser și picioare de masă, produse în Sighetu Marmației. Ofertă în 24h pentru Sighet, Baia Mare și tot județul.',
+    description: 'Confecții metalice în Maramureș, produse în Sighetu Marmației: porți, garduri, balustrade, debitare laser. Ofertă în 24h pentru Sighet și Baia Mare.',
     keywords: ['confectii metalice maramures', 'confectii metalice sighetu marmatiei', 'confectii metalice baia mare', 'porti metalice baia mare', 'debitare laser baia mare', 'atelier confectii metalice sighet'],
     advantages: [
       ['Producție în județ', 'Fabrica partener este în Sighetu Marmației. Discuți direct cu oamenii care execută lucrarea.'],
@@ -40,9 +41,10 @@ export const LOCAL_PAGES = [
     cities: 'Cluj-Napoca, Florești, Baciu, Apahida, Turda și județul Cluj',
     image: imgCJ,
     title: 'Confecții metalice și debitare laser pentru Cluj-Napoca',
+    seoTitle: 'Confecții Metalice și Debitare Laser Cluj-Napoca',
     h1: 'Confecții metalice și debitare laser pentru Cluj-Napoca.',
     lead: 'Pentru arhitecți, dezvoltatori imobiliari, firme de construcții și proprietari din Cluj: debitare laser după fișiere DXF/DWG, balustrade, porți, garduri și structuri metalice, livrate pe șantier sau la adresă.',
-    description: 'Confecții metalice și debitare laser pentru Cluj-Napoca: balustrade, porți, garduri, structuri și piese după DXF/DWG. Cotație în 24h și livrare în Cluj, Florești, Baciu, Apahida.',
+    description: 'Confecții metalice și debitare laser pentru Cluj-Napoca: balustrade, porți, garduri și piese după DXF. Cotație în 24h, livrare în Cluj și Florești.',
     keywords: ['confectii metalice cluj', 'debitare laser cluj', 'balustrade metalice cluj', 'porti metalice cluj', 'structuri metalice cluj-napoca'],
     advantages: [
       ['Lucrăm după proiect', 'Primim DWG, DXF, STEP sau PDF de la arhitect și livrăm desenul de execuție spre aprobare.'],

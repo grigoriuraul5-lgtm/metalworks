@@ -29,8 +29,16 @@ const BASE_KEYWORDS = [
   'sighetu marmatiei', 'baia mare', 'cluj-napoca',
 ];
 
-const SOMIERE_DESC = 'Cadre metalice pentru somiere în serie: 500–1.000 buc / 2 săptămâni, profil perforat la pas de 38 mm (ø 8,2 mm) pentru casete 68×8 mm și lamele fag. Pentru fabrici de mobilă și HoReCa.';
+const SOMIERE_DESC = 'Cadre metalice pentru somiere în serie: 500–1.000 buc în 2 săptămâni, profil perforat la 38 mm pentru casete 68×8. Pentru fabrici de mobilă.';
 const DEBITARE_DESC = 'Debitare laser țeavă și tablă după fișierul tău DXF, DWG sau STEP. Sudură TIG/MIG, vopsire electrostatică. Cotație în 24h. Maramureș, Cluj-Napoca, livrare națională.';
+
+function fitDescription(text, max = 158) {
+  const clean = text.replace(/\s+/g, ' ').trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max);
+  const end = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf(', '));
+  return (end > 90 ? cut.slice(0, end) : cut.slice(0, cut.lastIndexOf(' '))).replace(/[,.]$/, '') + '.';
+}
 
 export function getRoutes() {
   const routes = [
@@ -38,8 +46,8 @@ export function getRoutes() {
       path: '/',
       Component: App,
       head: {
-        title: 'KRAFT Metalworks | Confecții Metalice de Precizie & Debitare Laser',
-        description: 'KRAFT Metalworks — confecții metalice de precizie, debitare laser țeavă și tablă, picioare de masă metalice, porți, garduri și balustrade. Producție în Maramureș, livrare în toată România.',
+        title: 'Confecții Metalice la Comandă & Debitare Laser | KRAFT',
+        description: 'Confecții metalice la comandă: porți, garduri, balustrade, scări, picioare de masă și debitare laser. Producție în Maramureș, livrare în toată România.',
         keywords: [...BASE_KEYWORDS, 'picioare de masa metalice', 'porti metalice', 'garduri metalice', 'balustrade metalice'],
         jsonLd: graph(organizationSchema(), localBusinessSchema(), websiteSchema()),
         priority: '1.0',
@@ -49,7 +57,7 @@ export function getRoutes() {
       path: SOMIERE_PATH,
       Component: SomierePage,
       head: {
-        title: 'Cadre Metalice Somiere în Serie — 500–1.000 buc / 2 săpt. | KRAFT Metalworks',
+        title: 'Cadre Metalice Somiere în Serie, 500–1.000 buc | KRAFT',
         description: SOMIERE_DESC,
         keywords: [...BASE_KEYWORDS, 'cadre metalice somiere', 'somiere metalice serie', 'somiere pat metalice', 'cadru pat metalic', 'structura metalica pat', 'somiera metalica rezistenta', 'somiera cu lamele fag', 'producator cadre somiere', 'somiere horeca', 'casete lamele 68x8'],
         jsonLd: graph(
@@ -65,7 +73,7 @@ export function getRoutes() {
       path: DEBITARE_PATH,
       Component: DebitarePage,
       head: {
-        title: 'Debitare Laser Tablă, Țeavă și Profil — Laser Fiber CNC, Maramureș - Cluj | KRAFT Metalworks',
+        title: 'Debitare Laser Tablă, Țeavă și Profil CNC | KRAFT Metalworks',
         description: DEBITARE_DESC,
         keywords: [...BASE_KEYWORDS, 'debitare laser dxf', 'taiere laser metal', 'debitare laser inox', 'debitare laser baia mare', 'debitare laser cluj', 'debitare laser profil', 'taiere laser fiber', 'taiere laser cnc', 'debitare plasma', 'debitare waterjet', 'pret debitare laser metru liniar', 'furnizor debitare laser', 'servicii de debitare la comanda', 'debitare laser b2b', 'debitari industriale de precizie', 'sheet metal laser cutting'],
         jsonLd: graph(
@@ -81,7 +89,7 @@ export function getRoutes() {
       path: PICIOARE_PATH,
       Component: PicioareMasaPage,
       head: {
-        title: 'Picioare de Masă Metalice — Prețuri, Modele U, X, H | KRAFT Metalworks',
+        title: 'Picioare Masă Metalice U, X, H — Prețuri | KRAFT Metalworks',
         description: `Picioare de masă metalice produse în România: ${listedProducts().length} modele (U, X, H, V, picior central), vopsite electrostatic, prețuri publice de la ${Math.min(...listedProducts().filter((p) => p.basePrice).map((p) => p.basePrice))} RON. Livrare în toată țara.`,
         keywords: [...BASE_KEYWORDS, 'picioare masa metalice', 'picioare metalice masa', 'picioare masa industriale', 'picioare masa stil industrial', 'picior masa metalic x', 'picioare masa u', 'picioare masa trapez', 'picioare masa spider', 'picioare masa paianjen', 'picioare masa debitate laser', 'picioare masa profil metalic', 'cadru metalic masa', 'baze metalice mese'],
         jsonLd: graph(
@@ -97,8 +105,8 @@ export function getRoutes() {
       path: PORTI_PATH,
       Component: PortiGarduriPage,
       head: {
-        title: 'Porți și Garduri Metalice la Comandă — Maramureș, Cluj | KRAFT Metalworks',
-        description: 'Porți batante și culisante, portițe și garduri metalice pe dimensiunile tale, cu modele debitate laser și vopsire electrostatică. Producție în Sighetu Marmației, livrare Baia Mare, Cluj și național. Ofertă în 24h.',
+        title: 'Porți și Garduri Metalice la Comandă | KRAFT Metalworks',
+        description: 'Porți batante și culisante, portițe și garduri metalice pe dimensiunile tale, cu modele debitate laser. Livrare în toată România, ofertă în 24h.',
         keywords: [...BASE_KEYWORDS, 'porti metalice', 'porti debitate laser', 'garduri metalice', 'panouri gard laser cut', 'porti culisante', 'porti batante', 'gard metalic modern', 'porti metalice baia mare', 'porti metalice cluj', 'porti metalice sighet'],
         jsonLd: graph(
           organizationSchema(),
@@ -113,8 +121,8 @@ export function getRoutes() {
       path: BALUSTRADE_PATH,
       Component: BalustradePage,
       head: {
-        title: 'Balustrade Metalice Moderne pentru Scări, Balcoane, Terase | KRAFT Metalworks',
-        description: 'Balustrade metalice moderne la comandă pentru scări interioare, balcoane și terase: profile metalice sau panouri debitate laser, vopsite electrostatic. Ofertă în 24h, livrare în Maramureș, Cluj și național.',
+        title: 'Balustrade Metalice Moderne pentru Scări și Balcoane | KRAFT',
+        description: 'Balustrade metalice moderne la comandă pentru scări, balcoane și terase, din profil sau panouri debitate laser. Ofertă în 24h, livrare în toată țara.',
         keywords: [...BASE_KEYWORDS, 'balustrade metalice', 'balustrada metalica scara', 'balustrade balcon', 'balustrade moderne', 'balustrada debitata laser', 'balustrada tabla perforata', 'balustrada inox', 'balustrada aluminiu', 'balustrade metalice cluj', 'balustrade baia mare'],
         jsonLd: graph(
           organizationSchema(),
@@ -129,8 +137,8 @@ export function getRoutes() {
       path: HORECA_PATH,
       Component: HorecaPage,
       head: {
-        title: 'Confecții Metalice pentru Pensiuni și HoReCa — Maramureș | KRAFT Metalworks',
-        description: 'Firmă debitată laser, porți, balustrade de terasă, grătare, vetre de foc, mobilier de exterior și cadre de paturi pentru pensiuni, hoteluri și restaurante. Un singur proiect și o ofertă în 24h, producție în Maramureș.',
+        title: 'Confecții Metalice pentru Pensiuni și HoReCa | KRAFT',
+        description: 'Confecții metalice pentru pensiuni, hoteluri și restaurante: firme debitate laser, porți, balustrade, grătare, vetre de foc, mobilier. Ofertă în 24h.',
         keywords: [...BASE_KEYWORDS, 'confectii metalice pensiuni', 'firma luminoasa pensiune', 'mobilier metalic horeca', 'balustrade terasa pensiune', 'gratar exterior pensiune', 'pensiuni maramures'],
         jsonLd: graph(
           organizationSchema(),
@@ -163,7 +171,7 @@ export function getRoutes() {
       Component: LocalPage,
       props: { path: page.path },
       head: {
-        title: `${page.title} | KRAFT Metalworks`,
+        title: `${page.seoTitle || page.title} | KRAFT`,
         description: page.description,
         keywords: [...BASE_KEYWORDS, ...page.keywords],
         jsonLd: graph(
@@ -179,7 +187,7 @@ export function getRoutes() {
       path: '/blog',
       Component: BlogIndexPage,
       head: {
-        title: 'Blog Tehnic — Debitare Laser, Somiere de Serie, Ghiduri | KRAFT Metalworks',
+        title: 'Blog Tehnic: Debitare Laser și Ghiduri Metal | KRAFT',
         description: 'Ghiduri practice despre debitare laser, pregătirea fișierelor DXF, producția de serie și alegerea pieselor metalice, de la echipa KRAFT Metalworks.',
         keywords: [...BASE_KEYWORDS, 'ghid debitare laser', 'fisier dxf debitare'],
         jsonLd: graph(organizationSchema(), breadcrumbSchema([{ name: 'Acasă', path: '/' }, { name: 'Blog', path: '/blog' }])),
@@ -191,7 +199,7 @@ export function getRoutes() {
       Component: BlogPostPage,
       props: { slug: post.slug },
       head: {
-        title: `${post.title} | KRAFT Metalworks`,
+        title: `${post.seoTitle || post.title} | KRAFT`,
         description: post.description,
         keywords: BASE_KEYWORDS,
         type: 'article',
@@ -209,8 +217,8 @@ export function getRoutes() {
       Component: ProductPage,
       props: { slug: p.slug },
       head: {
-        title: `${p.title} — Picior de Masă Metalic${p.basePrice ? ` · ${p.basePrice} RON` : ''} | KRAFT Metalworks`,
-        description: `${p.description} ${p.material}.`.slice(0, 300),
+        title: `${p.title} – Picior Masă Metalic${p.basePrice ? `, ${p.basePrice} lei` : ''} | KRAFT`,
+        description: fitDescription(`${p.title}, picior de masă metalic${p.basePrice ? ` de la ${p.basePrice} lei` : ''}. ${p.description}`),
         keywords: [...BASE_KEYWORDS, 'picioare masa metalice', `${p.title.toLowerCase()}`],
         image: `/products/${p.slug}.jpg`,
         type: 'product',

@@ -12,8 +12,9 @@ export const POSTS = [
   {
     slug: 'cum-pregatesti-fisier-dxf-debitare-laser',
     title: 'Cum pregătești un fișier DXF pentru debitare laser (și eviți redesenarea)',
+    seoTitle: 'Fișier DXF pentru Debitare Laser: Cum îl Pregătești',
     description:
-      'Checklist practic pentru ingineri, arhitecți și producători: scară, contururi închise, straturi, text convertit în curbe și ce informații trimiți odată cu fișierul ca să primești cotația din prima.',
+      'Checklist DXF pentru debitare laser: scară 1:1, contururi închise, straturi, text în curbe și ce trimiți ca să primești cotația din prima.',
     category: 'Debitare Laser',
     date: '2026-11-18',
     readMinutes: 6,
@@ -70,8 +71,9 @@ Acceptăm și PDF cotat sau chiar o schiță fotografiată cu dimensiunile scris
   {
     slug: 'cadre-metalice-somiere-ce-verifici-la-furnizor',
     title: 'Cadre metalice pentru somiere: ce verifici la un furnizor de serie',
+    seoTitle: 'Cadre Metalice Somiere: Ce Verifici la Furnizor',
     description:
-      'Ghid pentru fabrici de mobilă și achizitori HoReCa: capacitate reală, precizia perforării pentru casete, finisaj, ambalare și cum structurezi o comandă de serie fără întârzieri.',
+      'Ce verifici la un furnizor de cadre metalice pentru somiere: capacitate, precizia perforării, finisaj, ambalare și cum eviți întârzierile la serie.',
     category: 'Somiere Serie',
     date: '2026-11-18',
     readMinutes: 5,
@@ -118,7 +120,7 @@ Ai un volum de discutat? Pe pagina [Cadre metalice pentru somiere](/somiere-meta
     slug: 'pretul-debitarii-laser-ce-il-influenteaza',
     title: 'Cât costă debitarea laser? Cei 6 factori care fac prețul',
     description:
-      'De ce două piese cu aceeași suprafață pot avea prețuri diferite: material, grosime, lungimea de tăiere, numărul de străpungeri, cantitatea și finisajul. Plus cum reduci costul fără să schimbi funcția piesei.',
+      'Cât costă debitarea laser: materialul, grosimea, lungimea de tăiere, străpungerile, cantitatea și finisajul. Plus cum reduci costul unei piese.',
     category: 'Ghiduri Tehnice',
     date: '2026-11-18',
     readMinutes: 5,
@@ -162,6 +164,7 @@ Cel mai rapid mod de a afla prețul real este să ne trimiți fișierul. Pe pagi
   {
     slug: 'picioare-masa-metalice-cum-alegi-profilul',
     title: 'Picioare de masă metalice: cum alegi forma, profilul și înălțimea',
+    seoTitle: 'Picioare de Masă Metalice: Cum Alegi Modelul',
     description:
       'Ghid pentru tâmplari, designeri și cumpărători: înălțimea corectă pentru dining, birou și cafenea, ce formă se potrivește cu ce blat și de ce contează profilul metalic.',
     category: 'Ghiduri Tehnice',
