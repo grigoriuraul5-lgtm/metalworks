@@ -14,6 +14,9 @@ import imgGard from '../assets/portofoliu/portofoliu-11.jpg';
 import imgBalustrada1 from '../assets/portofoliu/portofoliu-12.jpg';
 import imgBalustrada2 from '../assets/portofoliu/portofoliu-13.jpg';
 import imgPicioare from '../assets/portofoliu/portofoliu-1.jpg';
+import imgSuportVin from '../assets/elemente design inetrior exterior.json/suport vinuri si pahare.jpg';
+import imgRaftGeometric from '../assets/elemente design inetrior exterior.json/dulap genial.jpg';
+import imgBanca from '../assets/elemente design inetrior exterior.json/scaun de satat jos.jpg';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Pagini de servicii construite din lista de cuvinte cheie a fondatorului.
@@ -286,6 +289,46 @@ export const SERVICE_PAGES = [
       description: 'Feronerie metalică și accesorii pentru mobilier la comandă: flanșe, colțare, suporturi de raft, mânere, balamale și baze de mese. De la prototip la serie.',
       keywords: ['feronerie metalica', 'accesorii metalice mobilier', 'flanse debitate laser', 'placute de prindere', 'coltare metalice', 'conectori metalici', 'suporturi metalice raft', 'balamale sudate', 'manere metalice', 'baze metalice mese', 'elemente decorative metalice', 'feronerie custom mobilier'],
       serviceType: 'Feronerie metalică la comandă',
+    },
+  },
+  {
+    path: '/obiecte-design-metal',
+    crumb: 'Obiecte de design din metal',
+    eyebrow: 'Decor · Interior · HoReCa',
+    title: 'Obiecte de design din metal: piesele mici care fac un spațiu memorabil.',
+    lead: 'Suporturi de vin și pahare, rafturi și etajere geometrice, console de raft, cuiere, suporturi de plante, panouri decorative debitate laser și plăcuțe. Le producem în stilul proiectului tău, în orice culoare RAL, de la o bucată la serie, pentru case, pensiuni, cafenele și showroom-uri.',
+    heroImage: imgSuportVin,
+    types: [
+      ['Suporturi de vin și pahare', 'De perete sau de sine stătătoare, pentru casă, bar sau cramă, pe dimensiunile spațiului.'],
+      ['Rafturi și etajere geometrice', 'Biblioteci, etajere și separatoare decorative din țeavă sau tablă, cu model propriu.'],
+      ['Console de raft și cuiere', 'Console industriale pentru rafturi din lemn, cuiere de perete și de hol, în serie sau unicat.'],
+      ['Suporturi de plante și jardiniere', 'Pentru interior și terase, inclusiv din oțel Corten pentru exterior.'],
+      ['Panouri decorative și plăcuțe', 'Panouri de perete debitate laser, plăcuțe cu nume sau logo, numere de casă.'],
+      ['Bănci, măsuțe și suporturi de lemne', 'Piese mici de mobilier și accesorii pentru șemineu, asortate cu restul interiorului.'],
+    ],
+    typesTitle: 'Ce putem face pentru tine.',
+    gallery: [
+      { src: imgSuportVin, alt: 'Randare: suport metalic de perete pentru vin și pahare' },
+      { src: imgRaftGeometric, alt: 'Randare: etajeră metalică cu model geometric' },
+      { src: imgBanca, alt: 'Randare: bancă metalică cu șezut din tablă perforată' },
+      { src: imgPanou, alt: 'Panou decorativ metalic debitat laser, lucrare reală' },
+    ],
+    galleryTitle: 'Exemple de obiecte (randări) și un panou real din fabrică.',
+    faqs: [
+      { q: 'Puteți face un obiect de design după o poză de pe Pinterest?', a: 'Da, ca punct de plecare. Ne trimiți poza și dimensiunile, iar noi îl adaptăm într-un model propriu, cu desen și preț în 24 de ore.' },
+      { q: 'Faceți și o singură bucată?', a: 'Da. Facem unicate pentru casă și serii mici pentru pensiuni, cafenele sau magazine. Prețul pe bucată scade la cantități mai mari.' },
+      { q: 'În ce culori se pot face?', a: 'Vopsim electrostatic în orice culoare RAL, mat sau lucios. Ai nevoie de alt finisaj, de exemplu inox periat sau alamă? Întreabă-ne și verificăm.' },
+      { q: 'Se pot pune pe ele logo-ul sau numele localului?', a: 'Da. Prin debitare laser putem integra un logo, un nume sau un model propriu în obiect.' },
+    ],
+    faqTitle: 'Despre obiectele de design.',
+    subject: 'Cerere ofertă obiect de design din metal — KRAFT Metalworks',
+    product: 'Obiecte de design din metal',
+    detailsPlaceholder: 'Ex: suport vin de perete pentru 12 sticle și 16 pahare, 120×60 cm, negru mat...',
+    head: {
+      title: 'Obiecte de Design din Metal la Comandă | KRAFT Metalworks',
+      description: 'Suporturi de vin, rafturi geometrice, console, cuiere, suporturi de plante și panouri decorative din metal, la comandă, în orice culoare RAL.',
+      keywords: ['obiecte decorative metal', 'decoratiuni metalice interior', 'suport vin metalic', 'suport sticle vin perete', 'raft metalic perete', 'etajera metalica', 'console raft metalice', 'cuier metalic perete', 'suport plante metalic', 'panou decorativ metalic', 'decor metalic debitat laser', 'obiecte design metal la comanda'],
+      serviceType: 'Obiecte de design din metal la comandă',
     },
   },
   {

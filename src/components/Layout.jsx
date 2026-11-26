@@ -428,6 +428,7 @@ function NavigationOverlay({ isOpen, onClose }) {
     { label: 'Confecții la Comandă', href: '/confectii-metalice-la-comanda' },
     { label: 'Mobilier Industrial', href: '/mobilier-metalic-industrial' },
     { label: 'Feronerie & Accesorii', href: '/feronerie-accesorii-metalice' },
+    { label: 'Obiecte de Design', href: '/obiecte-design-metal' },
     { label: 'Picioare de Masă', href: '/picioare-masa-metalice' },
     { label: 'Serie pentru Producători', href: '/somiere-metalice-serie' },
     { label: 'Pensiuni & HoReCa', href: '/confectii-metalice-pensiuni-horeca' },
@@ -790,6 +791,7 @@ function SiteFooter() {
           <a href="/prelucrari-metalice-cnc" className={`block ${linkClass}`}>Îndoire CNC, sudură, vopsire</a>
           <a href="/proiectare-3d-confectii-metalice" className={`block ${linkClass}`}>Proiectare 3D și DXF</a>
           <a href="/feronerie-accesorii-metalice" className={`block ${linkClass}`}>Feronerie și accesorii</a>
+          <a href="/obiecte-design-metal" className={`block ${linkClass}`}>Obiecte de design din metal</a>
           <a href="/scari-metalice" className={`block ${linkClass}`}>Scări metalice</a>
           <a href="/mobilier-metalic-industrial" className={`block ${linkClass}`}>Mobilier metalic industrial</a>
           <a href="/pereti-despartitori-metalici-loft" className={`block ${linkClass}`}>Pereți despărțitori loft</a>

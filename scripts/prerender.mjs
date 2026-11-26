@@ -114,7 +114,7 @@ Cotație pentru fișiere tehnice (DXF, DWG, STEP, PDF): în cel mult 24 de ore l
 ## Producție la comandă
 - [Confecții metalice la comandă](${SITE_URL}/confectii-metalice-la-comanda): piese unicat, prototipare, serie mică și mare, subansamble industriale, structuri.
 - [Prelucrări CNC](${SITE_URL}/prelucrari-metalice-cnc): îndoire tablă abkant CNC, strunjire și frezare CNC, sudură MIG-MAG/TIG, sablare, vopsire electrostatică; zincare și alte procese speciale la cerere.
-- [Scări metalice](${SITE_URL}/scari-metalice) · [Mobilier metalic industrial](${SITE_URL}/mobilier-metalic-industrial) · [Pereți despărțitori loft](${SITE_URL}/pereti-despartitori-metalici-loft) · [Feronerie și accesorii](${SITE_URL}/feronerie-accesorii-metalice) · [Copertine și grilaje](${SITE_URL}/copertine-grilaje-metalice) · [Proiectare 3D și DXF](${SITE_URL}/proiectare-3d-confectii-metalice)
+- [Scări metalice](${SITE_URL}/scari-metalice) · [Mobilier metalic industrial](${SITE_URL}/mobilier-metalic-industrial) · [Pereți despărțitori loft](${SITE_URL}/pereti-despartitori-metalici-loft) · [Feronerie și accesorii](${SITE_URL}/feronerie-accesorii-metalice) · [Obiecte de design din metal](${SITE_URL}/obiecte-design-metal) · [Copertine și grilaje](${SITE_URL}/copertine-grilaje-metalice) · [Proiectare 3D și DXF](${SITE_URL}/proiectare-3d-confectii-metalice)
 
 ## Produse de serie
 - [Colecția de picioare de masă](${SITE_URL}/picioare-masa-metalice): ${priced.length} modele, prețuri publice în RON.
