@@ -24,7 +24,7 @@
 
 export const config = { runtime: 'edge' };
 
-const TO_EMAIL = 'contact@kraftmetalworks.ro';
+const TO_EMAIL = 'kraftmetalworks2025@gmail.com';
 const FROM_EMAIL = 'Site KRAFT Metalworks <site@kraftmetalworks.ro>';
 const MAX_ATTACHMENT_BYTES = 5 * 1024 * 1024; // 5 MB per fișier
 

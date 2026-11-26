@@ -36,7 +36,7 @@ export const contact = {
   phone: '+40 743 096 269',
   phone2: '+40 746 333 104',
   whatsapp: '40743096269', // fără + și spații, pentru link wa.me
-  email: 'contact@kraftmetalworks.ro',
+  email: 'kraftmetalworks2025@gmail.com',
   schedule: 'Luni–Vineri: 09:00–18:00',
 };
 
