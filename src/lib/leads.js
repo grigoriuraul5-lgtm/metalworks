@@ -37,7 +37,37 @@ export async function sendLead(formEl, extraFields = {}) {
   return result;
 }
 
+const WEB3FORMS_KEY = 'e687de75-5460-4f70-aa32-72104082eaf5'; // cheie publică, făcută să stea în site
+
+async function viaWeb3Forms(formEl, extraFields) {
+  const data = buildFormData(formEl, extraFields);
+  const files = [];
+  for (const [key, value] of Array.from(data.entries())) {
+    if (value instanceof File) {
+      files.push(`${value.name} (${Math.round(value.size / 1024)} KB)`);
+      data.delete(key);
+    }
+  }
+  if (files.length) {
+    data.append('fisiere_atasate', `${files.join(', ')} — pe planul gratuit fișierele nu trec prin formular; cere-le clientului pe email sau WhatsApp.`);
+  }
+  data.append('access_key', WEB3FORMS_KEY);
+  data.append('subject', data.get('_subject') || 'Cerere nouă — KRAFT Metalworks');
+  data.append('from_name', 'Site KRAFT Metalworks');
+  const clientEmail = data.get('email');
+  if (clientEmail) data.append('replyto', clientEmail);
+  const response = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { Accept: 'application/json' },
+    body: data,
+  });
+  const json = await response.json().catch(() => ({}));
+  if (!response.ok || json.success !== true) throw new Error(json.message || `Web3Forms ${response.status}`);
+  return { ok: true, via: 'web3forms', filesNotSent: files.length > 0 };
+}
+
 async function deliver(formEl, extraFields) {
+  // 1. Serverul propriu (Resend) — singurul care trimite și fișierele, când RESEND_API_KEY e setată.
   try {
     const response = await fetch('/api/send-lead', {
       method: 'POST',
@@ -45,9 +75,17 @@ async function deliver(formEl, extraFields) {
     });
     if (response.ok) return { ok: true, via: 'resend' };
   } catch {
-    // trecem la varianta de rezervă
+    // trecem mai departe
   }
 
+  // 2. Web3Forms — principalul canal acum, fără activare.
+  try {
+    return await viaWeb3Forms(formEl, extraFields);
+  } catch {
+    // trecem la ultima rezervă
+  }
+
+  // 3. FormSubmit — rezervă.
   const fallback = buildFormData(formEl, extraFields);
   fallback.append('_captcha', 'false');
   fallback.append('_template', 'table');
@@ -57,8 +95,7 @@ async function deliver(formEl, extraFields) {
     body: fallback,
   });
   if (!response.ok) throw new Error(`Trimitere eșuată (${response.status})`);
-  // FormSubmit răspunde 200 și când formularul nu e activat sau cererea e respinsă
-  // ({ success: "false" }). Fără verificarea asta, clientul vedea „trimis” iar emailul se pierdea.
+  // FormSubmit răspunde 200 și când formularul nu e activat ({ success: "false" }).
   const data = await response.json().catch(() => ({}));
   if (String(data.success) !== 'true') {
     throw new Error(data.message || 'Trimiterea nu a fost confirmată');
