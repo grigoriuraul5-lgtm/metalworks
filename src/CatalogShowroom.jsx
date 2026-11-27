@@ -221,12 +221,11 @@ const PRODUCTS = [
   {
     id: 'gr-1', category: 'gratare', title: 'Grătar Outdoor Vulcan 01',
     imgRender: grat1, aspect: 'landscape', hasSketch: false,
-    basePrice: 1800, material: 'Oțel carbon S235 · bare plate 25×6 mm · rezistență 600°C',
-    description: 'Grătar outdoor profesional din bare de oțel carbon S235 cu secțiune 25×6 mm, proiectat să reziste la temperaturi de peste 600°C fără deformare. Construcție solidă, sudată manual și finisată termorezistent — o soluție robustă pentru grădini private sau catering.',
+    basePrice: 1800, material: 'Oțel carbon S235 · bare plate 25×6 mm',
+    description: 'Grătar outdoor profesional din bare de oțel carbon S235 cu secțiune 25×6 mm. Construcție solidă, sudată manual și finisată termorezistent — o soluție robustă pentru grădini private sau catering.',
     specs: [
       { label: 'Material', value: 'Oțel carbon S235' },
       { label: 'Secțiune bare', value: '25×6 mm plate' },
-      { label: 'Rezistență termică', value: '600°C+ susținut' },
       { label: 'Finisaj', value: 'Brut / Vopsire termorezistentă' },
       { label: 'Dimensiuni', value: 'Standard sau la comandă' },
     ],
@@ -235,13 +234,11 @@ const PRODUCTS = [
     id: 'gr-2', category: 'gratare', title: 'Grătar Heavy Duty Titan',
     imgRender: grat2, aspect: 'landscape', hasSketch: false,
     basePrice: 2400, material: 'Oțel carbon S355 · bare 30×8 mm · heavy duty',
-    description: 'Construcție masivă din S355 cu bare de 30×8 mm, concepută pentru utilizare intensivă în restaurante cu foc deschis, catering profesional sau grădini de mari dimensiuni. Grunduit epoxi bicomponent pentru protecție maximă. Greutate ~45 kg/m².',
+    description: 'Construcție masivă din S355 cu bare de 30×8 mm, concepută pentru utilizare intensivă în restaurante cu foc deschis, catering profesional sau grădini de mari dimensiuni. Grunduit epoxi bicomponent pentru protecție maximă.',
     specs: [
       { label: 'Material', value: 'Oțel structural S355' },
       { label: 'Secțiune bare', value: '30×8 mm plate' },
-      { label: 'Rezistență termică', value: '600°C+ continuu' },
       { label: 'Finisaj', value: 'Grund epoxi bicomponent' },
-      { label: 'Greutate', value: '~45 kg/m²' },
     ],
   },
   {
@@ -253,7 +250,6 @@ const PRODUCTS = [
       { label: 'Material', value: 'Oțel Corten A' },
       { label: 'Finisaj', value: 'Patinare naturală auto-protectivă' },
       { label: 'Exterior', value: 'Fără vopsire — patina protejează oțelul' },
-      { label: 'Greutate', value: '~38 kg/m²' },
       { label: 'Dimensiuni', value: 'Complet la comandă' },
     ],
   },
