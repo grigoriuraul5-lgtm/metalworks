@@ -25,12 +25,12 @@ export const LOCAL_PAGES = [
     description: 'Confecții metalice în Maramureș, produse în Sighetu Marmației: porți, garduri, balustrade, debitare laser. Ofertă în 24h pentru Sighet și Baia Mare.',
     keywords: ['confectii metalice maramures', 'confectii metalice sighetu marmatiei', 'confectii metalice baia mare', 'porti metalice baia mare', 'debitare laser baia mare', 'atelier confectii metalice sighet'],
     advantages: [
-      ['Producție în județ', 'Fabrica partener este în Sighetu Marmației. Discuți direct cu oamenii care execută lucrarea.'],
+      ['Producție în județ', 'Lucrările se realizează în Sighetu Marmației. Ai un singur om de contact, de la schiță la livrare.'],
       ['Transport scurt', 'Livrarea în Sighet, Baia Mare și localitățile din județ se planifică rapid.'],
       ['Vizită pentru măsurători', 'Pentru porți, garduri și balustrade stabilim împreună cum se iau măsurătorile corect.'],
     ],
     faqs: [
-      { q: 'Unde se produc lucrările KRAFT Metalworks?', a: 'Lucrările se execută în Sighetu Marmației, județul Maramureș, într-o fabrică partener cu peste 30 de ani de experiență în prelucrarea oțelului.' },
+      { q: 'Unde se produc lucrările KRAFT Metalworks?', a: 'Lucrările se realizează în Sighetu Marmației, județul Maramureș, și se livrează în toată țara.' },
       { q: 'Lucrați și pentru clienți din Baia Mare?', a: 'Da. Livrăm în Baia Mare și în toate localitățile din județul Maramureș.' },
       { q: 'Cât durează o ofertă?', a: 'În cel mult 24 de ore lucrătoare de la primirea dimensiunilor sau a schiței.' },
     ],

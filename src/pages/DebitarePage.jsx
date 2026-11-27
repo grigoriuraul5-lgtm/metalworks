@@ -131,7 +131,7 @@ function DebitareContent() {
       <section className={`${sectionClass} bg-[#121212]`}>
         <div className="mx-auto max-w-7xl">
           <SectionHeading eyebrow="Ce executăm" title="Piesa finită, de la un singur furnizor.">
-            Nu muți reperele între ateliere: debitarea, sudura și vopsirea se fac în aceeași fabrică, după același desen aprobat.
+            Nu muți reperele între ateliere: debitarea, sudura și vopsirea se fac într-un singur loc, după același desen aprobat.
           </SectionHeading>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {CAPABILITIES.map(([t, d]) => (

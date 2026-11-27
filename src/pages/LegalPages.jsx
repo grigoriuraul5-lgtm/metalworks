@@ -126,7 +126,7 @@ function PrivacyContent() {
       <h2>4. Cui le transmitem</h2>
       <ul>
         <li>Furnizorului de găzduire a site-ului (Vercel) și serviciului de trimitere email (Resend sau FormSubmit), doar pentru a ne livra cererea ta.</li>
-        <li>Fabricii partenere și firmei de transport, strict cu datele necesare execuției și livrării comenzii.</li>
+        <li>Partenerilor de producție și firmei de transport, strict cu datele necesare execuției și livrării comenzii.</li>
         <li>Autorităților, doar când legea ne obligă.</li>
       </ul>
       <p>Unii dintre acești furnizori pot procesa date în afara Uniunii Europene, cu garanțiile prevăzute de GDPR (clauze contractuale standard).</p>

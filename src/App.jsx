@@ -157,7 +157,7 @@ function HomePage() {
               Inginerie de Precizie.
             </p>
             <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-[#d8ccb6] sm:text-lg">
-              Piese metalice custom pentru interior: picioare și cadre de masă, mobilier industrial, feronerie și obiecte de design, în unicat sau serie mică. Executate într-o fabrică partener cu peste 30 de ani de experiență în prelucrarea oțelului.
+              Piese metalice custom pentru interior: picioare și cadre de masă, mobilier industrial, feronerie și obiecte de design, în unicat sau serie mică. Proiectate și realizate în Maramureș, livrate în toată România.
             </p>
             <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
@@ -237,7 +237,7 @@ function HomePage() {
                 <div className="relative overflow-hidden rounded-[2rem] border border-white/5 shadow-luxe bg-[#0a0a0a]">
                   <img
                     src={proiectArhitectural}
-                    alt="Debitare laser în fabrica partener KRAFT Metalworks"
+                    alt="Debitare laser KRAFT Metalworks"
                     className="w-full h-auto block max-h-[85vh] object-contain"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/25 to-black/65" />
@@ -359,8 +359,8 @@ function HomePage() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-3xl border border-white/5 bg-white/10 p-8 backdrop-blur-md">
-                <p className="text-sm uppercase tracking-[0.25em] text-[#c5a059]">30+ ani de fabricație</p>
-                <p className="mt-4 text-sm leading-7 text-[#cfc5ad]">Producem în aceeași fabrică din Maramureș care execută de peste 30 de ani structuri metalice pentru reședințe, spații comerciale și industrie.</p>
+                <p className="text-sm uppercase tracking-[0.25em] text-[#c5a059]">Tot procesul, într-un singur loc</p>
+                <p className="mt-4 text-sm leading-7 text-[#cfc5ad]">Debitare laser, îndoire CNC, sudură și vopsire, cu un singur om de contact de la schiță până la livrare.</p>
               </div>
               <div className="rounded-3xl border border-white/5 bg-white/10 p-8 backdrop-blur-md">
                 <p className="text-sm uppercase tracking-[0.25em] text-[#c5a059]">Verificat înainte de livrare</p>

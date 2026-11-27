@@ -122,7 +122,7 @@ function PicioareContent() {
       <section className={`${sectionClass} bg-[#121212]`}>
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-start">
           <div>
-            <SectionHeading eyebrow="Pentru tâmplării și producători" title="Comenzi de serie, la preț de fabrică." />
+            <SectionHeading eyebrow="Pentru tâmplării și producători" title="Comenzi de serie, la preț de producător." />
             <p className="text-base leading-8 text-[#cfc5ad]">
               Dacă produci mese în serie, îți livrăm picioarele în loturi programate, în aceeași culoare și la aceeași cotă de la un lot la altul. Trimite modelul și volumul lunar estimat.
             </p>
@@ -196,7 +196,7 @@ export function CustomCategoryContent({ path, crumb, eyebrow, title, lead, heroI
       <section className="px-6 pb-4 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 rounded-3xl border border-[#c5a059]/20 bg-[#c5a059]/5 p-6 sm:flex-row sm:items-center">
           <p className="text-sm leading-6 text-[#cfc5ad]">
-            <span className="font-semibold text-[#f8f1e5]">Nu găsești exact ce cauți?</span> Spune-ne piesa, materialul sau procesul de care ai nevoie. Verificăm cu fabrica și îți răspundem în 24 de ore.
+            <span className="font-semibold text-[#f8f1e5]">Nu găsești exact ce cauți?</span> Spune-ne piesa, materialul sau procesul de care ai nevoie. Verificăm și îți răspundem în 24 de ore.
           </p>
           <a href="#cotatie" onClick={scrollToForm} className="shrink-0 rounded-full border border-[#c5a059]/60 px-6 py-3 text-xs uppercase tracking-[0.25em] text-[#c5a059] transition hover:bg-[#c5a059]/10">
             Întreabă-ne

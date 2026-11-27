@@ -63,9 +63,9 @@ export const SERVICE_PAGES = [
   {
     path: '/confectii-metalice-la-comanda',
     crumb: 'Confecții metalice la comandă',
-    eyebrow: 'Atelier și fabrică de confecții metalice · România',
+    eyebrow: 'Confecții metalice la comandă · România',
     title: 'Confecții metalice la comandă, de la piesă unicat la serie mare.',
-    lead: 'Proiectăm și producem confecții metalice pe comandă pentru persoane fizice, arhitecți, constructori și industrie: debitare laser, îndoire CNC, sudură, uzinare, vopsire și asamblare, într-o fabrică din Maramureș. Livrăm în Cluj, Transilvania și în toată România.',
+    lead: 'Proiectăm și producem confecții metalice pe comandă pentru persoane fizice, arhitecți, constructori și industrie: debitare laser, îndoire CNC, sudură, uzinare, vopsire și asamblare, totul într-un singur loc, în Maramureș. Livrăm în Cluj, Transilvania și în toată România.',
     heroImage: imgSerie,
     typesTitle: 'Tot lanțul de producție, într-un singur loc.',
     types: [
@@ -81,14 +81,14 @@ export const SERVICE_PAGES = [
       rows: [...MATERIALS, ...PROFILES],
     },
     gallery: [
-      { src: imgLaser, alt: 'Piese debitate laser din tablă în fabrica parteneră' },
+      { src: imgLaser, alt: 'Piese debitate laser din tablă' },
       { src: imgSerie, alt: 'Confecții metalice de serie pregătite pentru livrare' },
       { src: imgCnc, alt: 'Piese metalice uzinate pe strung CNC' },
       { src: imgPoarta, alt: 'Poartă metalică în execuție' },
       { src: imgBalustrada1, alt: 'Balustradă metalică în atelier' },
       { src: imgPanou, alt: 'Panou decorativ debitat laser' },
     ],
-    galleryTitle: 'Lucrări reale din fabrică.',
+    galleryTitle: 'Lucrări reale.',
     faqs: [
       { q: 'Ce fel de confecții metalice executați?', a: 'Practic orice piesă sau structură din metal: de la flanșe și plăcuțe de prindere, la porți, balustrade, scări, mobilier industrial, cadre de pat și subansamble pentru industrie. Lucrăm după desenul tău sau proiectăm noi piesa.' },
       { q: 'Lucrați și serie mică, nu doar serie mare?', a: 'Da. Facem piese unicat, prototipuri, serie mică și serie mare. Prețul pe bucată scade odată cu volumul, pentru că pregătirea producției se face o singură dată.' },
@@ -131,7 +131,7 @@ export const SERVICE_PAGES = [
       { src: imgBalustrada2, alt: 'Structură sudată din profile metalice' },
       { src: imgSerie, alt: 'Piese de serie vopsite electrostatic' },
     ],
-    galleryTitle: 'Procese din fabrică.',
+    galleryTitle: 'Procesele noastre.',
     faqs: [
       { q: 'Faceți îndoire de tablă pe abkant CNC?', a: 'Da. Îndoim tablă pe abkant CNC după desenul tău, inclusiv piese debitate laser care trebuie apoi îndoite și sudate.' },
       { q: 'Ce tip de sudură folosiți?', a: 'Sudură MIG-MAG pentru structuri din oțel și TIG / WIG pentru inox. Acolo unde sudura rămâne la vedere, o polizăm fin. Pentru serii mari sau aluminiu, spune-ne volumul și îți confirmăm soluția.' },
@@ -154,7 +154,7 @@ export const SERVICE_PAGES = [
     crumb: 'Scări metalice',
     eyebrow: 'Interior · Exterior · Industrial',
     title: 'Scări metalice de interior și exterior, pe măsura casei tale.',
-    lead: 'Scări drepte, în L, în U sau elicoidale, cu structură metalică portantă și trepte din tablă striată, lemn sau sticlă. Le proiectăm pe măsurătorile tale, le producem în fabrică și le livrăm gata de montaj.',
+    lead: 'Scări drepte, în L, în U sau elicoidale, cu structură metalică portantă și trepte din tablă striată, lemn sau sticlă. Le proiectăm pe măsurătorile tale, le realizăm și le livrăm gata de montaj.',
     heroImage: imgBalustrada2,
     types: [
       ['Scări interioare', 'Structură pe vang central sau lateral, cu trepte din lemn sau metal, în stil industrial ori minimalist.'],
@@ -274,7 +274,7 @@ export const SERVICE_PAGES = [
       { src: imgLaser, alt: 'Piese mici debitate laser din tablă' },
       { src: imgCnc, alt: 'Piese de feronerie strunjite pe CNC' },
     ],
-    galleryTitle: 'Componente din fabrică.',
+    galleryTitle: 'Componente realizate de noi.',
     faqs: [
       { q: 'Faceți feronerie custom pentru producători de mobilă?', a: 'Da. Producem componente metalice pentru mobilier în serie, după desenul vostru: plăcuțe, colțare, suporturi, baze și mânere.' },
       { q: 'Care e cantitatea minimă?', a: 'Lucrăm de la câteva bucăți pentru prototip până la serii de mii de bucăți. Prețul pe bucată scade odată cu volumul.' },
@@ -313,7 +313,7 @@ export const SERVICE_PAGES = [
       { src: imgBanca, alt: 'Randare: bancă metalică cu șezut din tablă perforată' },
       { src: imgPanou, alt: 'Panou decorativ metalic debitat laser, lucrare reală' },
     ],
-    galleryTitle: 'Exemple de obiecte (randări) și un panou real din fabrică.',
+    galleryTitle: 'Exemple de obiecte (randări) și un panou real realizat de noi.',
     faqs: [
       { q: 'Puteți face un obiect de design după o poză de pe Pinterest?', a: 'Da, ca punct de plecare. Ne trimiți poza și dimensiunile, iar noi îl adaptăm într-un model propriu, cu desen și preț în 24 de ore.' },
       { q: 'Faceți și o singură bucată?', a: 'Da. Facem unicate pentru casă și serii mici pentru pensiuni, cafenele sau magazine. Prețul pe bucată scade la cantități mai mari.' },
@@ -381,7 +381,7 @@ export const SERVICE_PAGES = [
     ],
     faqs: [
       { q: 'Am doar o schiță de mână. E suficient?', a: 'Da. O schiță cu dimensiunile principale și o poză a locului de montaj sunt suficiente ca să pornim proiectul 3D.' },
-      { q: 'Primesc fișierele DXF?', a: 'Da. Fișierele de execuție sunt pregătite pentru debitare laser și pot fi folosite la producția în fabrica noastră.' },
+      { q: 'Primesc fișierele DXF?', a: 'Da. Fișierele de execuție sunt pregătite pentru debitare laser și sunt folosite direct la producție.' },
       { q: 'Proiectul se plătește separat?', a: 'Îți spunem din prima ofertă dacă proiectarea e inclusă în lucrare sau are un preț separat, înainte să începem.' },
     ],
     faqTitle: 'Despre proiectare.',

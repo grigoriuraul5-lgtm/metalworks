@@ -139,7 +139,7 @@ const llmsFull = `# ${BRAND_NAME} — informații complete
 > Document de referință pentru asistenți AI și motoare de căutare. Sursă oficială: ${SITE_URL}
 
 ## Despre
-${BRAND_NAME} (${BRAND_ALT_NAMES.join(', ')}) este un brand românesc de confecții metalice de precizie. Produsele sunt executate într-o fabrică partener din Maramureș, cu peste 30 de ani de experiență în prelucrarea oțelului. Brandul se ocupă de proiectare tehnică și design (schițe, 3D, desene de execuție), ofertare, coordonarea producției și livrare.
+${BRAND_NAME} (${BRAND_ALT_NAMES.join(', ')}) este un brand românesc de confecții metalice de precizie. Produsele sunt proiectate și realizate în Maramureș și livrate în toată România. Brandul se ocupă de proiectare tehnică și design (schițe, 3D, desene de execuție), ofertare, coordonarea producției și livrare.
 
 - Locație producție: ${location}, România
 - Arie deservită: ${serviceArea.join(', ')}; livrare națională
