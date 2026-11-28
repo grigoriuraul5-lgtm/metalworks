@@ -17,6 +17,24 @@ import imgPicioare from '../assets/portofoliu/portofoliu-1.jpg';
 import imgSuportVin from '../assets/elemente design inetrior exterior.json/suport vinuri si pahare.jpg';
 import imgRaftGeometric from '../assets/elemente design inetrior exterior.json/dulap genial.jpg';
 import imgBanca from '../assets/elemente design inetrior exterior.json/scaun de satat jos.jpg';
+import realBazaX from '../assets/lucrari-noi/baza-x-serie.jpg';
+import realSuportMasurat from '../assets/lucrari-noi/suport-masurat.jpg';
+import realCadre from '../assets/lucrari-noi/cadre-ambalate.jpg';
+import realProfil from '../assets/lucrari-noi/profil-vopsit.jpg';
+import realSuportT from '../assets/lucrari-noi/suport-t.jpg';
+import realZincat from '../assets/lucrari-noi/suport-zincat.jpg';
+import realMecanism from '../assets/lucrari-noi/mecanism-pat.jpg';
+import realSuportiAlbi from '../assets/lucrari-noi/suporti-albi.jpg';
+import realDisc from '../assets/lucrari-noi/disc-perforat.jpg';
+import realPlaca from '../assets/lucrari-noi/placa-prindere.jpg';
+import realCapac from '../assets/lucrari-noi/capac-tabla.jpg';
+import randManere from '../assets/randari-noi/manere-bucatarie.jpg';
+import randSuportiRaft from '../assets/randari-noi/suporti-raft.jpg';
+import randLoft from '../assets/randari-noi/perete-loft.jpg';
+import randRaftGeo from '../assets/randari-noi/raft-geometric.jpg';
+import randVin from '../assets/randari-noi/suport-vin-perete.jpg';
+import randMasaX from '../assets/randari-noi/masa-x-loft.jpg';
+import randMasaCasa from '../assets/randari-noi/masa-casa-maramures.jpg';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Pagini de servicii construite din lista de cuvinte cheie a fondatorului.
@@ -81,6 +99,9 @@ export const SERVICE_PAGES = [
       rows: [...MATERIALS, ...PROFILES],
     },
     gallery: [
+      { src: realBazaX, alt: 'Baze de masă metalice în X produse în serie', tag: 'Lucrare reală' },
+      { src: realMecanism, alt: 'Mecanism metalic montat în cadrul unui pat', tag: 'Lucrare reală' },
+      { src: realSuportMasurat, alt: 'Suport metalic îndoit, verificat la dimensiune', tag: 'Lucrare reală' },
       { src: imgLaser, alt: 'Piese debitate laser din tablă' },
       { src: imgSerie, alt: 'Confecții metalice de serie pregătite pentru livrare' },
       { src: imgCnc, alt: 'Piese metalice uzinate pe strung CNC' },
@@ -208,10 +229,14 @@ export const SERVICE_PAGES = [
       ],
     },
     gallery: [
+      { src: realBazaX, alt: 'Baze de masă metalice în X, în producție', tag: 'Lucrare reală' },
+      { src: realCadre, alt: 'Cadre metalice de mobilier ambalate pentru livrare', tag: 'Lucrare reală' },
+      { src: realMecanism, alt: 'Cadru metalic montat într-un pat tapițat', tag: 'Lucrare reală' },
+      { src: randMasaX, alt: 'Masă din stejar pe picioare metalice X, într-un loft (randare)', tag: 'Randare' },
+      { src: randMasaCasa, alt: 'Masă cu bază metalică într-o casă din lemn din Maramureș (randare)', tag: 'Randare' },
       { src: imgPicioare, alt: 'Picioare de masă metalice în stil industrial' },
-      { src: imgSerie, alt: 'Cadre metalice de mobilier produse în serie' },
     ],
-    galleryTitle: 'Mobilier metalic din atelier.',
+    galleryTitle: 'Lucrări reale și cum arată în casă.',
     faqs: [
       { q: 'Faceți mobilier metalic după designul meu?', a: 'Da. Trimite o schiță, o poză de inspirație sau dimensiunile, iar noi facem proiectul 3D și execuția.' },
       { q: 'Combinați metalul cu lemnul?', a: 'Producem structura metalică gata pentru blat sau polițe din lemn. Vrei și lemnul de la noi? Întreabă-ne și îți spunem ce variante avem; altfel livrăm doar structura, pentru tâmplarul tău.' },
@@ -241,6 +266,11 @@ export const SERVICE_PAGES = [
       ['Vitrine și separatoare', 'Separatoare pentru bucătărie, birou sau dormitor, la orice dimensiune.'],
       ['Finisaj', 'Negru mat clasic sau orice culoare RAL, cu feronerie asortată.'],
     ],
+    gallery: [
+      { src: randLoft, alt: 'Perete despărțitor loft cu ramă neagră și sticlă între living și birou (randare)', tag: 'Randare' },
+      { src: imgPanou, alt: 'Panou metalic debitat laser', tag: 'Lucrare reală' },
+    ],
+    galleryTitle: 'Cum poate arăta la tine.',
     faqs: [
       { q: 'Faceți pereți loft pe măsură?', a: 'Da. Pe baza dimensiunilor golului facem desenul ramei și producem structura metalică pe dimensiunile exacte. Varianta de sticlă și montajul ți le confirmăm în ofertă.' },
       { q: 'Ce sticlă se poate folosi?', a: 'De obicei se folosește sticlă securizată clară, mată, fumurie sau reeded (cu striații). Spune-ne ce îți place și îți confirmăm în ofertă ce variantă putem livra.' },
@@ -271,8 +301,15 @@ export const SERVICE_PAGES = [
       ['Feronerie decorativă', 'Mânere pentru uși și sertare, balamale sudate sau cu rulment, inele, bride și elemente decorative metalice.'],
     ],
     gallery: [
-      { src: imgLaser, alt: 'Piese mici debitate laser din tablă' },
-      { src: imgCnc, alt: 'Piese de feronerie strunjite pe CNC' },
+      { src: realSuportiAlbi, alt: 'Suporturi metalice vopsite alb pentru mobilier', tag: 'Lucrare reală' },
+      { src: realSuportMasurat, alt: 'Suport metalic îndoit, măsurat înainte de livrare', tag: 'Lucrare reală' },
+      { src: realSuportT, alt: 'Suport metalic în T pentru mobilier', tag: 'Lucrare reală' },
+      { src: realZincat, alt: 'Piesă de prindere zincată pentru mobilier', tag: 'Lucrare reală' },
+      { src: realPlaca, alt: 'Placă de prindere debitată și îndoită', tag: 'Lucrare reală' },
+      { src: realDisc, alt: 'Disc din tablă perforată debitat laser', tag: 'Lucrare reală' },
+      { src: realProfil, alt: 'Profil metalic vopsit pentru cadru de mobilier', tag: 'Lucrare reală' },
+      { src: realCapac, alt: 'Capac din tablă striată debitat laser', tag: 'Lucrare reală' },
+      { src: randManere, alt: 'Mânere bară din oțel negru pe dulapuri de stejar (randare)', tag: 'Randare' },
     ],
     galleryTitle: 'Componente realizate de noi.',
     faqs: [
@@ -308,6 +345,9 @@ export const SERVICE_PAGES = [
     ],
     typesTitle: 'Ce putem face pentru tine.',
     gallery: [
+      { src: randRaftGeo, alt: 'Raft geometric din oțel negru pe un perete cald (randare)', tag: 'Randare' },
+      { src: randVin, alt: 'Suport metalic pentru vin și pahare deasupra unei comode (randare)', tag: 'Randare' },
+      { src: randSuportiRaft, alt: 'Polițe de stejar pe suporți metalici negri (randare)', tag: 'Randare' },
       { src: imgSuportVin, alt: 'Randare: suport metalic de perete pentru vin și pahare' },
       { src: imgRaftGeometric, alt: 'Randare: etajeră metalică cu model geometric' },
       { src: imgBanca, alt: 'Randare: bancă metalică cu șezut din tablă perforată' },

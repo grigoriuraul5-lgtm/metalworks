@@ -36,6 +36,12 @@ import lucrareReala15 from './assets/portofoliu-real/lucrare-reala-15.jpeg';
 import lucrareReala16 from './assets/portofoliu-real/lucrare-reala-16.jpeg';
 import lucrareReala17 from './assets/portofoliu-real/lucrare-reala-17.jpeg';
 import lucrareReala18 from './assets/portofoliu-real/lucrare-reala-18.jpeg';
+import nouBazaX from './assets/lucrari-noi/baza-x-serie.jpg';
+import nouMecanism from './assets/lucrari-noi/mecanism-pat.jpg';
+import nouSuportMasurat from './assets/lucrari-noi/suport-masurat.jpg';
+import nouSuportiAlbi from './assets/lucrari-noi/suporti-albi.jpg';
+import nouSuportT from './assets/lucrari-noi/suport-t.jpg';
+import nouDisc from './assets/lucrari-noi/disc-perforat.jpg';
 import { contactInfo } from './productsData.js';
 import { CatalogShowroom } from './CatalogShowroom.jsx';
 
@@ -45,7 +51,9 @@ import { sendLead } from './lib/leads.js';
 import { telLink } from './siteConfig.js';
 
 const portfolioImages = [
-  // ── Lucrări reale, din șantier/atelier (2026) — primele afișate ──
+  // ── Lucrări reale noi (sept. 2026): producție pentru mobilier ──
+  nouBazaX, nouMecanism, nouSuportMasurat, nouSuportiAlbi, nouSuportT, nouDisc,
+  // ── Lucrări reale, din șantier/atelier (2026) ──
   lucrareReala1, lucrareReala2, lucrareReala3, lucrareReala4, lucrareReala5, lucrareReala6,
   lucrareReala7, lucrareReala8, lucrareReala9, lucrareReala10, lucrareReala11, lucrareReala12,
   lucrareReala13, lucrareReala14, lucrareReala15, lucrareReala16, lucrareReala17, lucrareReala18,

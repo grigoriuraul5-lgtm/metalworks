@@ -4,6 +4,21 @@ import { SiteShell, useShop } from '../components/Layout.jsx';
 import { SectionHeading, labelClass, inputClass } from '../components/ui.jsx';
 import { PageHero, SpecGrid, ProcessSteps, FaqList, B2BQuoteForm, CtaBand, sectionClass } from './common.jsx';
 import imgHero from '../assets/portofoliu-real/lucrare-reala-17.jpeg';
+import realMecanism from '../assets/lucrari-noi/mecanism-pat.jpg';
+import realCadre from '../assets/lucrari-noi/cadre-ambalate.jpg';
+import realProfil from '../assets/lucrari-noi/profil-vopsit.jpg';
+import realSuportT from '../assets/lucrari-noi/suport-t.jpg';
+import realZincat from '../assets/lucrari-noi/suport-zincat.jpg';
+import realSuportiAlbi from '../assets/lucrari-noi/suporti-albi.jpg';
+
+const REAL_SERIE = [
+  { src: realMecanism, alt: 'Cadru metalic montat într-un pat tapițat' },
+  { src: realCadre, alt: 'Cadre metalice de pat ambalate pentru livrare' },
+  { src: realProfil, alt: 'Profil metalic vopsit pentru cadru de pat' },
+  { src: realSuportT, alt: 'Suport metalic în T pentru mobilier' },
+  { src: realZincat, alt: 'Piesă de prindere zincată' },
+  { src: realSuportiAlbi, alt: 'Suporturi metalice vopsite alb, în serie' },
+];
 
 export const SOMIERE_PATH = '/somiere-metalice-serie';
 export const SOMIERE_PDF = '/fise/fisa-tehnica-cadre-somiere-kraft.pdf';
@@ -148,6 +163,22 @@ function SomiereContent() {
                 <Icon className="h-6 w-6 text-[#c5a059]" />
                 <p className="mt-5 text-sm uppercase tracking-[0.25em] text-[#c5a059]">{t}</p>
                 <p className="mt-3 text-sm leading-7 text-[#cfc5ad]">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={sectionClass} id="lucrari">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading eyebrow="Lucrări reale" title="Piese livrate producătorilor de mobilă.">
+            Cadre, profile și piese de prindere realizate în serie, după desenul clientului.
+          </SectionHeading>
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+            {REAL_SERIE.map(({ src, alt }) => (
+              <div key={src} className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
+                <img src={src} alt={alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 hover:scale-105" />
+                <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-[#c5a059] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-black">Lucrare reală</span>
               </div>
             ))}
           </div>

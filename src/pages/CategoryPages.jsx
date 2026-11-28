@@ -154,9 +154,12 @@ function PicioareContent() {
 function Gallery({ images }) {
   return (
     <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
-      {images.map(({ src, alt }) => (
-        <div key={src} className="aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
+      {images.map(({ src, alt, tag }) => (
+        <div key={src} className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
           <img src={src} alt={alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 hover:scale-105" />
+          {tag && (
+            <span className={`pointer-events-none absolute left-3 top-3 rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] backdrop-blur-md ${tag === 'Lucrare reală' ? 'bg-[#c5a059] text-black' : 'bg-black/55 text-[#f8f1e5]'}`}>{tag}</span>
+          )}
         </div>
       ))}
     </div>
