@@ -1,3 +1,13 @@
+import randMasaX from '../assets/randari-noi/masa-x-loft.jpg';
+import randMasaCasa from '../assets/randari-noi/masa-casa-maramures.jpg';
+import randMasaOvala from '../assets/randari-noi/masa-ovala-nuc.jpg';
+import randBucatarie from '../assets/randari-noi/bucatarie-picior-u.jpg';
+import randCafenea from '../assets/randari-noi/cafenea-bistro.jpg';
+import randMasuta from '../assets/randari-noi/masuta-cafea-x.jpg';
+import randGratarLac from '../assets/randari-noi/gratar-lac.jpg';
+import randGratarTerasa from '../assets/randari-noi/gratar-terasa.jpg';
+import randVinRaft from '../assets/randari-noi/suport-vin-raft.jpg';
+import realSunshine from '../assets/lucrari-noi/panou-sunshine.jpg';
 import { ShoppingCart } from 'lucide-react';
 import { SiteShell, useShop, vatNote } from '../components/Layout.jsx';
 import { SectionHeading, labelClass, inputClass } from '../components/ui.jsx';
@@ -117,6 +127,21 @@ function PicioareContent() {
             Prețurile sunt afișate pe fiecare model ({vatNote().toLowerCase()}). Pentru altă dimensiune sau culoare, cere o ofertă personalizată din pagina produsului.
           </SectionHeading>
           <ProductGrid />
+        </div>
+      </section>
+      <section className={`${sectionClass} bg-[#0d0d0d]`}>
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading eyebrow="Cum arată în casă" title="Același picior, alt spațiu.">
+            Randări cu modelele noastre în bucătării, living-uri, lofturi și cafenele, ca să-ți fie mai ușor să alegi.
+          </SectionHeading>
+          <Gallery images={[
+            { src: randMasaX, alt: 'Masă din stejar pe picioare metalice X, într-un loft (randare)', tag: 'Randare' },
+            { src: randBucatarie, alt: 'Masă de bucătărie pe picioare metalice U (randare)', tag: 'Randare' },
+            { src: randMasaOvala, alt: 'Masă ovală din nuc pe bază metalică X (randare)', tag: 'Randare' },
+            { src: randCafenea, alt: 'Mese de cafenea pe picior metalic central (randare)', tag: 'Randare' },
+            { src: randMasuta, alt: 'Măsuță de cafea pe bază metalică X, în living (randare)', tag: 'Randare' },
+            { src: randMasaCasa, alt: 'Masă cu bază metalică într-o casă din lemn din Maramureș (randare)', tag: 'Randare' },
+          ]} />
         </div>
       </section>
       <section className={`${sectionClass} bg-[#121212]`}>
@@ -358,6 +383,11 @@ export function HorecaPage() {
           ['Camere și restaurant', 'Picioare de masă, cadre de paturi, rafturi și elemente decorative în serie.'],
         ]}
         gallery={[
+          { src: realSunshine, alt: 'Panou decorativ debitat laser cu sigla unei pensiuni', tag: 'Lucrare reală' },
+          { src: randCafenea, alt: 'Mese de cafenea pe picior metalic central (randare)', tag: 'Randare' },
+          { src: randGratarTerasa, alt: 'Masă-grătar din oțel cu nișă pentru lemne, pe terasă (randare)', tag: 'Randare' },
+          { src: randGratarLac, alt: 'Masă-grătar hexagonală pe un ponton la lac (randare)', tag: 'Randare' },
+          { src: randVinRaft, alt: 'Suport metalic de vin pe perete (randare)', tag: 'Randare' },
           { src: imgLaserPanel, alt: 'Panou metalic decorativ debitat laser' },
           { src: imgPanouri, alt: 'Panouri metalice decorative pentru gard și terasă' },
           { src: imgPoarta, alt: 'Poartă metalică în execuție' },
@@ -365,7 +395,7 @@ export function HorecaPage() {
           { src: imgPicioare, alt: 'Picioare de masă metalice pentru restaurant' },
           { src: imgForjat, alt: 'Elemente metalice decorative' },
         ]}
-        galleryTitle="Lucrări din atelier."
+        galleryTitle="Lucrări reale și idei pentru pensiunea ta."
         faqs={HORECA_FAQ}
         faqTitle="Despre proiectele pentru pensiuni și HoReCa."
         subject="Cerere ofertă pensiune / HoReCa — KRAFT Metalworks"

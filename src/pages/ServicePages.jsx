@@ -35,6 +35,9 @@ import randRaftGeo from '../assets/randari-noi/raft-geometric.jpg';
 import randVin from '../assets/randari-noi/suport-vin-perete.jpg';
 import randMasaX from '../assets/randari-noi/masa-x-loft.jpg';
 import randMasaCasa from '../assets/randari-noi/masa-casa-maramures.jpg';
+import randLaser from '../assets/randari-noi/debitare-laser.jpg';
+import randSudura from '../assets/randari-noi/sudura-cadru.jpg';
+import randAbkant from '../assets/randari-noi/abkant-cnc.jpg';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Pagini de servicii construite din lista de cuvinte cheie a fondatorului.
@@ -147,6 +150,9 @@ export const SERVICE_PAGES = [
       ['Asamblare', 'Montaj de subansamble, feronerie și verificare dimensională înainte de livrare.'],
     ],
     gallery: [
+      { src: randAbkant, alt: 'Îndoire pe abkant CNC (randare)', tag: 'Randare' },
+      { src: randSudura, alt: 'Sudură TIG la un cadru metalic de masă (randare)', tag: 'Randare' },
+      { src: randLaser, alt: 'Debitare laser a unui panou decorativ (randare)', tag: 'Randare' },
       { src: imgCnc, alt: 'Piese strunjite pe CNC' },
       { src: imgLaser, alt: 'Debitare laser tablă' },
       { src: imgBalustrada2, alt: 'Structură sudată din profile metalice' },

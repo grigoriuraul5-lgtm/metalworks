@@ -42,6 +42,21 @@ import nouSuportMasurat from './assets/lucrari-noi/suport-masurat.jpg';
 import nouSuportiAlbi from './assets/lucrari-noi/suporti-albi.jpg';
 import nouSuportT from './assets/lucrari-noi/suport-t.jpg';
 import nouDisc from './assets/lucrari-noi/disc-perforat.jpg';
+import lsMasa from './assets/randari-noi/masa-x-loft.jpg';
+import lsManere from './assets/randari-noi/manere-bucatarie.jpg';
+import lsRaft from './assets/randari-noi/raft-geometric.jpg';
+import lsLoft from './assets/randari-noi/perete-loft.jpg';
+import lsVin from './assets/randari-noi/suport-vin-perete.jpg';
+import lsGratar from './assets/randari-noi/gratar-terasa.jpg';
+
+const LIFESTYLE = [
+  { img: lsMasa, label: 'Picioare și cadre de masă', href: '/picioare-masa-metalice', alt: 'Masă din stejar pe picioare metalice X (randare)' },
+  { img: lsManere, label: 'Feronerie de mobilier', href: '/feronerie-accesorii-metalice', alt: 'Mânere bară din oțel pe dulapuri de stejar (randare)' },
+  { img: lsRaft, label: 'Obiecte de design', href: '/obiecte-design-metal', alt: 'Raft geometric din oțel negru (randare)' },
+  { img: lsLoft, label: 'Pereți loft', href: '/pereti-despartitori-metalici-loft', alt: 'Perete loft cu ramă neagră și sticlă (randare)' },
+  { img: lsVin, label: 'Suporturi de vin', href: '/obiecte-design-metal', alt: 'Suport metalic pentru vin și pahare (randare)' },
+  { img: lsGratar, label: 'Grătare și outdoor', href: '/confectii-metalice-pensiuni-horeca', alt: 'Masă-grătar din oțel pe terasă (randare)' },
+];
 import { contactInfo } from './productsData.js';
 import { CatalogShowroom } from './CatalogShowroom.jsx';
 
@@ -374,6 +389,28 @@ function HomePage() {
                 <p className="text-sm uppercase tracking-[0.25em] text-[#c5a059]">Verificat înainte de livrare</p>
                 <p className="mt-4 text-sm leading-7 text-[#cfc5ad]">Fiecare piesă este verificată dimensional și la finisaj înainte de livrare, după desenul de execuție aprobat de tine.</p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="la-tine" className="bg-[#0a0a0a] px-6 py-24 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-10 max-w-2xl">
+              <p className="text-xs uppercase tracking-[0.35em] text-[#c5a059]">Cum arată la tine</p>
+              <h2 id="la-tine" className="mt-4 text-3xl font-semibold text-[#f8f1e5] sm:text-4xl">Piesele noastre, în spații reale de locuit.</h2>
+              <p className="mt-4 text-base leading-8 text-[#cfc5ad]">Randări cu produsele KRAFT, ca să vezi cum se potrivesc în casa, pensiunea sau showroom-ul tău.</p>
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+              {LIFESTYLE.map(({ img, label, href, alt }) => (
+                <a key={label} href={href} className="group relative block aspect-[4/5] overflow-hidden rounded-3xl border border-white/10">
+                  <img src={img} alt={alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                  <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-black/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f8f1e5] backdrop-blur-md">Randare</span>
+                  <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-16 sm:p-6 sm:pt-20">
+                    <span className="block text-sm font-semibold text-[#f8f1e5] sm:text-lg">{label}</span>
+                    <span className="mt-1 block text-[11px] uppercase tracking-[0.25em] text-[#c5a059]">Vezi detalii →</span>
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
         </section>
