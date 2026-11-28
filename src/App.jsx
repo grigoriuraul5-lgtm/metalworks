@@ -1,7 +1,5 @@
 import { useRef, useState } from 'react';
 import { ArrowRight, Shield, Sparkles, Mail, ChevronRight, ChevronLeft } from 'lucide-react';
-import heroBG from './assets/imagine hero 1.jpeg';
-import heroBGMobile from './assets/imagine hero 1 mobile.jpeg';
 import logo1 from './assets/logo 1.png';
 import proiectArhitectural from './assets/portofoliu-real/lucrare-reala-05.jpeg';
 import portofoliu1 from './assets/portofoliu/portofoliu-1.jpg';
@@ -48,6 +46,40 @@ import lsRaft from './assets/randari-noi/raft-geometric.jpg';
 import lsLoft from './assets/randari-noi/perete-loft.jpg';
 import lsVin from './assets/randari-noi/suport-vin-perete.jpg';
 import lsGratar from './assets/randari-noi/gratar-terasa.jpg';
+import hsBucatarie from './assets/randari-noi/bucatarie-picior-u.jpg';
+import hsCafenea from './assets/randari-noi/cafenea-bistro.jpg';
+import hsCasa from './assets/randari-noi/masa-casa-maramures.jpg';
+import hsMasuta from './assets/randari-noi/masuta-cafea-x.jpg';
+import hsSuporti from './assets/randari-noi/suporti-raft.jpg';
+import hsGratarLac from './assets/randari-noi/gratar-lac.jpg';
+
+const HERO_COL_A = [
+  { img: lsMasa, label: 'Picioare de masă', href: '/picioare-masa-metalice', alt: 'Masă din stejar pe picioare metalice X' },
+  { img: lsManere, label: 'Feronerie de mobilier', href: '/feronerie-accesorii-metalice', alt: 'Mânere bară din oțel pe dulapuri de stejar' },
+  { img: hsCafenea, label: 'Mese pentru cafenele', href: '/confectii-metalice-pensiuni-horeca', alt: 'Mese de cafenea pe picior metalic central' },
+  { img: lsLoft, label: 'Pereți loft', href: '/pereti-despartitori-metalici-loft', alt: 'Perete loft cu ramă neagră și sticlă' },
+  { img: hsSuporti, label: 'Suporți de raft', href: '/feronerie-accesorii-metalice', alt: 'Polițe de stejar pe suporți metalici negri' },
+];
+const HERO_COL_B = [
+  { img: lsRaft, label: 'Obiecte de design', href: '/obiecte-design-metal', alt: 'Raft geometric din oțel negru' },
+  { img: hsBucatarie, label: 'Mese de bucătărie', href: '/picioare-masa-metalice', alt: 'Masă de bucătărie pe picioare metalice U' },
+  { img: lsGratar, label: 'Grătare outdoor', href: '/confectii-metalice-pensiuni-horeca', alt: 'Masă-grătar din oțel pe terasă' },
+  { img: lsVin, label: 'Suporturi de vin', href: '/obiecte-design-metal', alt: 'Suport metalic pentru vin și pahare' },
+  { img: hsCasa, label: 'Baze de masă', href: '/picioare-masa-metalice', alt: 'Masă cu bază metalică într-o casă din lemn' },
+  { img: hsMasuta, label: 'Măsuțe de cafea', href: '/picioare-masa-metalice', alt: 'Măsuță de cafea pe bază metalică X' },
+];
+
+function HeroCard({ img, label, href, alt, eager }) {
+  return (
+    <a href={href} className="hero-card group relative block overflow-hidden rounded-[1.6rem] border border-white/10">
+      <img src={img} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105" />
+      <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-black/85 via-black/35 to-transparent p-4 pt-14">
+        <span className="text-sm font-semibold text-[#f8f1e5]">{label}</span>
+        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#c5a059] text-[#0a0a0a] transition group-hover:translate-x-0.5">→</span>
+      </span>
+    </a>
+  );
+}
 
 const LIFESTYLE = [
   { img: lsMasa, label: 'Picioare și cadre de masă', href: '/picioare-masa-metalice', alt: 'Masă din stejar pe picioare metalice X (randare)' },
@@ -155,47 +187,71 @@ function HomePage() {
 
   return (
     <>
-        <section
-          id="home"
-          className="relative overflow-hidden hero-section"
-          style={{
-            backgroundColor: '#0a0a0a',
-            backgroundImage: `linear-gradient(180deg, rgba(10,10,10,0.6), rgba(10,10,10,0.85)), url(${heroBG})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
+        <section id="home" className="hero-v2 relative overflow-hidden bg-[#0a0a0a]">
           <style>{`
-            @media (max-width: 768px) {
-              .hero-section {
-                background-image: linear-gradient(180deg, rgba(10,10,10,0.6), rgba(10,10,10,0.85)), url(${heroBGMobile}) !important;
-              }
-            }
+            .hero-v2{background:radial-gradient(60% 55% at 18% 35%, rgba(197,160,89,.16), transparent 70%), radial-gradient(40% 40% at 90% 10%, rgba(197,160,89,.08), transparent 70%), #0a0a0a}
+            .hero-col{display:flex;flex-direction:column;gap:1rem}
+            .hero-track-up{animation:heroUp 60s linear infinite}
+            .hero-track-down{animation:heroDown 60s linear infinite}
+            .hero-rail:hover .hero-track-up,.hero-rail:hover .hero-track-down,.hero-row:hover .hero-track-x{animation-play-state:paused}
+            @keyframes heroUp{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+            @keyframes heroDown{from{transform:translateY(-50%)}to{transform:translateY(0)}}
+            .hero-row{-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+            .hero-rail{-webkit-mask-image:linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent)}
+            .hero-track-x{display:flex;gap:.75rem;width:max-content;animation:heroX 55s linear infinite}
+            .hero-track-x .hero-card{width:11.5rem}
+            @keyframes heroX{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+            @media (prefers-reduced-motion: reduce){.hero-track-up,.hero-track-down,.hero-track-x{animation:none}}
           `}</style>
-          <div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-7xl flex-col justify-center px-6 pb-24 pt-24 text-center md:min-h-[calc(100vh-112px)] lg:px-8">
-            <h1 className="font-ui mb-6 inline-flex justify-center text-base font-bold uppercase tracking-[0.15em] text-[#c5a059] sm:text-xl sm:tracking-[0.35em]">
-              <span className="sr-only">KRAFT Metalworks — </span>Confecții metalice de precizie
-            </h1>
-            <p className="mx-auto max-w-4xl text-5xl font-semibold leading-tight text-[#c5a059] sm:text-6xl lg:text-7xl" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Inginerie de Precizie.
-            </p>
-            <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-[#d8ccb6] sm:text-lg">
-              Piese metalice custom pentru interior: picioare și cadre de masă, mobilier industrial, feronerie și obiecte de design, în unicat sau serie mică. Proiectate și realizate în Maramureș, livrate în toată România.
-            </p>
-            <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
-                href="#collection"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#c5a059] bg-black/70 px-8 py-3 text-sm uppercase tracking-[0.35em] transition duration-300 hover:bg-[#141414] hover:text-[#f8f1e5]"
-              >
-                Explorează Colecția <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#proiecte-custom"
-                onClick={scrollTo('proiecte-custom')}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#c5a059] px-8 py-3 text-sm uppercase tracking-[0.35em] text-[#0a0a0a] transition duration-300 hover:bg-[#b8924b]"
-              >
-                Proiecte Custom <ChevronRight className="h-4 w-4" />
-              </a>
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-14 pt-14 lg:min-h-[calc(100vh-112px)] lg:grid-cols-12 lg:gap-12 lg:px-8 lg:py-0">
+            <div className="lg:col-span-5">
+              <h1 className="font-ui text-xs font-bold uppercase tracking-[0.35em] text-[#c5a059] sm:text-sm">
+                <span className="sr-only">KRAFT Metalworks — </span>Confecții metalice la comandă
+              </h1>
+              <p className="mt-6 text-[2.6rem] font-semibold leading-[1.05] text-[#f8f1e5] sm:text-6xl lg:text-[4.2rem]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                Metal făcut pe <span className="italic text-[#c5a059]">măsura</span> spațiului tău.
+              </p>
+              <p className="mt-6 max-w-xl text-base leading-8 text-[#d8ccb6] sm:text-lg">
+                Picioare și cadre de masă, feronerie de mobilier, obiecte de design și piese după desen, în unicat sau serie mică. Proiectate și realizate în Maramureș, livrate în toată România.
+              </p>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="#proiecte-custom"
+                  onClick={scrollTo('proiecte-custom')}
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#c5a059] px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] text-[#0a0a0a] transition duration-300 hover:bg-[#d4b06a]"
+                >
+                  Trimite desenul <ChevronRight className="h-4 w-4" />
+                </a>
+                <a
+                  href="#collection"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/20 px-7 py-3.5 text-sm uppercase tracking-[0.16em] text-[#f8f1e5] transition duration-300 hover:border-[#c5a059] hover:text-[#c5a059]"
+                >
+                  Vezi colecția <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+              <ul className="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-white/10 pt-6">
+                {[['24h', 'preț și termen'], ['1 buc.', 'sau serie mică'], ['RO', 'livrare în toată țara']].map(([big, small]) => (
+                  <li key={big}>
+                    <p className="text-2xl font-semibold text-[#c5a059]" style={{ fontFamily: "'Playfair Display', serif" }}>{big}</p>
+                    <p className="mt-1 text-[11px] uppercase leading-5 tracking-[0.18em] text-[#a99f8c]">{small}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="hero-rail relative hidden h-[calc(100vh-112px)] max-h-[860px] min-h-[620px] overflow-hidden lg:col-span-7 lg:grid lg:grid-cols-2 lg:gap-4">
+              <div className="hero-col hero-track-up">
+                {[...HERO_COL_A, ...HERO_COL_A].map((c, i) => <HeroCard key={`a${i}`} {...c} eager={i < 2} />)}
+              </div>
+              <div className="hero-col hero-track-down">
+                {[...HERO_COL_B, ...HERO_COL_B].map((c, i) => <HeroCard key={`b${i}`} {...c} eager={i < 2} />)}
+              </div>
+            </div>
+
+            <div className="hero-row -mx-6 overflow-hidden lg:hidden">
+              <div className="hero-track-x">
+                {[...HERO_COL_A, ...HERO_COL_B, ...HERO_COL_A, ...HERO_COL_B].map((c, i) => <HeroCard key={`x${i}`} {...c} eager={i < 3} />)}
+              </div>
             </div>
           </div>
         </section>
