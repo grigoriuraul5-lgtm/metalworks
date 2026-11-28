@@ -398,13 +398,12 @@ function HomePage() {
             <div className="mb-10 max-w-2xl">
               <p className="text-xs uppercase tracking-[0.35em] text-[#c5a059]">Cum arată la tine</p>
               <h2 id="la-tine" className="mt-4 text-3xl font-semibold text-[#f8f1e5] sm:text-4xl">Piesele noastre, în spații reale de locuit.</h2>
-              <p className="mt-4 text-base leading-8 text-[#cfc5ad]">Randări cu produsele KRAFT, ca să vezi cum se potrivesc în casa, pensiunea sau showroom-ul tău.</p>
+              <p className="mt-4 text-base leading-8 text-[#cfc5ad]">Cum se potrivesc piesele KRAFT în casă, în pensiune sau în showroom.</p>
             </div>
             <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
               {LIFESTYLE.map(({ img, label, href, alt }) => (
                 <a key={label} href={href} className="group relative block aspect-[4/5] overflow-hidden rounded-3xl border border-white/10">
                   <img src={img} alt={alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-                  <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-black/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f8f1e5] backdrop-blur-md">Randare</span>
                   <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-16 sm:p-6 sm:pt-20">
                     <span className="block text-sm font-semibold text-[#f8f1e5] sm:text-lg">{label}</span>
                     <span className="mt-1 block text-[11px] uppercase tracking-[0.25em] text-[#c5a059]">Vezi detalii →</span>

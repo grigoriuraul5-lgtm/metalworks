@@ -132,15 +132,15 @@ function PicioareContent() {
       <section className={`${sectionClass} bg-[#0d0d0d]`}>
         <div className="mx-auto max-w-7xl">
           <SectionHeading eyebrow="Cum arată în casă" title="Același picior, alt spațiu.">
-            Randări cu modelele noastre în bucătării, living-uri, lofturi și cafenele, ca să-ți fie mai ușor să alegi.
+            Modelele noastre în bucătării, living-uri, lofturi și cafenele, ca să-ți fie mai ușor să alegi.
           </SectionHeading>
           <Gallery images={[
-            { src: randMasaX, alt: 'Masă din stejar pe picioare metalice X, într-un loft (randare)', tag: 'Randare' },
-            { src: randBucatarie, alt: 'Masă de bucătărie pe picioare metalice U (randare)', tag: 'Randare' },
-            { src: randMasaOvala, alt: 'Masă ovală din nuc pe bază metalică X (randare)', tag: 'Randare' },
-            { src: randCafenea, alt: 'Mese de cafenea pe picior metalic central (randare)', tag: 'Randare' },
-            { src: randMasuta, alt: 'Măsuță de cafea pe bază metalică X, în living (randare)', tag: 'Randare' },
-            { src: randMasaCasa, alt: 'Masă cu bază metalică într-o casă din lemn din Maramureș (randare)', tag: 'Randare' },
+            { src: randMasaX, alt: 'Masă din stejar pe picioare metalice X, într-un loft (randare)' },
+            { src: randBucatarie, alt: 'Masă de bucătărie pe picioare metalice U (randare)' },
+            { src: randMasaOvala, alt: 'Masă ovală din nuc pe bază metalică X (randare)' },
+            { src: randCafenea, alt: 'Mese de cafenea pe picior metalic central (randare)' },
+            { src: randMasuta, alt: 'Măsuță de cafea pe bază metalică X, în living (randare)' },
+            { src: randMasaCasa, alt: 'Masă cu bază metalică într-o casă din lemn din Maramureș (randare)' },
           ]} />
         </div>
       </section>
@@ -384,10 +384,10 @@ export function HorecaPage() {
         ]}
         gallery={[
           { src: realSunshine, alt: 'Panou decorativ debitat laser cu sigla unei pensiuni', tag: 'Lucrare reală' },
-          { src: randCafenea, alt: 'Mese de cafenea pe picior metalic central (randare)', tag: 'Randare' },
-          { src: randGratarTerasa, alt: 'Masă-grătar din oțel cu nișă pentru lemne, pe terasă (randare)', tag: 'Randare' },
-          { src: randGratarLac, alt: 'Masă-grătar hexagonală pe un ponton la lac (randare)', tag: 'Randare' },
-          { src: randVinRaft, alt: 'Suport metalic de vin pe perete (randare)', tag: 'Randare' },
+          { src: randCafenea, alt: 'Mese de cafenea pe picior metalic central (randare)' },
+          { src: randGratarTerasa, alt: 'Masă-grătar din oțel cu nișă pentru lemne, pe terasă (randare)' },
+          { src: randGratarLac, alt: 'Masă-grătar hexagonală pe un ponton la lac (randare)' },
+          { src: randVinRaft, alt: 'Suport metalic de vin pe perete (randare)' },
           { src: imgLaserPanel, alt: 'Panou metalic decorativ debitat laser' },
           { src: imgPanouri, alt: 'Panouri metalice decorative pentru gard și terasă' },
           { src: imgPoarta, alt: 'Poartă metalică în execuție' },
